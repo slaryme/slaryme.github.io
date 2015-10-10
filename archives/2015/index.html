@@ -3,19 +3,19 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Archives: 2015 | Hexo</title>
+  <title>Archives: 2015 | David Done 博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description">
+  <meta name="description" content="daviddone | Android">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/archives/2015/index.html">
-<meta property="og:site_name" content="Hexo">
-<meta property="og:description">
+<meta property="og:title" content="David Done 博客">
+<meta property="og:url" content="http://www.daviddone.com/archives/2015/index.html">
+<meta property="og:site_name" content="David Done 博客">
+<meta property="og:description" content="daviddone | Android">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
-<meta name="twitter:description">
+<meta name="twitter:title" content="David Done 博客">
+<meta name="twitter:description" content="daviddone | Android">
   
-    <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
+    <link rel="alternative" href="/atom.xml" title="David Done 博客" type="application/atom+xml">
   
   
     <link rel="icon" href="/favicon.png">
@@ -33,8 +33,12 @@
   <div id="header-outer" class="outer">
     <div id="header-title" class="inner">
       <h1 id="logo-wrap">
-        <a href="/" id="logo">Hexo</a>
+        <a href="/" id="logo">David Done 博客</a>
       </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">www.daviddone.com</a>
+        </h2>
       
     </div>
     <div id="header-inner" class="inner">
@@ -53,7 +57,7 @@
         <a id="nav-search-btn" class="nav-icon" title="Search"></a>
       </nav>
       <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://www.daviddone.com"></form>
       </div>
     </div>
   </div>
@@ -61,52 +65,102 @@
       <div class="outer">
         <section id="main">
   
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2015" class="archive-year">2015</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2015/10/09/hello-world/" class="archive-article-date">
-  <time datetime="2015-10-09T07:24:00.916Z" itemprop="datePublished">Oct 9</time>
+    <article id="post-搭建博客" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/10/10/搭建博客/" class="article-date">
+  <time datetime="2015-10-10T02:12:34.000Z" itemprop="datePublished">2015-10-10</time>
 </a>
-      
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/分类一/">分类一</a>►<a class="article-category-link" href="/categories/分类一/分类二/">分类二</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
     <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/10/09/hello-world/">Hello World</a>
+      <a class="article-title" href="/2015/10/10/搭建博客/">在github上构建Hexo博客</a>
     </h1>
   
 
-    </header>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p></p><p><br>    目录：<br>    1: Hexo简介<br>    2：Hexo在本地安装<br>    3：github分配博客项目空间<br>    4：发布Hexo到github上<br>    5：绑定个性化域名<br>    6: 个性化配置<br>    7: 使用MD创建第一篇博客<br>    8：问题与结论<br></p><br>1：Hexo简介<br><img src="/images/hexo_info.png" alt=""><p></p>
+<p></p><p><br>Hexo是一款轻量级的静态博客框架，基于node.js 。截止目前，在Github该项目的star数量已经超过6000,由此可见其受欢迎的程度。Hexo的官网：<a href="https://hexo.io/，通过简约醒目的风格向我们展现了使用Hexo的原因。Blazing" target="_blank" rel="external">https://hexo.io/，通过简约醒目的风格向我们展现了使用Hexo的原因。Blazing</a> Fast，Markdown Support，One-Command Deployment，Various Plugins。由于github拥有支持node和Markdown的github pages服务，所以我们可以在github上便捷的搭建免费的hexo博客站点。<br></p><br>2：Hexo在本地安装<br>在本地搭建Hexo博客需要先安装Git和Node.js。笔者采用的是window 7 64，所以下载windows版本下的Git即可<a href="https://git-for-windows.github.io/,然后下载安装Node.js" target="_blank" rel="external">https://git-for-windows.github.io/,然后下载安装Node.js</a> <a href="https://nodejs.org/en/" target="_blank" rel="external">https://nodejs.org/en/</a> 即可。下面进入Hexo在本地搭建环节。<br>安装<br>在本地磁盘下新建Hexo文件夹，如（D:\Hexo），点击右键，选择Git bush，然后执行命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init</span><br></pre></td></tr></table></figure><p></p>
+<p>会得到hexo博客需要的所有目录文件。<br>安装依赖包：执行命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install</span><br></pre></td></tr></table></figure></p>
+<p>生成博客与部署：<br>hexo generate<br>hexo server<br>执行hexo server之后，会有如下提示：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">INFO  Hexo is running at http://0.0.0.0:4000/. Press Ctrl+C to stop.</span><br></pre></td></tr></table></figure></p>
+<p>则通过本地IP采用127.0.0.1：4000即可访问。如下图，则表示本地安装成功：<br><img src="/images/hexo_install_success.png" alt=""><br>3：github分配博客项目空间<br>在自己Github主页右下角，创建一个新的repository。命名规则username.github.io;注意username更换为自己的github账号，如笔者的新repository为daviddone.github.io。<br><img src="/images/hexo_github.png" alt=""><br>4：发布Hexo到github上<br>编辑_config.yml （D:\Hexo中）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">deploy:&#10;  type: git&#10;  repository: git@github.com:daviddone/daviddone.github.io.git&#10;  branch: master</span><br></pre></td></tr></table></figure></p>
+<p>请注意：repository必须填写SSH的路径，不能填写：<br><a href="https://github.com/daviddone/daviddone.github.io.git" target="_blank" rel="external">https://github.com/daviddone/daviddone.github.io.git</a><br>执行下列指令，可完成部署<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo generate&#10;ssh -T git@github.comhexo deploy</span><br></pre></td></tr></table></figure></p>
+<p>5：绑定个性化域名<br>Dns服务商设置：<br><img src="/images/hexo_dns1.png" alt=""><br><img src="/images/hexo_dns2.png" alt=""><br>域名服务商万网设置：<br><img src="/images/hexo_cname.png" alt=""><br>修改完毕之后查看域名信息确认,如下：<br><img src="/images/hexo_cname_confirm.png" alt=""><br>GitHub和Hexo设置:<br>在D:\Hexo\source新建文件名CNAME文件,然后编辑如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">www.daviddone.com</span><br></pre></td></tr></table></figure></p>
+<p>然后更新github，会发现在repository的根目录下会出现CNAME文件夹</p>
+<p>注意域名解析有一定的延迟，等到生效时，访问www.daviddone.com即可查看，github博客已与域名绑定。至此，博客的简单搭建完毕。<br>6：个性化配置<br>换肤,自定义网站主题：<br>克隆喜欢的主题<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/ppoffice/hexo-theme-hueman.git themes/hueman</span><br></pre></td></tr></table></figure></p>
+<p>在_config.yml中配置：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># Extensions &#25193;&#23637;&#65306;&#25554;&#20214;&#21644;&#30382;&#32932;&#10;## Plugins: http://hexo.io/plugins/&#10;## Themes: http://hexo.io/themes/&#10;theme: hueman</span><br></pre></td></tr></table></figure></p>
+<p>其他配置见笔者的配置文件：<br>7: 使用MD创建第一篇博客：<br>执行命令创建文章：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new &#25645;&#24314;&#21338;&#23458;</span><br></pre></td></tr></table></figure></p>
+<p>在D:\Hexo\source_posts目录下出现 搭建博客.md 文件，然后以MarkDown语法编辑文章。编辑完毕之后，执行<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo server</span><br></pre></td></tr></table></figure></p>
+<p>查看效果<br>介绍文章语法：<br>生成.md文件之后，每篇文章文首添加：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">title: &#25645;&#24314;&#21338;&#23458;&#10;date: 2015-10-10 10:12:34&#10;tags:&#10;- &#26631;&#35760;&#19968; &#10;- &#26631;&#35760;&#20108;&#10;categories:&#10;- &#20998;&#31867;&#19968;&#10;- &#20998;&#31867;&#20108;&#10;---</span><br></pre></td></tr></table></figure></p>
+<p>接下来就可以写正文,正文遵循MarkDown语法，可参考其官方教材：<br><a href="https://guides.github.com/features/mastering-markdown" target="_blank" rel="external">https://guides.github.com/features/mastering-markdown</a><br>8:问题与结论<br>1：部署的时候出现错误：<br><img src="/images/hexo_error1.png" alt=""><br>原因：将repository中的SSH路径写为了Https路径。<br>2:初次使用请配置SSH keys<br>参考官方教材：<a href="https://help.github.com/articles/generating-ssh-keys/" target="_blank" rel="external">https://help.github.com/articles/generating-ssh-keys/</a><br>配置完毕之后，在每次push之前执行命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure></p>
+<p>即可获取权限</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://www.daviddone.com/2015/10/10/搭建博客/" data-id="cifkgsgvt0000asuzxmg7lgk8" class="article-share-link">Share</a>
+      
+        <a href="http://www.daviddone.com/2015/10/10/搭建博客/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/标记一-标记11/">标记一 标记11</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/标记二/">标记二</a></li></ul>
+
+    </footer>
   </div>
+  
 </article>
+
+
   
-  
-    </div></section>
   
 </section>
         
           <aside id="sidebar">
   
     
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/分类一/">分类一</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/分类一/分类二/">分类二</a><span class="category-list-count">1</span></li></ul></li></ul>
+    </div>
+  </div>
+
   
     
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/标记一-标记11/">标记一 标记11</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/标记二/">标记二</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </div>
+
   
     
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/标记一-标记11/" style="font-size: 10px;">标记一 标记11</a> <a href="/tags/标记二/" style="font-size: 10px;">标记二</a>
+    </div>
+  </div>
+
   
     
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">October 2015</a><span class="archive-list-count">1</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">十月 2015</a><span class="archive-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -118,7 +172,7 @@
       <ul>
         
           <li>
-            <a href="/2015/10/09/hello-world/">Hello World</a>
+            <a href="/2015/10/10/搭建博客/">在github上构建Hexo博客</a>
           </li>
         
       </ul>
@@ -133,7 +187,7 @@
   
   <div class="outer">
     <div id="footer-info" class="inner">
-      &copy; 2015 John Doe<br>
+      &copy; 2015 daviddone<br>
       Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
@@ -147,6 +201,18 @@
   
 </nav>
     
+<script>
+  var disqus_shortname = 'devilwwj';
+  
+  (function(){
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
