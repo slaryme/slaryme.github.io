@@ -4,7 +4,7 @@
   <subtitle><![CDATA[www.daviddone.com]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://www.daviddone.com/"/>
-  <updated>2015-10-10T06:31:46.007Z</updated>
+  <updated>2015-10-10T13:13:03.881Z</updated>
   <id>http://www.daviddone.com/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://www.daviddone.com/2015/10/10/MarkDown%E7%AE%80%E6%98%8E%E6%95%99%E6%9D%90/"/>
     <id>http://www.daviddone.com/2015/10/10/MarkDown简明教材/</id>
     <published>2015-10-10T03:05:29.000Z</published>
-    <updated>2015-10-10T06:31:46.007Z</updated>
+    <updated>2015-10-10T13:13:03.881Z</updated>
     <content type="html"><![CDATA[<h2 id="引用语法">引用语法</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#62; &#24341;&#29992;&#19968;&#10;&#62; &#22810;&#34892;&#24341;&#29992;</span><br></pre></td></tr></table></figure>
 <p>引用效果</p>
 <blockquote>
@@ -48,9 +48,9 @@
 </ul>
 </li>
 </ul>
-<h2 id="视频引用语法：">视频引用语法：</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#60;iframe height=200 width=200 src=&#34;http://player.youku.com/embed/XMjI2MjU3MDMy&#34; frameborder=0 allowfullscreen&#62;&#60;/iframe&#62;</span><br></pre></td></tr></table></figure>
+<h2 id="视频引用语法：">视频引用语法：</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#60;iframe height=300 width=400 src=&#34;http://player.youku.com/embed/XMjI2MjU3MDMy&#34; frameborder=0 allowfullscreen&#62;&#60;/iframe&#62;</span><br></pre></td></tr></table></figure>
 <p>效果如下：</p>
-<p><iframe height="200" width="200" src="http://player.youku.com/embed/XMjI2MjU3MDMy" frameborder="0" allowfullscreen></iframe><br>注意,MD完全支持 Html。</p>
+<p><iframe height="300" width="400" src="http://player.youku.com/embed/XMjI2MjU3MDMy" frameborder="0" allowfullscreen></iframe><br>注意,MD完全支持 Html。</p>
 ]]></content>
     <summary type="html">
     <![CDATA[<h2 id="引用语法">引用语法</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td clas]]>
