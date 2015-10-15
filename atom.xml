@@ -4,7 +4,7 @@
   <subtitle><![CDATA[www.daviddone.com]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://www.daviddone.com/"/>
-  <updated>2015-10-15T01:56:05.729Z</updated>
+  <updated>2015-10-15T02:14:43.872Z</updated>
   <id>http://www.daviddone.com/</id>
   
   <author>
@@ -15,11 +15,28 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title><![CDATA[阅读java编程思想]]></title>
+    <link href="http://www.daviddone.com/2015/10/13/%E9%98%85%E8%AF%BBjava%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3/"/>
+    <id>http://www.daviddone.com/2015/10/13/阅读java编程思想/</id>
+    <published>2015-10-13T05:06:59.000Z</published>
+    <updated>2015-10-15T02:14:43.872Z</updated>
+    <content type="html"><![CDATA[<p>程序运行的时候内存是怎么分配的：<br>寄存器<br>堆栈<br>堆<br>常量存储<br>非RAM存储</p>
+<p>8中基本类型和范围：<br>int short byte char float double long boolean<br>字符类型：short byte char<br>数字类型：int float long double<br>判断类型：boolean </p>
+<p>Java中的数组：<br>C中数组就是内存块，访问自身内存块之外的数组危险。而Java为了确保其安全性，有个范围检查机制。<br>创建数组对象就是创建数组的引用，初始化为null，还有存放数据类型的数组<br>Java中的对象销毁<br>C开发时，会遇到，变量存活要多久，销毁对象什么时候，变量的生命周期如何算？Java采用了什么样的。<br>作用域：变量作用域：<br>对象作用域：<br>程序执行，如何传递和复制对象引用</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>程序运行的时候内存是怎么分配的：<br>寄存器<br>堆栈<br>堆<br>常量存储<br>非RAM存储</p>
+<p>8中基本类型和范围：<br>int short byte char float double long boolean<br>字符类型：short byt]]>
+    </summary>
+    
+  </entry>
+  
+  <entry>
     <title><![CDATA[如何掌握英文]]></title>
     <link href="http://www.daviddone.com/2015/10/13/%E5%A6%82%E4%BD%95%E6%8E%8C%E6%8F%A1%E8%8B%B1%E6%96%87/"/>
     <id>http://www.daviddone.com/2015/10/13/如何掌握英文/</id>
     <published>2015-10-13T01:54:54.000Z</published>
-    <updated>2015-10-15T01:56:05.729Z</updated>
+    <updated>2015-10-15T02:18:24.239Z</updated>
     <content type="html"><![CDATA[<h2 id="目的">目的</h2><p>学习一门外语，不可避及的就是谈一谈，学习这门外语的目的，例如笔者学习英语的主要的目的是，学好英文，能够无障碍看美剧，看英文原著，看英文技术文档，用流利的英文交流，或者用英文来写写文章来陶冶一下情操。正是有了这些目标，我才能够有动力不断学习英文，有意识的运用英文。</p>
 <h2 id="方法">方法</h2><h3 id="朗读和背诵">朗读和背诵</h3><p>学习任何语言，最基本且有效的方法就是朗读和背诵。最开始的时候，一定要坚持，每天早上1小时，持续一年。背诵不必贪多，一篇一篇的文章背诵即可，对每篇文章的词组，语法都要达到熟练掌握。如此操作，只要能够达到50篇高级文章的熟练掌握，则会发现阅读会有很大的进步。</p>
 <h3 id="反复看和听">反复看和听</h3><!-- http://www.zhihu.com/question/26424821/answer/32770859 --> 
@@ -31,7 +48,57 @@
     <![CDATA[<h2 id="目的">目的</h2><p>学习一门外语，不可避及的就是谈一谈，学习这门外语的目的，例如笔者学习英语的主要的目的是，学好英文，能够无障碍看美剧，看英文原著，看英文技术文档，用流利的英文交流，或者用英文来写写文章来陶冶一下情操。正是有了这些目标，我才能够有动力不断学]]>
     </summary>
     
-      <category term="外语" scheme="http://www.daviddone.com/categories/%E5%A4%96%E8%AF%AD/"/>
+      <category term="English" scheme="http://www.daviddone.com/categories/English/"/>
+    
+      <category term="Methodology" scheme="http://www.daviddone.com/categories/English/Methodology/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Android 屏幕适配]]></title>
+    <link href="http://www.daviddone.com/2015/10/12/%E5%B1%8F%E5%B9%95%E9%80%82%E9%85%8D/"/>
+    <id>http://www.daviddone.com/2015/10/12/屏幕适配/</id>
+    <published>2015-10-12T02:17:15.000Z</published>
+    <updated>2015-10-15T02:09:49.423Z</updated>
+    <content type="html"><![CDATA[<h2 id="何为适配？">何为适配？</h2><h2 id="基本知识介绍">基本知识介绍</h2><h3 id="px"><a href="https://en.wikipedia.org/wiki/Pixel" target="_blank" rel="external">px</a></h3><p>px是pixel的缩写，即像素，它是数字图像在计算机图形学中基本元素，即屏幕上的最小单位。通常用来指代电子设备的分辨率：<br>如我们所说的分辨率1280*720，实际上就是竖屏上面总共的像素点1280,横屏上面像素点为720个。</p>
+<h3 id="inch"><a href="https://en.wikipedia.org/wiki/Inch" target="_blank" rel="external">inch</a></h3><p> inch，英寸，屏幕长度计量单位，一英寸等于2.54厘米。一般常说的5英寸大小的手机是指手机的对角线是5英寸，12.7cm长。</p>
+<h3 id="dpi">dpi</h3><p>dot per inch，即每英寸上面的像素点，如上述的1280*720，通过公式计算可得dpi为290，290离320范围较近<br><img src="/images/android_screen/android_gongshi.png" alt=""></p>
+<p>参考Android官方给出的屏幕密度表：</p>
+<p><img src="/images/android_screen/android_screen_size.png" alt=""></p>
+<h3 id="density">density</h3><p>屏幕密度，是Android中以160dpi作为基础屏幕参数比对得来，如在160dpi下屏幕密度为1，则320dpi下屏幕密度为2,以公式density=dpi/160计算</p>
+<h3 id="dip">dip</h3><p>dip和dp一样，device independent pixels，即是设备独立像素，是Android设备的特有的屏幕计量单位，按照标准在160dpi的设备下，1px=1dp。其余情况，采用公式计算而得： dp =px* dpi /160 (标准情况是160)</p>
+<h2 id="选择xhdp作为主适配">选择xhdp作为主适配</h2><p>通过市场调查，普遍高端机的分辨率范围大多分辨率1280 <em> 720，所以优先考虑分辨率1280</em>720作为主要适配的机型。这时候就可以协调公司的UI设计师在分辨率为1280<em>720的画布上作图，参考Android密度表，此时密度值为320。将切好的图标放在<br>xhdpi资源文件夹目录下。同理如果设计稿画布分辨率对应的屏幕密度在240左右，则将图片放在hdpi路径下。这个时候直接在布局文件中采用wrap_content引用即可，当然你也可以将图片的大小换算成dp值，采用图标px大小除以2即为dp值。（dp =px</em> dpi /160）</p>
+<h2 id="采用Materiral_Design风格设计">采用Materiral Design风格设计</h2><h2 id="采用百分比解决适配">采用百分比解决适配</h2><h2 id="（持续更新中）">（持续更新中）</h2>]]></content>
+    <summary type="html">
+    <![CDATA[<h2 id="何为适配？">何为适配？</h2><h2 id="基本知识介绍">基本知识介绍</h2><h3 id="px"><a href="https://en.wikipedia.org/wiki/Pixel" target="_blank" rel="external"]]>
+    </summary>
+    
+      <category term="Android" scheme="http://www.daviddone.com/tags/Android/"/>
+    
+      <category term="技术" scheme="http://www.daviddone.com/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="Android" scheme="http://www.daviddone.com/categories/%E6%8A%80%E6%9C%AF/Android/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[node++快捷键]]></title>
+    <link href="http://www.daviddone.com/2015/10/12/node-%E5%BF%AB%E6%8D%B7%E9%94%AE/"/>
+    <id>http://www.daviddone.com/2015/10/12/node-快捷键/</id>
+    <published>2015-10-12T02:17:15.000Z</published>
+    <updated>2015-10-12T12:34:30.851Z</updated>
+    <content type="html"><![CDATA[<p><a href="https://notepad-plus-plus.org/" target="_blank" rel="external">nodepad++</a>是我用过最好的文字编辑软件，她不但轻巧优雅，而且功能强大。不过为了更有效率的掌握她，我决定学习一些快捷键。<br><a href="https://notepad-plus-plus.org/" target="_blank" rel="external">参考官网</a><br><!-- http://blog.csdn.net/vindraz/article/details/12579201--></p>
+<h2 id="nodeplus_设置背景颜色<!-http://blog-csdn-net/fly542/article/details/7101118_->">nodeplus 设置背景颜色<!--http://blog.csdn.net/fly542/article/details/7101118 --></h2><p>设置选项-&gt;语言格式设置-&gt;语言 Global Styles -&gt; Global Override<br>按照如下操作：<br><img src="/images/tools/tools_nodepad.png" alt=""><br>选中行颜色：Current line background<br>修改背景色，变为绿色。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p><a href="https://notepad-plus-plus.org/" target="_blank" rel="external">nodepad++</a>是我用过最好的文字编辑软件，她不但轻巧优雅，而且功能强大。不过为了更有效率的掌握她，我决定学习一些快捷键]]>
+    </summary>
+    
+      <category term="tools" scheme="http://www.daviddone.com/tags/tools/"/>
+    
+      <category term="技术" scheme="http://www.daviddone.com/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="tools" scheme="http://www.daviddone.com/categories/%E6%8A%80%E6%9C%AF/tools/"/>
     
   </entry>
   
@@ -82,6 +149,26 @@
       <category term="技术" scheme="http://www.daviddone.com/categories/%E6%8A%80%E6%9C%AF/"/>
     
       <category term="Hexo" scheme="http://www.daviddone.com/categories/%E6%8A%80%E6%9C%AF/Hexo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[工具推荐]]></title>
+    <link href="http://www.daviddone.com/2014/10/12/%E5%B7%A5%E5%85%B7%E6%8E%A8%E8%8D%90/"/>
+    <id>http://www.daviddone.com/2014/10/12/工具推荐/</id>
+    <published>2014-10-12T09:26:14.000Z</published>
+    <updated>2015-10-12T11:00:23.698Z</updated>
+    <content type="html"><![CDATA[<p>最好用的计算器，没有之一：</p>
+<p><a href="https://www.google.com.hk/webhp?tab=Tw#newwindow=1&amp;safe=strict&amp;q=%E8%AE%A1%E7%AE%97%E5%99%A8" target="_blank" rel="external">谷歌计算器</a></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>最好用的计算器，没有之一：</p>
+<p><a href="https://www.google.com.hk/webhp?tab=Tw#newwindow=1&amp;safe=strict&amp;q=%E8%AE%A1%E7%AE%97%E5%99%A8" targe]]>
+    </summary>
+    
+      <category term="技术" scheme="http://www.daviddone.com/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="tools" scheme="http://www.daviddone.com/categories/%E6%8A%80%E6%9C%AF/tools/"/>
     
   </entry>
   

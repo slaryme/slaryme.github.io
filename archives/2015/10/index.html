@@ -65,6 +65,60 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-阅读java编程思想" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/10/13/阅读java编程思想/" class="article-date">
+  <time datetime="2015-10-13T05:06:59.000Z" itemprop="datePublished">2015-10-13</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/10/13/阅读java编程思想/">阅读java编程思想</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>程序运行的时候内存是怎么分配的：<br>寄存器<br>堆栈<br>堆<br>常量存储<br>非RAM存储</p>
+<p>8中基本类型和范围：<br>int short byte char float double long boolean<br>字符类型：short byte char<br>数字类型：int float long double<br>判断类型：boolean </p>
+<p>Java中的数组：<br>C中数组就是内存块，访问自身内存块之外的数组危险。而Java为了确保其安全性，有个范围检查机制。<br>创建数组对象就是创建数组的引用，初始化为null，还有存放数据类型的数组<br>Java中的对象销毁<br>C开发时，会遇到，变量存活要多久，销毁对象什么时候，变量的生命周期如何算？Java采用了什么样的。<br>作用域：变量作用域：<br>对象作用域：<br>程序执行，如何传递和复制对象引用</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://www.daviddone.com/2015/10/13/阅读java编程思想/" data-id="cifrlks500000wouz5jn9fz4f" class="article-share-link">Share</a>
+      
+        <a href="http://www.daviddone.com/2015/10/13/阅读java编程思想/#disqus_thread" class="article-comment-link">Comments</a>
+	<div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = 'daviddone';
+    
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-如何掌握英文" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2015/10/13/如何掌握英文/" class="article-date">
@@ -72,7 +126,7 @@
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/外语/">外语</a>
+    <a class="article-category-link" href="/categories/English/">English</a>►<a class="article-category-link" href="/categories/English/Methodology/">Methodology</a>
   </div>
 
   </div>
@@ -101,7 +155,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.daviddone.com/2015/10/13/如何掌握英文/" data-id="cifqr7xn600002cuzplga68xj" class="article-share-link">Share</a>
+      <a data-url="http://www.daviddone.com/2015/10/13/如何掌握英文/" data-id="cifrlks67000kwouzmv99bni7" class="article-share-link">Share</a>
       
         <a href="http://www.daviddone.com/2015/10/13/如何掌握英文/#disqus_thread" class="article-comment-link">Comments</a>
 	<div id="disqus_thread"></div>
@@ -119,6 +173,130 @@
 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
       
       
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-屏幕适配" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/10/12/屏幕适配/" class="article-date">
+  <time datetime="2015-10-12T02:17:15.000Z" itemprop="datePublished">2015-10-12</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/技术/">技术</a>►<a class="article-category-link" href="/categories/技术/Android/">Android</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/10/12/屏幕适配/">Android 屏幕适配</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="何为适配？">何为适配？</h2><h2 id="基本知识介绍">基本知识介绍</h2><h3 id="px"><a href="https://en.wikipedia.org/wiki/Pixel" target="_blank" rel="external">px</a></h3><p>px是pixel的缩写，即像素，它是数字图像在计算机图形学中基本元素，即屏幕上的最小单位。通常用来指代电子设备的分辨率：<br>如我们所说的分辨率1280*720，实际上就是竖屏上面总共的像素点1280,横屏上面像素点为720个。</p>
+<h3 id="inch"><a href="https://en.wikipedia.org/wiki/Inch" target="_blank" rel="external">inch</a></h3><p> inch，英寸，屏幕长度计量单位，一英寸等于2.54厘米。一般常说的5英寸大小的手机是指手机的对角线是5英寸，12.7cm长。</p>
+<h3 id="dpi">dpi</h3><p>dot per inch，即每英寸上面的像素点，如上述的1280*720，通过公式计算可得dpi为290，290离320范围较近<br><img src="/images/android_screen/android_gongshi.png" alt=""></p>
+<p>参考Android官方给出的屏幕密度表：</p>
+<p><img src="/images/android_screen/android_screen_size.png" alt=""></p>
+<h3 id="density">density</h3><p>屏幕密度，是Android中以160dpi作为基础屏幕参数比对得来，如在160dpi下屏幕密度为1，则320dpi下屏幕密度为2,以公式density=dpi/160计算</p>
+<h3 id="dip">dip</h3><p>dip和dp一样，device independent pixels，即是设备独立像素，是Android设备的特有的屏幕计量单位，按照标准在160dpi的设备下，1px=1dp。其余情况，采用公式计算而得： dp =px* dpi /160 (标准情况是160)</p>
+<h2 id="选择xhdp作为主适配">选择xhdp作为主适配</h2><p>通过市场调查，普遍高端机的分辨率范围大多分辨率1280 <em> 720，所以优先考虑分辨率1280</em>720作为主要适配的机型。这时候就可以协调公司的UI设计师在分辨率为1280<em>720的画布上作图，参考Android密度表，此时密度值为320。将切好的图标放在<br>xhdpi资源文件夹目录下。同理如果设计稿画布分辨率对应的屏幕密度在240左右，则将图片放在hdpi路径下。这个时候直接在布局文件中采用wrap_content引用即可，当然你也可以将图片的大小换算成dp值，采用图标px大小除以2即为dp值。（dp =px</em> dpi /160）</p>
+<h2 id="采用Materiral_Design风格设计">采用Materiral Design风格设计</h2><h2 id="采用百分比解决适配">采用百分比解决适配</h2><h2 id="（持续更新中）">（持续更新中）</h2>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://www.daviddone.com/2015/10/12/屏幕适配/" data-id="cifrlks5z000ewouz97xox5tm" class="article-share-link">Share</a>
+      
+        <a href="http://www.daviddone.com/2015/10/12/屏幕适配/#disqus_thread" class="article-comment-link">Comments</a>
+	<div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = 'daviddone';
+    
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-node-快捷键" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/10/12/node-快捷键/" class="article-date">
+  <time datetime="2015-10-12T02:17:15.000Z" itemprop="datePublished">2015-10-12</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/技术/">技术</a>►<a class="article-category-link" href="/categories/技术/tools/">tools</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/10/12/node-快捷键/">node++快捷键</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a href="https://notepad-plus-plus.org/" target="_blank" rel="external">nodepad++</a>是我用过最好的文字编辑软件，她不但轻巧优雅，而且功能强大。不过为了更有效率的掌握她，我决定学习一些快捷键。<br><a href="https://notepad-plus-plus.org/" target="_blank" rel="external">参考官网</a><br><!-- http://blog.csdn.net/vindraz/article/details/12579201--></p>
+<h2 id="nodeplus_设置背景颜色<!-http://blog-csdn-net/fly542/article/details/7101118_->">nodeplus 设置背景颜色<!--http://blog.csdn.net/fly542/article/details/7101118 --></h2><p>设置选项-&gt;语言格式设置-&gt;语言 Global Styles -&gt; Global Override<br>按照如下操作：<br><img src="/images/tools/tools_nodepad.png" alt=""><br>选中行颜色：Current line background<br>修改背景色，变为绿色。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://www.daviddone.com/2015/10/12/node-快捷键/" data-id="cifrlks6e000pwouzken8fldm" class="article-share-link">Share</a>
+      
+        <a href="http://www.daviddone.com/2015/10/12/node-快捷键/#disqus_thread" class="article-comment-link">Comments</a>
+	<div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = 'daviddone';
+    
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/tools/">tools</a></li></ul>
+
     </footer>
   </div>
   
@@ -187,7 +365,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.daviddone.com/2015/10/10/MarkDown简明教材/" data-id="cifqqrd4m000pr8uz67xvnncv" class="article-share-link">Share</a>
+      <a data-url="http://www.daviddone.com/2015/10/10/MarkDown简明教材/" data-id="cifrlks6l000uwouz0xjlm6p8" class="article-share-link">Share</a>
       
         <a href="http://www.daviddone.com/2015/10/10/MarkDown简明教材/#disqus_thread" class="article-comment-link">Comments</a>
 	<div id="disqus_thread"></div>
@@ -223,7 +401,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/外语/">外语</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术/">技术</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/技术/Hexo/">Hexo</a><span class="category-list-count">2</span></li></ul></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/English/">English</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/English/Methodology/">Methodology</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术/">技术</a><span class="category-list-count">5</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/技术/Android/">Android</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术/Hexo/">Hexo</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术/tools/">tools</a><span class="category-list-count">2</span></li></ul></li></ul>
     </div>
   </div>
 
@@ -232,7 +410,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo教材/">Hexo教材</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown/">markdown</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/标记二/">标记二</a><span class="tag-list-count">1</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android/">Android</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo教材/">Hexo教材</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown/">markdown</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tools/">tools</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/标记二/">标记二</a><span class="tag-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -241,7 +419,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Hexo教材/" style="font-size: 10px;">Hexo教材</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/标记二/" style="font-size: 10px;">标记二</a>
+      <a href="/tags/Android/" style="font-size: 10px;">Android</a> <a href="/tags/Hexo教材/" style="font-size: 10px;">Hexo教材</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/tools/" style="font-size: 10px;">tools</a> <a href="/tags/标记二/" style="font-size: 10px;">标记二</a>
     </div>
   </div>
 
@@ -250,7 +428,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">十月 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">十月 2014</a><span class="archive-list-count">1</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">十月 2015</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">十月 2014</a><span class="archive-list-count">2</span></li></ul>
     </div>
   </div>
 
@@ -262,15 +440,23 @@
       <ul>
         
           <li>
+            <a href="/2015/10/13/阅读java编程思想/">阅读java编程思想</a>
+          </li>
+        
+          <li>
             <a href="/2015/10/13/如何掌握英文/">如何掌握英文</a>
           </li>
         
           <li>
-            <a href="/2015/10/10/MarkDown简明教材/">MarkDown简明教材</a>
+            <a href="/2015/10/12/屏幕适配/">Android 屏幕适配</a>
           </li>
         
           <li>
-            <a href="/2014/10/10/搭建博客/">使用Github搭建Hexo博客</a>
+            <a href="/2015/10/12/node-快捷键/">node++快捷键</a>
+          </li>
+        
+          <li>
+            <a href="/2015/10/10/MarkDown简明教材/">MarkDown简明教材</a>
           </li>
         
       </ul>
