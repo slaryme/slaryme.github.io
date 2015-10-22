@@ -4,7 +4,7 @@
   <subtitle><![CDATA[www.daviddone.com]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://www.daviddone.com/"/>
-  <updated>2015-10-15T02:18:24.239Z</updated>
+  <updated>2015-10-22T07:05:08.772Z</updated>
   <id>http://www.daviddone.com/</id>
   
   <author>
@@ -15,11 +15,38 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title><![CDATA[Android API Guides]]></title>
+    <link href="http://www.daviddone.com/2015/10/22/Guides/"/>
+    <id>http://www.daviddone.com/2015/10/22/Guides/</id>
+    <published>2015-10-22T07:00:55.000Z</published>
+    <updated>2015-10-22T07:05:08.772Z</updated>
+    <content type="html"><![CDATA[<h1 id="Android_开发指南Introduction_to_Android">Android 开发指南<a href="https://developer.android.com/guide/index.html" target="_blank" rel="external">Introduction to Android</a></h1><p>安卓提供了丰富的应用层框架来使得你能够在java开发环境下在移动设备下创建创新型App和游戏。左边导航栏中提供详情，利用Android丰富多样的API的创建App。<br>如果你新入手Android，那么理解关于Android应用层框架的基本概念就显得尤为的重要。</p>
+<h2 id="应用提供多个入口，">应用提供多个入口，</h2><p>创建安卓应用由一系列可以独立调用的不同组件组合搞定。例如,一个Activity提供用户界面的的单个屏幕，一个Service独立的在后台运行。<br>你可以采用Intent从一个组件到另外一个组件。甚至可以在不同应用之间调用组件。比如调用地图应用的Activity来显示地址。<br>这种方式为单个应用提供多个入口。使得任何应用能够默认的调用其他的应用。</p>
+<h2 id="App适配不同的设备">App适配不同的设备</h2><p>Android提供可适配化的应用框架，为不同配置参数的设备提供唯一的资源。例如，你可以为不同大小的屏幕创建不同的layout布局文件。<br>系统根据当前屏幕大小选择其中一种进行布局。你可以查询设备在运行时设备的特性是否可用，如果任何应用的特性要求使用指定硬件，比如说camera。<br>若有必要，你可在google play等应用商城上，声明你的应用所需的特性不允许在不支持某种特性的设备上安装该应用。<br>了解更多：Device Compatibility 设备兼容。<br>          Resources Overview  资源概述。<br>          User Interface Overview 用户界面概述。</p>
+<h2 id="应用的基础知识：Application_Fundamentals">应用的基础知识：<a href="https://developer.android.com/guide/components/fundamentals.html" target="_blank" rel="external">Application Fundamentals</a></h2><p>Android应用有JAVA语言编写，Android SDK工具将会编译所有代码（包括所有数据，资源文件）进入apk(安卓安装包)。apk安装包是一个压缩文件，以.apk后缀结尾<br>。一个apk文件包含所有的Android应用内容，是Android设备用来安装App的文件。<br>一旦安装到设备中，每一个Android应用在自己的安全沙盒中运行。</p>
+<ul>
+<li>Android操作系统是一个多用户的Linux系统。每个App是不同的用户。</li>
+<li>默认情况，系统为每个用户分配一个唯一的Linux用户Id（）</li>
+</ul>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h1 id="Android_开发指南Introduction_to_Android">Android 开发指南<a href="https://developer.android.com/guide/index.html" target="_blank" rel="exter]]>
+    </summary>
+    
+      <category term="Translation" scheme="http://www.daviddone.com/tags/Translation/"/>
+    
+      <category term="English" scheme="http://www.daviddone.com/categories/English/"/>
+    
+      <category term="Translation" scheme="http://www.daviddone.com/categories/English/Translation/"/>
+    
+  </entry>
+  
+  <entry>
     <title><![CDATA[如何掌握英文]]></title>
     <link href="http://www.daviddone.com/2015/10/13/%E5%A6%82%E4%BD%95%E6%8E%8C%E6%8F%A1%E8%8B%B1%E6%96%87/"/>
     <id>http://www.daviddone.com/2015/10/13/如何掌握英文/</id>
     <published>2015-10-13T01:54:54.000Z</published>
-    <updated>2015-10-15T02:18:24.239Z</updated>
+    <updated>2015-10-15T02:30:32.617Z</updated>
     <content type="html"><![CDATA[<h2 id="目的">目的</h2><p>学习一门外语，不可避及的就是谈一谈，学习这门外语的目的，例如笔者学习英语的主要的目的是，学好英文，能够无障碍看美剧，看英文原著，看英文技术文档，用流利的英文交流，或者用英文来写写文章来陶冶一下情操。正是有了这些目标，我才能够有动力不断学习英文，有意识的运用英文。</p>
 <h2 id="方法">方法</h2><h3 id="朗读和背诵">朗读和背诵</h3><p>学习任何语言，最基本且有效的方法就是朗读和背诵。最开始的时候，一定要坚持，每天早上1小时，持续一年。背诵不必贪多，一篇一篇的文章背诵即可，对每篇文章的词组，语法都要达到熟练掌握。如此操作，只要能够达到50篇高级文章的熟练掌握，则会发现阅读会有很大的进步。</p>
 <h3 id="反复看和听">反复看和听</h3><!-- http://www.zhihu.com/question/26424821/answer/32770859 --> 
@@ -34,6 +61,55 @@
       <category term="English" scheme="http://www.daviddone.com/categories/English/"/>
     
       <category term="Methodology" scheme="http://www.daviddone.com/categories/English/Methodology/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Android 屏幕适配]]></title>
+    <link href="http://www.daviddone.com/2015/10/12/%E5%B1%8F%E5%B9%95%E9%80%82%E9%85%8D/"/>
+    <id>http://www.daviddone.com/2015/10/12/屏幕适配/</id>
+    <published>2015-10-12T02:17:15.000Z</published>
+    <updated>2015-10-22T07:07:09.018Z</updated>
+    <content type="html"><![CDATA[<h2 id="何为适配？">何为适配？</h2><p><img src="/images/android_screen/android_devices.jpg" alt=""><br>鉴于Android设备的碎片化，较为严重。在设计App的时候，需要将适配考虑进去。简单的说，适配就是为了让市面上使用各种屏幕大小，<br>各种机型的用户们都能够正常，且友好的使用我们的App。</p>
+<h2 id="基本知识介绍">基本知识介绍</h2><h3 id="px"><a href="https://en.wikipedia.org/wiki/Pixel" target="_blank" rel="external">px</a></h3><p>px是pixel的缩写，即像素，它是数字图像在计算机图形学中基本元素，即屏幕上的最小单位。通常用来指代电子设备的分辨率：<br>如我们所说的分辨率1280*720，实际上就是竖屏上面总共的像素点1280,横屏上面像素点为720个。</p>
+<h3 id="inch"><a href="https://en.wikipedia.org/wiki/Inch" target="_blank" rel="external">inch</a></h3><p> inch，英寸，屏幕长度计量单位，一英寸等于2.54厘米。一般常说的5英寸大小的手机是指手机的对角线是5英寸，12.7cm长。</p>
+<h3 id="dpi">dpi</h3><p>dot per inch，即每英寸上面的像素点，如上述的1280*720，通过公式计算可得dpi为290，290离320范围较近<br><img src="/images/android_screen/android_gongshi.png" alt=""></p>
+<p>参考Android官方给出的屏幕密度表：</p>
+<p><img src="/images/android_screen/android_screen_size.png" alt=""></p>
+<h3 id="density">density</h3><p>屏幕密度，是Android中以160dpi作为基础屏幕参数比对得来，如在160dpi下屏幕密度为1，则320dpi下屏幕密度为2,以公式density=dpi/160计算</p>
+<h3 id="dip">dip</h3><p>dip和dp一样，device independent pixels，即是设备独立像素，是Android设备的特有的屏幕计量单位，按照标准在160dpi的设备下，1px=1dp。其余情况，采用公式计算而得： dp =px* dpi /160 (标准情况是160)</p>
+<h2 id="选择xhdp作为主适配">选择xhdp作为主适配</h2><p>通过市场调查，普遍高端机的分辨率范围大多分辨率1280 <em> 720，所以优先考虑分辨率1280</em>720作为主要适配的机型。这时候就可以协调公司的UI设计师在分辨率为1280<em>720的画布上作图，参考Android密度表，此时密度值为320。将切好的图标放在<br>xhdpi资源文件夹目录下。同理如果设计稿画布分辨率对应的屏幕密度在240左右，则将图片放在hdpi路径下。这个时候直接在布局文件中采用wrap_content引用即可，当然你也可以将图片的大小换算成dp值，采用图标px大小除以2即为dp值。（dp =px</em> dpi /160）</p>
+<h2 id="（持续更新中）">（持续更新中）</h2>]]></content>
+    <summary type="html">
+    <![CDATA[<h2 id="何为适配？">何为适配？</h2><p><img src="/images/android_screen/android_devices.jpg" alt=""><br>鉴于Android设备的碎片化，较为严重。在设计App的时候，需要将适配考虑进去。简单的说，适]]>
+    </summary>
+    
+      <category term="Android" scheme="http://www.daviddone.com/tags/Android/"/>
+    
+      <category term="技术" scheme="http://www.daviddone.com/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="Android" scheme="http://www.daviddone.com/categories/%E6%8A%80%E6%9C%AF/Android/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[node++快捷键]]></title>
+    <link href="http://www.daviddone.com/2015/10/12/node-%E5%BF%AB%E6%8D%B7%E9%94%AE/"/>
+    <id>http://www.daviddone.com/2015/10/12/node-快捷键/</id>
+    <published>2015-10-12T02:17:15.000Z</published>
+    <updated>2015-10-15T02:30:40.207Z</updated>
+    <content type="html"><![CDATA[<p><a href="https://notepad-plus-plus.org/" target="_blank" rel="external">nodepad++</a>是我用过最好的文字编辑软件，她不但轻巧优雅，而且功能强大。不过为了更有效率的掌握她，我决定学习一些快捷键。<br><a href="https://notepad-plus-plus.org/" target="_blank" rel="external">参考官网</a><br><!-- http://blog.csdn.net/vindraz/article/details/12579201--></p>
+<h2 id="nodeplus_设置背景颜色<!-http://blog-csdn-net/fly542/article/details/7101118_->">nodeplus 设置背景颜色<!--http://blog.csdn.net/fly542/article/details/7101118 --></h2><p>设置选项-&gt;语言格式设置-&gt;语言 Global Styles -&gt; Global Override<br>按照如下操作：<br><img src="/images/tools/tools_nodepad.png" alt=""><br>选中行颜色：Current line background<br>修改背景色，变为绿色。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p><a href="https://notepad-plus-plus.org/" target="_blank" rel="external">nodepad++</a>是我用过最好的文字编辑软件，她不但轻巧优雅，而且功能强大。不过为了更有效率的掌握她，我决定学习一些快捷键]]>
+    </summary>
+    
+      <category term="tools" scheme="http://www.daviddone.com/tags/tools/"/>
+    
+      <category term="技术" scheme="http://www.daviddone.com/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="tools" scheme="http://www.daviddone.com/categories/%E6%8A%80%E6%9C%AF/tools/"/>
     
   </entry>
   

@@ -3,21 +3,24 @@
 <head>
   <meta charset="utf-8">
   
-  <title>如何掌握英文 | David Done 博客</title>
+  <title>Android 屏幕适配 | David Done 博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="目的学习一门外语，不可避及的就是谈一谈，学习这门外语的目的，例如笔者学习英语的主要的目的是，学好英文，能够无障碍看美剧，看英文原著，看英文技术文档，用流利的英文交流，或者用英文来写写文章来陶冶一下情操。正是有了这些目标，我才能够有动力不断学习英文，有意识的运用英文。
-方法朗读和背诵学习任何语言，最基本且有效的方法就是朗读和背诵。最开始的时候，一定要坚持，每天早上1小时，持续一年。背诵不必贪多，一篇">
+  <meta name="description" content="何为适配？鉴于Android设备的碎片化，较为严重。在设计App的时候，需要将适配考虑进去。简单的说，适配就是为了让市面上使用各种屏幕大小，各种机型的用户们都能够正常，且友好的使用我们的App。
+基本知识介绍pxpx是pixel的缩写，即像素，它是数字图像在计算机图形学中基本元素，即屏幕上的最小单位。通常用来指代电子设备的分辨率：如我们所说的分辨率1280*720，实际上就是竖屏上面总共的像素点1">
 <meta property="og:type" content="article">
-<meta property="og:title" content="如何掌握英文">
-<meta property="og:url" content="http://www.daviddone.com/2015/10/13/如何掌握英文/index.html">
+<meta property="og:title" content="Android 屏幕适配">
+<meta property="og:url" content="http://www.daviddone.com/2015/10/12/屏幕适配/index.html">
 <meta property="og:site_name" content="David Done 博客">
-<meta property="og:description" content="目的学习一门外语，不可避及的就是谈一谈，学习这门外语的目的，例如笔者学习英语的主要的目的是，学好英文，能够无障碍看美剧，看英文原著，看英文技术文档，用流利的英文交流，或者用英文来写写文章来陶冶一下情操。正是有了这些目标，我才能够有动力不断学习英文，有意识的运用英文。
-方法朗读和背诵学习任何语言，最基本且有效的方法就是朗读和背诵。最开始的时候，一定要坚持，每天早上1小时，持续一年。背诵不必贪多，一篇">
-<meta property="og:updated_time" content="2015-10-15T02:30:32.617Z">
+<meta property="og:description" content="何为适配？鉴于Android设备的碎片化，较为严重。在设计App的时候，需要将适配考虑进去。简单的说，适配就是为了让市面上使用各种屏幕大小，各种机型的用户们都能够正常，且友好的使用我们的App。
+基本知识介绍pxpx是pixel的缩写，即像素，它是数字图像在计算机图形学中基本元素，即屏幕上的最小单位。通常用来指代电子设备的分辨率：如我们所说的分辨率1280*720，实际上就是竖屏上面总共的像素点1">
+<meta property="og:image" content="http://www.daviddone.com/images/android_screen/android_devices.jpg">
+<meta property="og:image" content="http://www.daviddone.com/images/android_screen/android_gongshi.png">
+<meta property="og:image" content="http://www.daviddone.com/images/android_screen/android_screen_size.png">
+<meta property="og:updated_time" content="2015-10-22T07:07:09.018Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="如何掌握英文">
-<meta name="twitter:description" content="目的学习一门外语，不可避及的就是谈一谈，学习这门外语的目的，例如笔者学习英语的主要的目的是，学好英文，能够无障碍看美剧，看英文原著，看英文技术文档，用流利的英文交流，或者用英文来写写文章来陶冶一下情操。正是有了这些目标，我才能够有动力不断学习英文，有意识的运用英文。
-方法朗读和背诵学习任何语言，最基本且有效的方法就是朗读和背诵。最开始的时候，一定要坚持，每天早上1小时，持续一年。背诵不必贪多，一篇">
+<meta name="twitter:title" content="Android 屏幕适配">
+<meta name="twitter:description" content="何为适配？鉴于Android设备的碎片化，较为严重。在设计App的时候，需要将适配考虑进去。简单的说，适配就是为了让市面上使用各种屏幕大小，各种机型的用户们都能够正常，且友好的使用我们的App。
+基本知识介绍pxpx是pixel的缩写，即像素，它是数字图像在计算机图形学中基本元素，即屏幕上的最小单位。通常用来指代电子设备的分辨率：如我们所说的分辨率1280*720，实际上就是竖屏上面总共的像素点1">
   
     <link rel="alternative" href="/atom.xml" title="David Done 博客" type="application/atom+xml">
   
@@ -67,14 +70,14 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-如何掌握英文" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-屏幕适配" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2015/10/13/如何掌握英文/" class="article-date">
-  <time datetime="2015-10-13T01:54:54.000Z" itemprop="datePublished">2015-10-13</time>
+    <a href="/2015/10/12/屏幕适配/" class="article-date">
+  <time datetime="2015-10-12T02:17:15.000Z" itemprop="datePublished">2015-10-12</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/English/">English</a>►<a class="article-category-link" href="/categories/English/Methodology/">Methodology</a>
+    <a class="article-category-link" href="/categories/技术/">技术</a>►<a class="article-category-link" href="/categories/技术/Android/">Android</a>
   </div>
 
   </div>
@@ -85,7 +88,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      如何掌握英文
+      Android 屏幕适配
     </h1>
   
 
@@ -93,19 +96,22 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="目的">目的</h2><p>学习一门外语，不可避及的就是谈一谈，学习这门外语的目的，例如笔者学习英语的主要的目的是，学好英文，能够无障碍看美剧，看英文原著，看英文技术文档，用流利的英文交流，或者用英文来写写文章来陶冶一下情操。正是有了这些目标，我才能够有动力不断学习英文，有意识的运用英文。</p>
-<h2 id="方法">方法</h2><h3 id="朗读和背诵">朗读和背诵</h3><p>学习任何语言，最基本且有效的方法就是朗读和背诵。最开始的时候，一定要坚持，每天早上1小时，持续一年。背诵不必贪多，一篇一篇的文章背诵即可，对每篇文章的词组，语法都要达到熟练掌握。如此操作，只要能够达到50篇高级文章的熟练掌握，则会发现阅读会有很大的进步。</p>
-<h3 id="反复看和听">反复看和听</h3><!-- http://www.zhihu.com/question/26424821/answer/32770859 --> 
-<p>同种材料反复研看，研听，例如将 老友记 看两遍。充分利用自己的空余时间，把一些Adudio Book或是podcast下载到手机中，在没事干的时候戴上耳机反复听。这里推荐一些材料：《哈利波特》1-7，《乔布斯传》，《人性的弱点》，VOA news等的MP3音频都是不错的材料。</p>
-<h3 id="多用">多用</h3><p>俗话说，孰能生巧，如果学习一门外语，都不运用，怎么能够掌握呢。所以多开口讲英文，浏览英文网站，看英文原著，就会慢慢的扩大自己的词汇量。如果之前的反复阅读的方法算是精读的话，此方法就是略读了，例如笔者经常使用英文浏览技术网站。当遇到不认识的词语词组，采用翻译软件进行一下翻译即可，这里推荐一下国内的有道翻译软件。</p>
-<h3 id="提升中文能力">提升中文能力</h3><p>提升英文阅读的同时，也要注意提升自己的中文水平。语言能够自如的表达，顺畅的翻译是需要两种语言都融汇贯通的。</p>
-<h3 id="(此文持续更新和总结中)">(此文持续更新和总结中)</h3>
+        <h2 id="何为适配？">何为适配？</h2><p><img src="/images/android_screen/android_devices.jpg" alt=""><br>鉴于Android设备的碎片化，较为严重。在设计App的时候，需要将适配考虑进去。简单的说，适配就是为了让市面上使用各种屏幕大小，<br>各种机型的用户们都能够正常，且友好的使用我们的App。</p>
+<h2 id="基本知识介绍">基本知识介绍</h2><h3 id="px"><a href="https://en.wikipedia.org/wiki/Pixel" target="_blank" rel="external">px</a></h3><p>px是pixel的缩写，即像素，它是数字图像在计算机图形学中基本元素，即屏幕上的最小单位。通常用来指代电子设备的分辨率：<br>如我们所说的分辨率1280*720，实际上就是竖屏上面总共的像素点1280,横屏上面像素点为720个。</p>
+<h3 id="inch"><a href="https://en.wikipedia.org/wiki/Inch" target="_blank" rel="external">inch</a></h3><p> inch，英寸，屏幕长度计量单位，一英寸等于2.54厘米。一般常说的5英寸大小的手机是指手机的对角线是5英寸，12.7cm长。</p>
+<h3 id="dpi">dpi</h3><p>dot per inch，即每英寸上面的像素点，如上述的1280*720，通过公式计算可得dpi为290，290离320范围较近<br><img src="/images/android_screen/android_gongshi.png" alt=""></p>
+<p>参考Android官方给出的屏幕密度表：</p>
+<p><img src="/images/android_screen/android_screen_size.png" alt=""></p>
+<h3 id="density">density</h3><p>屏幕密度，是Android中以160dpi作为基础屏幕参数比对得来，如在160dpi下屏幕密度为1，则320dpi下屏幕密度为2,以公式density=dpi/160计算</p>
+<h3 id="dip">dip</h3><p>dip和dp一样，device independent pixels，即是设备独立像素，是Android设备的特有的屏幕计量单位，按照标准在160dpi的设备下，1px=1dp。其余情况，采用公式计算而得： dp =px* dpi /160 (标准情况是160)</p>
+<h2 id="选择xhdp作为主适配">选择xhdp作为主适配</h2><p>通过市场调查，普遍高端机的分辨率范围大多分辨率1280 <em> 720，所以优先考虑分辨率1280</em>720作为主要适配的机型。这时候就可以协调公司的UI设计师在分辨率为1280<em>720的画布上作图，参考Android密度表，此时密度值为320。将切好的图标放在<br>xhdpi资源文件夹目录下。同理如果设计稿画布分辨率对应的屏幕密度在240左右，则将图片放在hdpi路径下。这个时候直接在布局文件中采用wrap_content引用即可，当然你也可以将图片的大小换算成dp值，采用图标px大小除以2即为dp值。（dp =px</em> dpi /160）</p>
+<h2 id="（持续更新中）">（持续更新中）</h2>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.daviddone.com/2015/10/13/如何掌握英文/" data-id="cig1w246q000fyguz6l532rwc" class="article-share-link">Share</a>
+      <a data-url="http://www.daviddone.com/2015/10/12/屏幕适配/" data-id="cig1w246h0009yguz4ymk2ne7" class="article-share-link">Share</a>
       
-        <a href="http://www.daviddone.com/2015/10/13/如何掌握英文/#disqus_thread" class="article-comment-link">Comments</a>
+        <a href="http://www.daviddone.com/2015/10/12/屏幕适配/#disqus_thread" class="article-comment-link">Comments</a>
 	<div id="disqus_thread"></div>
 <script type="text/javascript">
     /* * * CONFIGURATION VARIABLES * * */
@@ -121,25 +127,27 @@
 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
       
       
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li></ul>
+
     </footer>
   </div>
   
     
 <nav id="article-nav">
   
-    <a href="/2015/10/22/Guides/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2015/10/13/如何掌握英文/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Newer</strong>
       <div class="article-nav-title">
         
-          Android API Guides
+          如何掌握英文
         
       </div>
     </a>
   
   
-    <a href="/2015/10/12/屏幕适配/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2015/10/12/node-快捷键/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">Android 屏幕适配</div>
+      <div class="article-nav-title">node++快捷键</div>
     </a>
   
 </nav>
@@ -248,7 +256,7 @@
 <script>
   var disqus_shortname = 'daviddone';
   
-  var disqus_url = 'http://www.daviddone.com/2015/10/13/如何掌握英文/';
+  var disqus_url = 'http://www.daviddone.com/2015/10/12/屏幕适配/';
   
   (function(){
     var dsq = document.createElement('script');
