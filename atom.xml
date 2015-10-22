@@ -4,7 +4,7 @@
   <subtitle><![CDATA[www.daviddone.com]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://www.daviddone.com/"/>
-  <updated>2015-10-22T07:05:08.772Z</updated>
+  <updated>2015-10-22T07:15:48.483Z</updated>
   <id>http://www.daviddone.com/</id>
   
   <author>
@@ -19,18 +19,18 @@
     <link href="http://www.daviddone.com/2015/10/22/Guides/"/>
     <id>http://www.daviddone.com/2015/10/22/Guides/</id>
     <published>2015-10-22T07:00:55.000Z</published>
-    <updated>2015-10-22T07:05:08.772Z</updated>
-    <content type="html"><![CDATA[<h1 id="Android_开发指南Introduction_to_Android">Android 开发指南<a href="https://developer.android.com/guide/index.html" target="_blank" rel="external">Introduction to Android</a></h1><p>安卓提供了丰富的应用层框架来使得你能够在java开发环境下在移动设备下创建创新型App和游戏。左边导航栏中提供详情，利用Android丰富多样的API的创建App。<br>如果你新入手Android，那么理解关于Android应用层框架的基本概念就显得尤为的重要。</p>
-<h2 id="应用提供多个入口，">应用提供多个入口，</h2><p>创建安卓应用由一系列可以独立调用的不同组件组合搞定。例如,一个Activity提供用户界面的的单个屏幕，一个Service独立的在后台运行。<br>你可以采用Intent从一个组件到另外一个组件。甚至可以在不同应用之间调用组件。比如调用地图应用的Activity来显示地址。<br>这种方式为单个应用提供多个入口。使得任何应用能够默认的调用其他的应用。</p>
-<h2 id="App适配不同的设备">App适配不同的设备</h2><p>Android提供可适配化的应用框架，为不同配置参数的设备提供唯一的资源。例如，你可以为不同大小的屏幕创建不同的layout布局文件。<br>系统根据当前屏幕大小选择其中一种进行布局。你可以查询设备在运行时设备的特性是否可用，如果任何应用的特性要求使用指定硬件，比如说camera。<br>若有必要，你可在google play等应用商城上，声明你的应用所需的特性不允许在不支持某种特性的设备上安装该应用。<br>了解更多：Device Compatibility 设备兼容。<br>          Resources Overview  资源概述。<br>          User Interface Overview 用户界面概述。</p>
-<h2 id="应用的基础知识：Application_Fundamentals">应用的基础知识：<a href="https://developer.android.com/guide/components/fundamentals.html" target="_blank" rel="external">Application Fundamentals</a></h2><p>Android应用有JAVA语言编写，Android SDK工具将会编译所有代码（包括所有数据，资源文件）进入apk(安卓安装包)。apk安装包是一个压缩文件，以.apk后缀结尾<br>。一个apk文件包含所有的Android应用内容，是Android设备用来安装App的文件。<br>一旦安装到设备中，每一个Android应用在自己的安全沙盒中运行。</p>
+    <updated>2015-10-22T07:15:48.483Z</updated>
+    <content type="html"><![CDATA[<h1 id="Android_开发指南">Android 开发指南</h1><h2 id="简介_Introduction_to_Android">简介 <a href="https://developer.android.com/guide/index.html" target="_blank" rel="external">Introduction to Android</a></h2><p>安卓提供了丰富的应用层框架来使得你能够在java开发环境下在移动设备下创建创新型App和游戏。左边导航栏中提供详情，利用Android丰富多样的API的创建App。如果你新入手Android，那么理解关于Android应用层框架的基本概念就显得尤为的重要。</p>
+<h2 id="应用提供多个入口，">应用提供多个入口，</h2><p>创建安卓应用由一系列可以独立调用的不同组件组合搞定。例如,一个Activity提供用户界面的的单个屏幕，一个Service独立的在后台运行。你可以采用Intent从一个组件到另外一个组件。甚至可以在不同应用之间调用组件。比如调用地图应用的Activity来显示地址。这种方式为单个应用提供多个入口。使得任何应用能够默认的调用其他的应用。</p>
+<h2 id="App适配不同的设备">App适配不同的设备</h2><p>Android提供可适配化的应用框架，为不同配置参数的设备提供唯一的资源。例如，你可以为不同大小的屏幕创建不同的layout布局文件。系统根据当前屏幕大小选择其中一种进行布局。你可以查询设备在运行时设备的特性是否可用，如果任何应用的特性要求使用指定硬件，比如说camera。若有必要，你可在google play等应用商城上，声明你的应用所需的特性不允许在不支持某种特性的设备上安装该应用。<br>了解更多：Device Compatibility 设备兼容。<br>          Resources Overview  资源概述。<br>          User Interface Overview 用户界面概述。</p>
+<h2 id="应用的基础知识_Application_Fundamentals">应用的基础知识 <a href="https://developer.android.com/guide/components/fundamentals.html" target="_blank" rel="external">Application Fundamentals</a></h2><p>Android应用有JAVA语言编写，Android SDK工具将会编译所有代码（包括所有数据，资源文件）进入apk(安卓安装包)。apk安装包是一个压缩文件，以.apk后缀结尾。一个apk文件包含所有的Android应用内容，是Android设备用来安装App的文件。一旦安装到设备中，每一个Android应用在自己的安全沙盒中运行。</p>
 <ul>
 <li>Android操作系统是一个多用户的Linux系统。每个App是不同的用户。</li>
 <li>默认情况，系统为每个用户分配一个唯一的Linux用户Id（）</li>
 </ul>
 ]]></content>
     <summary type="html">
-    <![CDATA[<h1 id="Android_开发指南Introduction_to_Android">Android 开发指南<a href="https://developer.android.com/guide/index.html" target="_blank" rel="exter]]>
+    <![CDATA[<h1 id="Android_开发指南">Android 开发指南</h1><h2 id="简介_Introduction_to_Android">简介 <a href="https://developer.android.com/guide/index.html" targe]]>
     </summary>
     
       <category term="Translation" scheme="http://www.daviddone.com/tags/Translation/"/>
