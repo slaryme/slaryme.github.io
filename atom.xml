@@ -4,7 +4,7 @@
   <subtitle><![CDATA[www.daviddone.com]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://www.daviddone.com/"/>
-  <updated>2015-10-22T07:15:48.483Z</updated>
+  <updated>2015-10-22T07:22:59.317Z</updated>
   <id>http://www.daviddone.com/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://www.daviddone.com/2015/10/22/Guides/"/>
     <id>http://www.daviddone.com/2015/10/22/Guides/</id>
     <published>2015-10-22T07:00:55.000Z</published>
-    <updated>2015-10-22T07:15:48.483Z</updated>
+    <updated>2015-10-22T07:22:59.317Z</updated>
     <content type="html"><![CDATA[<h1 id="Android_开发指南">Android 开发指南</h1><h2 id="简介_Introduction_to_Android">简介 <a href="https://developer.android.com/guide/index.html" target="_blank" rel="external">Introduction to Android</a></h2><p>安卓提供了丰富的应用层框架来使得你能够在java开发环境下在移动设备下创建创新型App和游戏。左边导航栏中提供详情，利用Android丰富多样的API的创建App。如果你新入手Android，那么理解关于Android应用层框架的基本概念就显得尤为的重要。</p>
 <h2 id="应用提供多个入口，">应用提供多个入口，</h2><p>创建安卓应用由一系列可以独立调用的不同组件组合搞定。例如,一个Activity提供用户界面的的单个屏幕，一个Service独立的在后台运行。你可以采用Intent从一个组件到另外一个组件。甚至可以在不同应用之间调用组件。比如调用地图应用的Activity来显示地址。这种方式为单个应用提供多个入口。使得任何应用能够默认的调用其他的应用。</p>
 <h2 id="App适配不同的设备">App适配不同的设备</h2><p>Android提供可适配化的应用框架，为不同配置参数的设备提供唯一的资源。例如，你可以为不同大小的屏幕创建不同的layout布局文件。系统根据当前屏幕大小选择其中一种进行布局。你可以查询设备在运行时设备的特性是否可用，如果任何应用的特性要求使用指定硬件，比如说camera。若有必要，你可在google play等应用商城上，声明你的应用所需的特性不允许在不支持某种特性的设备上安装该应用。<br>了解更多：Device Compatibility 设备兼容。<br>          Resources Overview  资源概述。<br>          User Interface Overview 用户界面概述。</p>
@@ -69,7 +69,7 @@
     <link href="http://www.daviddone.com/2015/10/12/%E5%B1%8F%E5%B9%95%E9%80%82%E9%85%8D/"/>
     <id>http://www.daviddone.com/2015/10/12/屏幕适配/</id>
     <published>2015-10-12T02:17:15.000Z</published>
-    <updated>2015-10-22T07:07:09.018Z</updated>
+    <updated>2015-10-22T07:25:12.868Z</updated>
     <content type="html"><![CDATA[<h2 id="何为适配？">何为适配？</h2><p><img src="/images/android_screen/android_devices.jpg" alt=""><br>鉴于Android设备的碎片化，较为严重。在设计App的时候，需要将适配考虑进去。简单的说，适配就是为了让市面上使用各种屏幕大小，<br>各种机型的用户们都能够正常，且友好的使用我们的App。</p>
 <h2 id="基本知识介绍">基本知识介绍</h2><h3 id="px"><a href="https://en.wikipedia.org/wiki/Pixel" target="_blank" rel="external">px</a></h3><p>px是pixel的缩写，即像素，它是数字图像在计算机图形学中基本元素，即屏幕上的最小单位。通常用来指代电子设备的分辨率：<br>如我们所说的分辨率1280*720，实际上就是竖屏上面总共的像素点1280,横屏上面像素点为720个。</p>
 <h3 id="inch"><a href="https://en.wikipedia.org/wiki/Inch" target="_blank" rel="external">inch</a></h3><p> inch，英寸，屏幕长度计量单位，一英寸等于2.54厘米。一般常说的5英寸大小的手机是指手机的对角线是5英寸，12.7cm长。</p>
@@ -78,7 +78,7 @@
 <p><img src="/images/android_screen/android_screen_size.png" alt=""></p>
 <h3 id="density">density</h3><p>屏幕密度，是Android中以160dpi作为基础屏幕参数比对得来，如在160dpi下屏幕密度为1，则320dpi下屏幕密度为2,以公式density=dpi/160计算</p>
 <h3 id="dip">dip</h3><p>dip和dp一样，device independent pixels，即是设备独立像素，是Android设备的特有的屏幕计量单位，按照标准在160dpi的设备下，1px=1dp。其余情况，采用公式计算而得： dp =px* dpi /160 (标准情况是160)</p>
-<h2 id="选择xhdp作为主适配">选择xhdp作为主适配</h2><p>通过市场调查，普遍高端机的分辨率范围大多分辨率1280 <em> 720，所以优先考虑分辨率1280</em>720作为主要适配的机型。这时候就可以协调公司的UI设计师在分辨率为1280<em>720的画布上作图，参考Android密度表，此时密度值为320。将切好的图标放在<br>xhdpi资源文件夹目录下。同理如果设计稿画布分辨率对应的屏幕密度在240左右，则将图片放在hdpi路径下。这个时候直接在布局文件中采用wrap_content引用即可，当然你也可以将图片的大小换算成dp值，采用图标px大小除以2即为dp值。（dp =px</em> dpi /160）</p>
+<h2 id="选择xhdp作为主适配">选择xhdp作为主适配</h2><p>通过市场调查，普遍高端机的分辨率范围大多分辨率1280<em> 720，所以优先考虑分辨率1280</em>720作为主要适配的机型。这时候就可以协调公司的UI设计师在分辨率为1280 <em>720的画布上作图，参考Android密度表，此时密度值为320。将切好的图标放在<br>xhdpi资源文件夹目录下。同理如果设计稿画布分辨率对应的屏幕密度在240左右，则将图片放在hdpi路径下。这个时候直接在布局文件中采用wrap_content引用即可，当然你也可以将图片的大小换算成dp值，采用图标px大小除以2即为dp值。（dp =px</em>dpi /160）</p>
 <h2 id="（持续更新中）">（持续更新中）</h2>]]></content>
     <summary type="html">
     <![CDATA[<h2 id="何为适配？">何为适配？</h2><p><img src="/images/android_screen/android_devices.jpg" alt=""><br>鉴于Android设备的碎片化，较为严重。在设计App的时候，需要将适配考虑进去。简单的说，适]]>
