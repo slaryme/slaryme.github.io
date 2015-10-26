@@ -97,13 +97,18 @@
 <h2 id="应用的基础知识_Application_Fundamentals">应用的基础知识 <a href="https://developer.android.com/guide/components/fundamentals.html" target="_blank" rel="external">Application Fundamentals</a></h2><p>Android应用有JAVA语言编写，Android SDK工具将会编译所有代码（包括所有数据，资源文件）进入apk(安卓安装包)。apk安装包是一个压缩文件，以.apk后缀结尾。一个apk文件包含所有的Android应用内容，是Android设备用来安装App的文件。一旦安装到设备中，每一个Android应用在自己的安全沙盒中运行。</p>
 <ul>
 <li>Android操作系统是一个多用户的Linux系统。每个App是不同的用户。</li>
-<li>默认情况，系统为每个用户分配一个唯一的Linux用户Id（）</li>
+<li>每个进程都有自己的虚拟机（VM），因此，每个App的代码独立运行。</li>
+<li>默认情况下，每个App运行在它自己的Linux进程中，当App的任何组件需要被执行的时候，Android就会开启进程，当进程不在需要或者其他App需要系统恢复内存之时``，Android将会关闭进程。</li>
+</ul>
+<p>通过这样的方式，Android系统实现了最少特权原则。也就是，每一个App在默认情况下，只能访问它本身运行所需的组件``,不再能够访问更多。这就能够确保，App不能访问哪些它没有权限访问的系统的其他部分，从而营造一种安全的环境。<br>然而，任然有一些方法可以让App和其他的App分享数据，让App获取系统的服务：</p>
+<ul>
+<li>两个App同时分享相同的Linux用户Id是可能的，当他们能够互相访问对方的文件。为了保护系统资源。</li>
 </ul>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.daviddone.com/2015/10/22/Guides/" data-id="cig21xdb7000v4wuz9bw7w3nf" class="article-share-link">Share</a>
+      <a data-url="http://www.daviddone.com/2015/10/22/Guides/" data-id="cig81xsq9000vw4uz6kqfjcap" class="article-share-link">Share</a>
       
         <a href="http://www.daviddone.com/2015/10/22/Guides/#disqus_thread" class="article-comment-link">Comments</a>
 	<div id="disqus_thread"></div>
@@ -166,7 +171,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.daviddone.com/2015/10/13/如何掌握英文/" data-id="cig21xdak000f4wuziboqdl84" class="article-share-link">Share</a>
+      <a data-url="http://www.daviddone.com/2015/10/13/如何掌握英文/" data-id="cig81xspj000fw4uzla29m1yv" class="article-share-link">Share</a>
       
         <a href="http://www.daviddone.com/2015/10/13/如何掌握英文/#disqus_thread" class="article-comment-link">Comments</a>
 	<div id="disqus_thread"></div>
@@ -230,7 +235,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.daviddone.com/2015/10/12/屏幕适配/" data-id="cig21xdac00094wuz6a8hlhi2" class="article-share-link">Share</a>
+      <a data-url="http://www.daviddone.com/2015/10/12/屏幕适配/" data-id="cig81xspb0009w4uz0mgfbexb" class="article-share-link">Share</a>
       
         <a href="http://www.daviddone.com/2015/10/12/屏幕适配/#disqus_thread" class="article-comment-link">Comments</a>
 	<div id="disqus_thread"></div>
@@ -289,7 +294,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.daviddone.com/2015/10/12/node-快捷键/" data-id="cig21xdar000k4wuzvub5hv4g" class="article-share-link">Share</a>
+      <a data-url="http://www.daviddone.com/2015/10/12/node-快捷键/" data-id="cig81xspq000kw4uz9eut9qnh" class="article-share-link">Share</a>
       
         <a href="http://www.daviddone.com/2015/10/12/node-快捷键/#disqus_thread" class="article-comment-link">Comments</a>
 	<div id="disqus_thread"></div>
@@ -377,7 +382,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.daviddone.com/2015/10/10/MarkDown简明教材/" data-id="cig21xdb0000q4wuzppuukaf2" class="article-share-link">Share</a>
+      <a data-url="http://www.daviddone.com/2015/10/10/MarkDown简明教材/" data-id="cig81xsq0000qw4uz9l8n0y6b" class="article-share-link">Share</a>
       
         <a href="http://www.daviddone.com/2015/10/10/MarkDown简明教材/#disqus_thread" class="article-comment-link">Comments</a>
 	<div id="disqus_thread"></div>
@@ -464,7 +469,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.daviddone.com/2014/10/10/搭建博客/" data-id="cig21xd9o00004wuzill8a7nw" class="article-share-link">Share</a>
+      <a data-url="http://www.daviddone.com/2014/10/10/搭建博客/" data-id="cig81xsom0000w4uzdftnz79p" class="article-share-link">Share</a>
       
         <a href="http://www.daviddone.com/2014/10/10/搭建博客/#disqus_thread" class="article-comment-link">Comments</a>
 	<div id="disqus_thread"></div>
