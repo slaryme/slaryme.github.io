@@ -233,7 +233,7 @@
 <p>参考Android官方给出的屏幕密度表：</p>
 <p><img src="/images/android_screen/android_screen_size.png" alt=""></p>
 <h3 id="density">density</h3><p>屏幕密度，是Android中以160dpi作为基础屏幕参数比对得来，如在160dpi下屏幕密度为1，则320dpi下屏幕密度为2,以公式density=dpi/160计算</p>
-<h3 id="dip">dip</h3><p>dip和dp一样，device independent pixels，即是设备独立像素，是Android设备的特有的屏幕计量单位，按照标准在160dpi的设备下，1px=1dp。其余情况，采用公式计算而得： px = dp * (dpi / 160) (标准情况是160)</p>
+<h3 id="dip">dip</h3><p>dip和dp一样，device independent pixels，即是设备独立像素，是Android设备的特有的屏幕计量单位，按照标准在160dpi的设备下，1px=1dp。其余情况，采用公式计算而得： px = dp * (dpi / 160)  (标准情况是160)</p>
 <h2 id="选择xhdp作为主适配">选择xhdp作为主适配</h2><p>通过市场调查，普遍高端机的分辨率范围大多分辨率1280x 720，所以优先考虑分辨率1280x720作为主要适配的机型。这时候就可以协调公司的UI设计师在分辨率为1280x720的画布上作图，参考Android密度表，此时密度值为320。将切好的图标放在xhdpi资源文件夹目录下。同理如果设计稿画布分辨率对应的屏幕密度在240左右，则将图片放在hdpi路径下。这个时候直接在布局文件中采用wrap_content引用即可，当然你也可以将图片的大小换算成dp值，采用图标px大小除以2即为dp值。（dp =px dpi /160）</p>
 <h2 id="（持续更新中）">（持续更新中）</h2>
       
