@@ -25,7 +25,7 @@ Hexo是一款轻量级的静态博客框架，基于Node.js 。截止目前，�
 <meta property="og:image" content="http://www.daviddone.com/images/hexo_add_discuss.png">
 <meta property="og:image" content="http://www.daviddone.com/images/hexo_create_discuss_a.png">
 <meta property="og:image" content="http://www.daviddone.com/images/hexo_error1.png">
-<meta property="og:updated_time" content="2015-10-12T03:00:17.936Z">
+<meta property="og:updated_time" content="2015-11-03T06:07:06.604Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="使用Github搭建Hexo博客">
 <meta name="twitter:description" content="目录    1：Hexo简介    2：Hexo在本地安装    3：Github分配博客项目空间    4：发布Hexo到Github上    5：绑定个性化域名    6：个性化配置    7：使用MD创建第一篇博客    8：问题与结论
@@ -118,7 +118,7 @@ Hexo是一款轻量级的静态博客框架，基于Node.js 。截止目前，�
 <p>则通过本地IP采用127.0.0.1：4000即可访问。如下图，则表示本地安装成功：<br><img src="/images/hexo_install_success.png" alt=""></p>
 <h2 id="3：Github分配博客项目空间">3：Github分配博客项目空间</h2><p>在自己Github主页右下角，创建一个新的repository。命名规则username.github.io;注意username更换为自己的github账号，如笔者的新repository为daviddone.github.io。<br><img src="/images/hexo_github.png" alt=""></p>
 <h2 id="4：发布Hexo到github上">4：发布Hexo到github上</h2><p>编辑_config.yml （D:\Hexo中）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">deploy:&#10;  type: git&#10;  repository: git@github.com:daviddone/daviddone.github.io.git&#10;  branch: master</span><br></pre></td></tr></table></figure></p>
-<p>请注意：repository必须填写SSH的路径，不能填写：<br><a href="https://github.com/daviddone/daviddone.github.io.git" target="_blank" rel="external">https://github.com/daviddone/daviddone.github.io.git</a><br>执行下列指令，可完成部署<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo generate&#10;ssh -T git@github.comhexo deploy</span><br></pre></td></tr></table></figure></p>
+<p>请注意：repository必须填写SSH的路径，不能填写：<br><a href="https://github.com/daviddone/daviddone.github.io.git" target="_blank" rel="external">https://github.com/daviddone/daviddone.github.io.git</a><br>执行下列指令，可完成部署<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo generate&#10;ssh -T git@github.com&#10;hexo deploy</span><br></pre></td></tr></table></figure></p>
 <h2 id="5：绑定个性化域名">5：绑定个性化域名</h2><h3 id="DNS服务商设置：">DNS服务商设置：</h3><p><img src="/images/hexo_dns1.png" alt=""><br><img src="/images/hexo_dns2.png" alt=""></p>
 <h3 id="域名服务商万网设置：">域名服务商万网设置：</h3><p><img src="/images/hexo_cname.png" alt=""><br>修改完毕之后查看域名信息确认,如下：<br><img src="/images/hexo_cname_confirm.png" alt=""></p>
 <h3 id="GitHub和Hexo设置:">GitHub和Hexo设置:</h3><p>在D:\Hexo\source新建文件名CNAME文件,然后编辑如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">www.daviddone.com</span><br></pre></td></tr></table></figure></p>
@@ -140,7 +140,7 @@ Hexo是一款轻量级的静态博客框架，基于Node.js 。截止目前，�
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.daviddone.com/2014/10/10/搭建博客/" data-id="cigd3m50j0000h4uzbt0ry722" class="article-share-link">Share</a>
+      <a data-url="http://www.daviddone.com/2014/10/10/搭建博客/" data-id="cigiz544k0000g0uz1mwfepmh" class="article-share-link">Share</a>
       
         <a href="http://www.daviddone.com/2014/10/10/搭建博客/#disqus_thread" class="article-comment-link">Comments</a>
 	<div id="disqus_thread"></div>
