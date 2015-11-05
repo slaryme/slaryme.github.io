@@ -75,10 +75,10 @@
   
   <entry>
     <title><![CDATA[Android 屏幕适配]]></title>
-    <link href="http://www.daviddone.com/2015/10/12/%E5%B1%8F%E5%B9%95%E9%80%82%E9%85%8D/"/>
-    <id>http://www.daviddone.com/2015/10/12/屏幕适配/</id>
-    <published>2015-10-12T02:17:15.000Z</published>
-    <updated>2015-11-04T09:37:30.677Z</updated>
+    <link href="http://www.daviddone.com/2015/09/12/%E5%B1%8F%E5%B9%95%E9%80%82%E9%85%8D/"/>
+    <id>http://www.daviddone.com/2015/09/12/屏幕适配/</id>
+    <published>2015-09-12T02:17:15.000Z</published>
+    <updated>2015-11-05T03:15:46.372Z</updated>
     <content type="html"><![CDATA[<h2 id="何为适配？">何为适配？</h2><p><img src="/images/android_screen/android_devices.jpg" alt=""><br>鉴于Android设备的碎片化，较为严重。在设计App的时候，需要将适配考虑进去。简单的说，适配就是为了让市面上使用各种屏幕大小，<br>各种机型的用户们都能够正常，且友好的使用我们的App。</p>
 <h2 id="基本知识介绍">基本知识介绍</h2><h3 id="px"><a href="https://en.wikipedia.org/wiki/Pixel" target="_blank" rel="external">px</a></h3><p>px是pixel的缩写，即像素，它是数字图像在计算机图形学中基本元素，即屏幕上的最小单位。通常用来指代电子设备的分辨率：<br>如我们所说的分辨率1280*720，实际上就是竖屏上面总共的像素点1280,横屏上面像素点为720个。</p>
 <h3 id="inch"><a href="https://en.wikipedia.org/wiki/Inch" target="_blank" rel="external">inch</a></h3><p> inch，英寸，屏幕长度计量单位，一英寸等于2.54厘米。一般常说的5英寸大小的手机是指手机的对角线是5英寸，12.7cm长。</p>
@@ -104,10 +104,10 @@
   
   <entry>
     <title><![CDATA[node++快捷键]]></title>
-    <link href="http://www.daviddone.com/2015/10/12/node-%E5%BF%AB%E6%8D%B7%E9%94%AE/"/>
-    <id>http://www.daviddone.com/2015/10/12/node-快捷键/</id>
-    <published>2015-10-12T02:17:15.000Z</published>
-    <updated>2015-11-05T03:13:14.082Z</updated>
+    <link href="http://www.daviddone.com/2015/07/12/node-%E5%BF%AB%E6%8D%B7%E9%94%AE/"/>
+    <id>http://www.daviddone.com/2015/07/12/node-快捷键/</id>
+    <published>2015-07-12T02:17:15.000Z</published>
+    <updated>2015-11-05T03:14:58.726Z</updated>
     <content type="html"><![CDATA[<p><a href="https://notepad-plus-plus.org/" target="_blank" rel="external">nodepad++</a>是我用过最好的文字编辑软件，她不但轻巧优雅，而且功能强大。不过为了更有效率的掌握她，我决定学习一些使用技巧和快捷键。<br><a href="https://notepad-plus-plus.org/" target="_blank" rel="external">参考官网</a><br><!-- http://blog.csdn.net/vindraz/article/details/12579201--></p>
 <h2 id="nodeplus_设置背景颜色<!-http://blog-csdn-net/fly542/article/details/7101118_->">nodeplus 设置背景颜色<!--http://blog.csdn.net/fly542/article/details/7101118 --></h2><p>设置选项-&gt;语言格式设置-&gt;语言 Global Styles -&gt; Global Override<br>按照如下操作：<br><img src="/images/tools/tools_nodepad.png" alt=""><br>点击背景色框，即可修改想要的背景色。如笔者使用的颜色：R，G，B分别为202,234,206。</p>
 <h4 id="同理设置行颜色">同理设置行颜色</h4><p>选中–&gt;Current line background<br>修改背景色，变为自己想要的颜色，如笔者使用的颜色：R，G，B分别为43,213,157。</p>
@@ -126,10 +126,10 @@
   
   <entry>
     <title><![CDATA[MarkDown简明教材]]></title>
-    <link href="http://www.daviddone.com/2015/10/10/MarkDown%E7%AE%80%E6%98%8E%E6%95%99%E6%9D%90/"/>
-    <id>http://www.daviddone.com/2015/10/10/MarkDown简明教材/</id>
-    <published>2015-10-10T03:05:29.000Z</published>
-    <updated>2015-10-11T03:38:35.007Z</updated>
+    <link href="http://www.daviddone.com/2015/06/10/MarkDown%E7%AE%80%E6%98%8E%E6%95%99%E6%9D%90/"/>
+    <id>http://www.daviddone.com/2015/06/10/MarkDown简明教材/</id>
+    <published>2015-06-10T03:05:29.000Z</published>
+    <updated>2015-11-05T03:15:11.787Z</updated>
     <content type="html"><![CDATA[<h2 id="引用语法">引用语法</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#62; &#24341;&#29992;&#19968;&#10;&#62; &#22810;&#34892;&#24341;&#29992;</span><br></pre></td></tr></table></figure>
 <p>引用效果</p>
 <blockquote>
@@ -176,10 +176,10 @@
   
   <entry>
     <title><![CDATA[使用Github搭建Hexo博客]]></title>
-    <link href="http://www.daviddone.com/2014/10/10/%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/"/>
-    <id>http://www.daviddone.com/2014/10/10/搭建博客/</id>
-    <published>2014-10-10T02:12:34.000Z</published>
-    <updated>2015-11-03T06:07:06.604Z</updated>
+    <link href="http://www.daviddone.com/2015/06/10/%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/"/>
+    <id>http://www.daviddone.com/2015/06/10/搭建博客/</id>
+    <published>2015-06-10T02:12:34.000Z</published>
+    <updated>2015-11-05T03:14:41.441Z</updated>
     <content type="html"><![CDATA[<h3 id="目录">目录</h3><p></p><p><br>    1：Hexo简介<br>    2：Hexo在本地安装<br>    3：Github分配博客项目空间<br>    4：发布Hexo到Github上<br>    5：绑定个性化域名<br>    6：个性化配置<br>    7：使用MD创建第一篇博客<br>    8：问题与结论<br></p><p></p>
 <h2 id="1：Hexo简介">1：Hexo简介</h2><p><img src="/images/hexo_info.png" alt=""></p>
 <p></p><p><br>Hexo是一款轻量级的静态博客框架，基于Node.js 。截止目前，在Github该项目的star数量已经超过6000,由此可见其受欢迎的程度。<a href="https://hexo.io/" target="_blank" rel="external">Hexo的官网</a>，通过简约醒目的风格向我们展现了使用Hexo的原因。Blazing Fast，Markdown Support，One-Command Deployment，Various Plugins。由于Github拥有支持Node和Markdown的Github pages服务，所以我们可以在Github上便捷的搭建免费的hexo博客站点。<br></p><p></p>
