@@ -78,7 +78,7 @@
     <link href="http://www.daviddone.com/2015/09/12/%E5%B1%8F%E5%B9%95%E9%80%82%E9%85%8D/"/>
     <id>http://www.daviddone.com/2015/09/12/屏幕适配/</id>
     <published>2015-09-12T02:17:15.000Z</published>
-    <updated>2015-11-07T12:41:26.086Z</updated>
+    <updated>2015-11-07T12:45:06.388Z</updated>
     <content type="html"><![CDATA[<h2 id="何为适配？">何为适配？</h2><p><img src="/images/android_screen/android_devices.jpg" alt=""><br>鉴于Android设备的碎片化，较为严重。在设计App的时候，需要将适配考虑进去。简单的说，适配就是为了让市面上使用各种屏幕大小，<br>各种机型的用户们都能够正常，且友好的使用我们的App。</p>
 <h2 id="基本知识介绍">基本知识介绍</h2><h3 id="px"><a href="https://en.wikipedia.org/wiki/Pixel" target="_blank" rel="external">px</a></h3><p>px是pixel的缩写，即像素，它是数字图像在计算机图形学中基本元素，即屏幕上的最小单位。通常用来指代电子设备的分辨率：<br>如我们所说的分辨率1280*720，实际上就是竖屏上面总共的像素点1280,横屏上面像素点为720个。</p>
 <h3 id="inch"><a href="https://en.wikipedia.org/wiki/Inch" target="_blank" rel="external">inch</a></h3><p> inch，英寸，屏幕长度计量单位，一英寸等于2.54厘米。一般常说的5英寸大小的手机是指手机的对角线是5英寸，12.7cm长。</p>
@@ -88,7 +88,7 @@
 <p><img src="/images/android_screen/android_screen_size.png" alt=""></p>
 <h3 id="dip">dip</h3><p>dip和dp一样，device independent pixels，即是设备独立像素，是Android设备的特有的屏幕计量单位，按照标准在160dpi的设备下，1px = 1dp。其余情况，需要换算，采用公式计算而得： px = dp * (dpi / 160) (标准情况是160)。这里的dpi/160即是屏幕密度的比例值。如在320的屏幕密度下1px换算成dp为：dp = 1/(320/160) = 0.5。</p>
 <h3 id="sp"><a href="http://stackoverflow.com/questions/2025282/difference-between-px-dp-dip-and-sp-in-android" target="_blank" rel="external">sp</a></h3><p>ScaledPixels，即是放大像素。在Android官方网站上并没有px转换为sp的公式，但是sp的大小和dp相似，所以可以采用px = sp * (dpi/160)，则sp = px/(dpi/160)来做计算。<br><a href="http://developer.android.com/guide/topics/resources/more-resources.html#Dimension" target="_blank" rel="external">官方教材</a></p>
-<h2 id="选择xhdp作为主适配">选择xhdp作为主适配</h2><p>目前市面上的高端机的分辨率范围大多分辨率为<font color="red">1280 <em> 720</em></font>，所以优先考虑分辨率为1280  720作为主要适配的机型。这时候就可以协调公司的UI设计师在分辨率为1280 * 720的画布上作图，参考Android密度表，此时密度值为320。将切好的图标放在xhdpi资源文件夹目录下。同理如果设计稿画布分辨率对应的屏幕密度在240左右，则将图片放在hdpi路径下。这个时候直接在布局文件中采用wrap_content引用即可，当然你也可以将图片的大小换算成dp值，采用图标px大小除以屏幕密度比例值即为dp值。（dp =px/(dpi /160)）</p>
+<h2 id="选择xhdp作为主适配">选择xhdp作为主适配</h2><p>目前市面上的高端机的分辨率范围大多分辨率为<xmp><1280 *="" 720<="" xmp="">，所以优先考虑分辨率为1280 <em> 720作为主要适配的机型。这时候就可以协调公司的UI设计师在分辨率为1280 </em> 720的画布上作图，参考Android密度表，此时密度值为320。将切好的图标放在xhdpi资源文件夹目录下。同理如果设计稿画布分辨率对应的屏幕密度在240左右，则将图片放在hdpi路径下。这个时候直接在布局文件中采用wrap_content引用即可，当然你也可以将图片的大小换算成dp值，采用图标px大小除以屏幕密度比例值即为dp值。（dp =px/(dpi /160)）</1280></xmp></p>
 <h2 id="（持续更新中）">（持续更新中）</h2>]]></content>
     <summary type="html">
     <![CDATA[<h2 id="何为适配？">何为适配？</h2><p><img src="/images/android_screen/android_devices.jpg" alt=""><br>鉴于Android设备的碎片化，较为严重。在设计App的时候，需要将适配考虑进去。简单的说，适]]>
