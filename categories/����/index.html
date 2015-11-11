@@ -3,12 +3,12 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Archives: 2015/9 | David Done 博客</title>
+  <title>Category: ���� | David Done 博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="daviddone | Android">
 <meta property="og:type" content="website">
 <meta property="og:title" content="David Done 博客">
-<meta property="og:url" content="http://www.daviddone.com/archives/2015/09/index.html">
+<meta property="og:url" content="http://www.daviddone.com/categories/����/index.html">
 <meta property="og:site_name" content="David Done 博客">
 <meta property="og:description" content="daviddone | Android">
 <meta name="twitter:card" content="summary">
@@ -65,14 +65,14 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-屏幕适配" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="android-Android SDK 更新" class="article article-type-android" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2015/09/12/屏幕适配/" class="article-date">
-  <time datetime="2015-09-12T02:17:15.000Z" itemprop="datePublished">2015-09-12</time>
+    <a href="/2015/07/22/Android SDK 更新/" class="article-date">
+  <time datetime="2015-07-22T07:00:55.000Z" itemprop="datePublished">2015-07-22</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/技术/">技术</a>►<a class="article-category-link" href="/categories/技术/Android/">Android</a>
+    <a class="article-category-link" href="/categories/����/">����</a>►<a class="article-category-link" href="/categories/����/Android/">Android</a>
   </div>
 
   </div>
@@ -83,7 +83,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2015/09/12/屏幕适配/">Android 屏幕适配</a>
+      <a class="article-title" href="/2015/07/22/Android SDK 更新/">Android SDK ����</a>
     </h1>
   
 
@@ -91,23 +91,14 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="何为适配？">何为适配？</h2><p><img src="/images/android_screen/android_devices.jpg" alt=""><br>鉴于Android设备的种类繁多，屏幕大小各异，各种碎片化问题存在，在设计App的时候，需要将适配考虑进去。简单的说，适配就是为了让市面上使用各种屏幕大小，各种机型的用户们都能够正常，且流畅的使用我们的App。如果我们不考虑适配,直接使用UI设计师给出长度为50px方形的logo图形，在Android开发的布局文件中设置控件长宽为50px，那么我们得到的结果是任何设备上显示的控件长度50px，就会出现在低分辨率的手机上logo会失真，高分辨率会缩小。</p>
-<h2 id="基本知识介绍">基本知识介绍</h2><h3 id="px"><a href="https://en.wikipedia.org/wiki/Pixel" target="_blank" rel="external">px</a></h3><p>px是pixel的缩写，即像素，它是数字图像在计算机图形学中基本元素，即屏幕上的最小单位。通常用来指代电子设备的分辨率：<br>如我们所说的分辨率1280 × 720，实际上就是竖屏上面总共的像素点1280,横屏上面像素点为720个。</p>
-<h3 id="inch"><a href="https://en.wikipedia.org/wiki/Inch" target="_blank" rel="external">inch</a></h3><p> inch，英寸，屏幕长度计量单位，一英寸等于2.54厘米。一般常说的5英寸大小的手机是指手机的对角线是5英寸，12.7cm长。</p>
-<h3 id="dpi">dpi</h3><p>dot per inch，每英寸上面的像素点，即Android手机的屏幕密度。对于4.5英寸，1280 × 720分辨率的手机，我们可以通过对角线上的分辨率除以屏幕大小4.5英寸得到dpi。注意：对角线分辨率通过长1280,宽720做勾股定理算出。</p>
-<p><img src="/images/android_screen/android_gongshi.png" alt=""></p>
-<p>算出dpi为326,非常接近320。参考官方的屏幕密度表：</p>
-<p><img src="/images/android_screen/android_screen_size.png" alt=""></p>
-<h3 id="dip">dip</h3><p>dip和dp一样，device independent pixels，即是设备独立像素，是Android设备的特有的屏幕计量单位，按照标准在160dpi的设备下，1px = 1dp。其余情况，需要换算，采用公式计算而得： px = dp × (dpi / 160) (标准情况是160)。这里的dpi/160即是屏幕密度的比例值。如在320的屏幕密度下1px换算成dp为：dp = 1/(320/160) = 0.5。</p>
-<h3 id="sp"><a href="http://stackoverflow.com/questions/2025282/difference-between-px-dp-dip-and-sp-in-android" target="_blank" rel="external">sp</a></h3><p>ScaledPixels，即是放大像素。在Android官方网站上并没有px转换为sp的公式，但是sp的大小和dp相似，所以可以采用px = sp × (dpi/160)，则sp = px/(dpi/160)来做计算。<br><a href="http://developer.android.com/guide/topics/resources/more-resources.html#Dimension" target="_blank" rel="external">官方教材</a></p>
-<h2 id="选择xhdp作为主适配">选择xhdp作为主适配</h2><p>目前市面上的高端机的分辨率范围大多分辨率为1280 × 720，所以优先考虑分辨率为1280 × 720作为主要适配的机型。这时候可以协调公司的UI设计师在分辨率为1280 × 720的画布上作图，此时屏幕密度值为320，则将切好的图标放在xhdpi资源文件夹目录下。同理如果设计稿画布分辨率对应的屏幕密度在240左右，则将图片放在hdpi路径下（具体关系参照上图）。这个时候直接在布局文件中采用wrap_content引用即可，当然你也可以将图片的大小换算成dp值，采用图标px大小除以屏幕密度比例值即为dp值（dp =px/(dpi /160)）。在Android开发中我们采用dp来代替px作为尺寸大小单位，是因为px在任何屏幕上的大小是一致的，而dp则是根据每个手机屏幕密度值变化的，在低屏幕密度值的情况下，控件显示的长度小一些，而高屏幕密度值，控件显示长度则大一些。</p>
-<h2 id="（持续更新中）">（持续更新中）</h2>
+        <p>�������������ȶ������������Բ��ù��ھ�����Դ����Android SDK�����ò�˵����ʱ��������Դ���ٶȻ��Ƿǳ������ġ������Ƽ�һ�£�<a href="http://www.androiddevtools.cn/" target="_blank" rel="external">���ھ�����Դ</a>��<br>1������Android SDK Manager ѡ�� Tools –&gt; Options,Ȼ���� Proxy Settings��Http Proxy Server��Http Proxy Port�ֱ�����mirrors.neusoft.edu.cn��80����ѡ�� Force https://… sources to be fetched using <a href="http://...��Ȼ������Close��" target="_blank" rel="external">http://...��Ȼ������Close��</a><br>2��Ȼ��ѡ��Android SDK Manager�µ�Packages��Reload����ʱ���Ϳ��Ը����ˡ�<br><img src="/images/andrdoid_sdk_upadte.jpg" alt="ͼƬ"></p>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.daviddone.com/2015/09/12/屏幕适配/" data-id="cigujzvkh0009gcuzjpgfunon" class="article-share-link">Share</a>
+      <a data-url="http://www.daviddone.com/2015/07/22/Android SDK 更新/" data-id="cigujzvls0011gcuzomn8yyke" class="article-share-link">Share</a>
       
-        <a href="http://www.daviddone.com/2015/09/12/屏幕适配/#disqus_thread" class="article-comment-link">Comments</a>
+        <a href="http://www.daviddone.com/2015/07/22/Android SDK 更新/#disqus_thread" class="article-comment-link">Comments</a>
 	<div id="disqus_thread"></div>
 <script type="text/javascript">
     /* * * CONFIGURATION VARIABLES * * */
