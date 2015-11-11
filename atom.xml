@@ -107,18 +107,18 @@
     <link href="http://www.daviddone.com/2015/07/22/Android%20SDK%20%E6%9B%B4%E6%96%B0/"/>
     <id>http://www.daviddone.com/2015/07/22/Android SDK 更新/</id>
     <published>2015-07-22T07:00:55.000Z</published>
-    <updated>2015-11-11T08:31:01.801Z</updated>
-    <content type="html"><![CDATA[<h1 id="Android_SDK_����">Android SDK ����</h1><p>�������������ȶ������������Բ��ù��ھ�����Դ����Android SDK�����ò�˵����ʱ��������Դ���ٶȻ��Ƿǳ������ġ������Ƽ�һ�£�<a href="http://www.androiddevtools.cn/" target="_blank" rel="external">���ھ�����Դ</a>��<br>1������Android SDK Manager ѡ�� Tools –&gt; Options,Ȼ���� Proxy Settings��Http Proxy Server��Http Proxy Port�ֱ�����mirrors.neusoft.edu.cn��80����ѡ�� Force https://… sources to be fetched using <a href="http://...��Ȼ������Close��" target="_blank" rel="external">http://...��Ȼ������Close��</a><br>2��Ȼ��ѡ��Android SDK Manager�µ�Packages��Reload����ʱ���Ϳ��Ը����ˡ�<br><img src="/images/andrdoid_sdk_upadte.jpg" alt="ͼƬ"></p>
+    <updated>2015-11-11T08:35:03.441Z</updated>
+    <content type="html"><![CDATA[<h1 id="Android_SDK_更新">Android SDK 更新</h1><p>当遇到代理不稳定的情况，可以采用国内镜像资源更新Android SDK。不得不说，有时候镜像资源的速度还是非常给力的。这里推荐一下：<a href="http://www.androiddevtools.cn/" target="_blank" rel="external">国内镜像资源</a>。<br>1：打开Android SDK Manager 选择 Tools –&gt; Options,然后在 Proxy Settings的Http Proxy Server和Http Proxy Port分别填上mirrors.neusoft.edu.cn和80，勾选上 Force https://… sources to be fetched using <a href="http://...，然后点击Close。" target="_blank" rel="external">http://...，然后点击Close。</a><br>2：然后选择Android SDK Manager下的Packages和Reload，这时候就可以更新了。<br><img src="/images/andrdoid_sdk_upadte.jpg" alt="图片"></p>
 ]]></content>
     <summary type="html">
-    <![CDATA[<h1 id="Android_SDK_����">Android SDK ����</h1><p>�������������ȶ������������Բ��ù��ھ�����Դ����Android SDK�����ò�˵����ʱ��������Դ���ٶȻ��Ƿǳ�����]]>
+    <![CDATA[<h1 id="Android_SDK_更新">Android SDK 更新</h1><p>当遇到代理不稳定的情况，可以采用国内镜像资源更新Android SDK。不得不说，有时候镜像资源的速度还是非常给力的。这里推荐一下：<a href="http://www.androidd]]>
     </summary>
     
       <category term="Android" scheme="http://www.daviddone.com/tags/Android/"/>
     
-      <category term="����" scheme="http://www.daviddone.com/categories/%EF%BF%BD%EF%BF%BD%EF%BF%BD%EF%BF%BD/"/>
+      <category term="技术" scheme="http://www.daviddone.com/categories/%E6%8A%80%E6%9C%AF/"/>
     
-      <category term="Android" scheme="http://www.daviddone.com/categories/%EF%BF%BD%EF%BF%BD%EF%BF%BD%EF%BF%BD/Android/"/>
+      <category term="Android" scheme="http://www.daviddone.com/categories/%E6%8A%80%E6%9C%AF/Android/"/>
     
   </entry>
   
