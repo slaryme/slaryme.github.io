@@ -103,13 +103,13 @@
 <p>注意每次地点改变之后将会移除Marker，重新标记。可以调用aMap.clear()清除地图。不过，呵呵，我们这里要拖动的地图，可不是Marker标记图标。所以我们要另找方法。</p>
 <h2 id="地图上的标记不动，拖拽地图，位置更改">地图上的标记不动，拖拽地图，位置更改</h2><p>在确定了标记处于地图中央，且无论如何不会改动，拖动地图，获取标记的位置图标，即地图中央。由文档可得，地图中央的位置就是视图中央的位置，可以简单获取。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">LatLng mTarget = aMap.getCameraPosition().target;</span><br></pre></td></tr></table></figure></p>
 <p>mTarget为地图中央的经纬度。然后我们就可以将地图和图标采用Fragment布局方式，将地图置于下方，图标置于地图的上方正中央。接下来就是拖动地图，获取其正中央的经纬度了。拖动地图可参考实例代码 com.amapv2.apis.basic.EventsActivity.java。<br>需要实现接口，OnCameraChangeListener,并实现接口中的两个方法：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@Override&#10;&#9;public void onCameraChange(CameraPosition cameraPosition) &#123;&#10;&#9;&#9;Log.e(&#34;&#20301;&#32622;&#31227;&#21160;&#34;,cameraPosition.toString());&#10;&#9;&#125;&#10;&#9;@Override&#10;&#9;public void onCameraChangeFinish(CameraPosition cameraPosition) &#123;&#10;&#9;&#9;Log.e(&#34;&#20301;&#32622;&#31227;&#21160;&#32467;&#26463;&#34;,cameraPosition.toString());&#10;&#9;&#9;//&#33719;&#21462;&#25302;&#21160;&#21518;&#30340;&#20013;&#22830;&#10;&#9;&#9;LatLng mTarget = aMap.getCameraPosition().target;&#10;&#9;&#125;</span><br></pre></td></tr></table></figure></p>
-<p>注意还需要绑定地图拖动事件：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">aMap.setOnCameraChangeListener(this);// &#23545;amap&#28155;&#21152;&#31227;&#21160;&#22320;&#22270;&#20107;&#20214;&#30417;&#21548;&#22120;</span><br></pre></td></tr></table></figure></p>
+<p>注意还需要绑定地图拖动事件：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">aMap.setOnCameraChangeListener(this); &#23545;amap&#28155;&#21152;&#31227;&#21160;&#22320;&#22270;&#20107;&#20214;&#30417;&#21548;&#22120;</span><br></pre></td></tr></table></figure></p>
 <h2 id="高德地图之POI">高德地图之POI</h2><h2 id="高德地图之云搜索:">高德地图之云搜索:</h2><h2 id="高德地图之移动大头针：">高德地图之移动大头针：</h2><p><a href="http://lbs.amap.com/api/android-sdk/summary/" target="_blank" rel="external">官方文档链接</a></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.daviddone.com/2015/11/19/三方组件之高德地图/" data-id="cih5ywakw000o8wuzvdoxeuov" class="article-share-link">Share</a>
+      <a data-url="http://www.daviddone.com/2015/11/19/三方组件之高德地图/" data-id="cih5yyvq2000or8uzh4kdsw8t" class="article-share-link">Share</a>
       
         <a href="http://www.daviddone.com/2015/11/19/三方组件之高德地图/#disqus_thread" class="article-comment-link">Comments</a>
 	<div id="disqus_thread"></div>
@@ -169,7 +169,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.daviddone.com/2015/11/11/更新/" data-id="cih5ywajd00008wuz4e9hs4r7" class="article-share-link">Share</a>
+      <a data-url="http://www.daviddone.com/2015/11/11/更新/" data-id="cih5yyvok0000r8uzb3sara5a" class="article-share-link">Share</a>
       
         <a href="http://www.daviddone.com/2015/11/11/更新/#disqus_thread" class="article-comment-link">Comments</a>
 	<div id="disqus_thread"></div>
@@ -243,7 +243,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.daviddone.com/2015/10/22/Guides/" data-id="cih5ywall00138wuznm3jhbda" class="article-share-link">Share</a>
+      <a data-url="http://www.daviddone.com/2015/10/22/Guides/" data-id="cih5yyvqr0013r8uz37j2hifz" class="article-share-link">Share</a>
       
         <a href="http://www.daviddone.com/2015/10/22/Guides/#disqus_thread" class="article-comment-link">Comments</a>
 	<div id="disqus_thread"></div>
@@ -306,7 +306,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.daviddone.com/2015/10/13/如何掌握英文/" data-id="cih5ywakm000j8wuza5tc40md" class="article-share-link">Share</a>
+      <a data-url="http://www.daviddone.com/2015/10/13/如何掌握英文/" data-id="cih5yyvpq000jr8uz5etder7v" class="article-share-link">Share</a>
       
         <a href="http://www.daviddone.com/2015/10/13/如何掌握英文/#disqus_thread" class="article-comment-link">Comments</a>
 	<div id="disqus_thread"></div>
@@ -371,7 +371,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.daviddone.com/2015/09/12/屏幕适配/" data-id="cih5ywake000f8wuze6esr715" class="article-share-link">Share</a>
+      <a data-url="http://www.daviddone.com/2015/09/12/屏幕适配/" data-id="cih5yyvpj000fr8uzpeevcrua" class="article-share-link">Share</a>
       
         <a href="http://www.daviddone.com/2015/09/12/屏幕适配/#disqus_thread" class="article-comment-link">Comments</a>
 	<div id="disqus_thread"></div>
@@ -431,7 +431,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.daviddone.com/2015/07/12/node-快捷键/" data-id="cih5ywal2000s8wuzgu9xiuqt" class="article-share-link">Share</a>
+      <a data-url="http://www.daviddone.com/2015/07/12/node-快捷键/" data-id="cih5yyvqa000sr8uzxlwtb816" class="article-share-link">Share</a>
       
         <a href="http://www.daviddone.com/2015/07/12/node-快捷键/#disqus_thread" class="article-comment-link">Comments</a>
 	<div id="disqus_thread"></div>
@@ -519,7 +519,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.daviddone.com/2015/06/10/MarkDown简明教材/" data-id="cih5ywalb000y8wuzi9i768c3" class="article-share-link">Share</a>
+      <a data-url="http://www.daviddone.com/2015/06/10/MarkDown简明教材/" data-id="cih5yyvqh000yr8uz87mguvc1" class="article-share-link">Share</a>
       
         <a href="http://www.daviddone.com/2015/06/10/MarkDown简明教材/#disqus_thread" class="article-comment-link">Comments</a>
 	<div id="disqus_thread"></div>
@@ -606,7 +606,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.daviddone.com/2015/06/10/搭建博客/" data-id="cih5ywak400078wuz5i35rrng" class="article-share-link">Share</a>
+      <a data-url="http://www.daviddone.com/2015/06/10/搭建博客/" data-id="cih5yyvpb0007r8uzl3fof1ve" class="article-share-link">Share</a>
       
         <a href="http://www.daviddone.com/2015/06/10/搭建博客/#disqus_thread" class="article-comment-link">Comments</a>
 	<div id="disqus_thread"></div>
