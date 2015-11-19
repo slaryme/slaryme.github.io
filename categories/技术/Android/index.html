@@ -65,6 +65,71 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-三方组件之高德地图" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/11/19/三方组件之高德地图/" class="article-date">
+  <time datetime="2015-11-19T08:08:08.000Z" itemprop="datePublished">2015-11-19</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/技术/">技术</a>►<a class="article-category-link" href="/categories/技术/Android/">Android</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/11/19/三方组件之高德地图/">三方组件之高德地图</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>高德2D地图实现云搜索（周边地址选择）</p>
+<h2 id="获取SHA1与Package">获取SHA1与Package</h2><p>Windows：依次在 eclipse 中打开 Window -&gt; Preferances -&gt; Android -&gt; Build。<br>然后选择SHA1：18:F2:AA:4B:CD:FC:9D:BC:B8:64:0D:5D:4A:06:CA:E1:B9:EA:A5:A7<br>修改manifest文件：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"> &#60;meta-data&#10;            android:name=&#34;com.amap.api.v2.apikey&#34;&#10;            android:value=&#34;22cf23dc41d089037032898817f4f4f2&#34; /&#62;&#10;```&#9;&#9;&#9;&#10;## &#39640;&#24503;&#22320;&#22270;&#20043;&#22320;&#20301;(&#23637;&#31034;&#22320;&#22270;)&#65306;&#10;### Step 1&#65292;&#28155;&#21152;&#24067;&#23616;&#25991;&#20214; basicmap_activity.xml&#20013;&#30340;&#24067;&#23616;&#25991;&#20214;&#65307;&#10;&#60;com.amap.api.maps2d.MapView&#10;android:id=&#34;@+id/map&#34;&#10;android:layout_width=&#34;fill_parent&#34;&#10;android:layout_height=&#34;fill_parent&#34; /&#62;&#10;&#28982;&#21518;&#24341;&#20837;com.amapv2.apis.basic. BasicMapActivity.java &#20013;&#30340;&#26680;&#24515;&#20195;&#30721;&#12290;&#10;### Step 2,&#23450;&#20301;&#24182;&#22312;&#22320;&#22270;&#19978;&#26174;&#31034;&#20986;&#33258;&#23450;&#20041;&#30340;&#23567;&#28857;&#65288;&#19981;&#21253;&#21547;&#36861;&#38543;&#21151;&#33021;&#65289;&#65306;&#10;&#24341;&#20837;com.amap.map2d.demo.location.LocationNetworkActivity &#20013;&#30340;&#30456;&#20851;&#23450;&#20301;&#20195;&#30721;&#65292;&#23450;&#20301;&#23436;&#27605;&#20043;&#21518;&#37319;&#29992;Toast&#25552;&#31034;&#20986;&#26469;&#65292;&#22914;&#33021;&#27491;&#30830;&#23450;&#20301;&#65292;&#23558;&#23450;&#20301;&#24471;&#21040;&#30340;&#32467;&#26524;&#26174;&#31034;&#22312;&#22320;&#22270;&#19978;&#12290;&#36825;&#37324;&#37319;&#29992;&#33258;&#23450;&#20041;&#22270;&#26631;&#20195;&#26367;&#31995;&#32479;&#30340;&#40664;&#35748;&#22270;&#26631;&#12290;&#36825;&#37324;&#37325;&#28857;&#25552;&#19968;&#19979;&#65306;</span><br></pre></td></tr></table></figure></p>
+<p>aMapLocManager.requestLocationData(<br>                LocationProviderProxy.AMapNetwork, 2000, 10, this);<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#31532;&#19968;&#20010;&#21442;&#25968;&#26159;&#23450;&#20301;provider&#65292;&#31532;&#20108;&#20010;&#21442;&#25968;&#26102;&#38388;&#26368;&#30701;&#26159;2000&#27627;&#31186;&#65292;&#31532;&#19977;&#20010;&#21442;&#25968;&#36317;&#31163;&#38388;&#38548;&#21333;&#20301;&#26159;&#31859;&#65292;&#31532;&#22235;&#20010;&#21442;&#25968;&#26159;&#23450;&#20301;&#30417;&#21548;&#32773;&#10;&#21478;&#22806;&#27880;&#24847;&#19968;&#20010;&#24320;&#21457;&#25991;&#26723;&#19978;&#27809;&#26377;&#30340;&#32454;&#33410;&#65292;&#35774;&#32622;&#21021;&#22987;&#21270;&#30340;&#32553;&#25918;&#27604;&#20363;&#65306;&#10;aMap.moveCamera(CameraUpdateFactory.zoomTo(12));&#10;[&#24320;&#21457;&#25991;&#26723;](http://lbs.amap.com/Public/reference/AMap_Android_Api_Doc_V3.0_20150914/)&#10;&#21442;&#32771; com.amapv2.apis.overlay.MarkerActivity.java&#23454;&#20363;&#20195;&#30721;&#21487;&#24471;&#65292;&#10;[&#35206;&#30422;&#29289;&#8212;&#8212;&#26631;&#35760;&#23567;&#28857;](http://lbs.amap.com/api/android-sdk/guide/overlay/)&#10;&#25105;&#23545;&#20854;&#23553;&#35013;&#20102;&#22914;&#19979;&#20195;&#30721;&#65307;</span><br></pre></td></tr></table></figure></p>
+<p>AMap aMap;<br>private void addMarkersToMap(LatLng locationLaLng)<br>    {<br>    //添加每一帧图片。<br>        markerOption = new MarkerOptions();//根据经纬度new LatLng(34.341568, 108.940174)<br>        markerOption.position(locationLaLng);<br>        markerOption.title(“西安市”).snippet(“西安市：34.341568, 108.940174”);<br>        markerOption.draggable(false);// 地图拖拽<br>        markerOption.icon(BitmapDescriptorFactory.fromResource(R.drawable.arrow));<br>        aMap.addMarker(markerOption);<br>    }<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#27880;&#24847;&#27599;&#27425;&#22320;&#28857;&#25913;&#21464;&#20043;&#21518;&#23558;&#20250;&#31227;&#38500;Marker&#65292;&#37325;&#26032;&#26631;&#35760;&#12290;&#21487;&#20197;&#35843;&#29992;aMap.clear()&#28165;&#38500;&#22320;&#22270;&#12290;&#19981;&#36807;&#65292;&#21621;&#21621;&#65292;&#25105;&#20204;&#36825;&#37324;&#35201;&#25302;&#21160;&#30340;&#22320;&#22270;&#65292;&#21487;&#19981;&#26159;Marker&#26631;&#35760;&#22270;&#26631;&#12290;&#25152;&#20197;&#25105;&#20204;&#35201;&#21478;&#25214;&#26041;&#27861;&#12290;&#10;&#10;## &#22320;&#22270;&#19978;&#30340;&#26631;&#35760;&#19981;&#21160;&#65292;&#25302;&#25341;&#22320;&#22270;&#65292;&#20301;&#32622;&#26356;&#25913;&#10;&#22312;&#30830;&#23450;&#20102;&#26631;&#35760;&#22788;&#20110;&#22320;&#22270;&#20013;&#22830;&#65292;&#19988;&#26080;&#35770;&#22914;&#20309;&#19981;&#20250;&#25913;&#21160;&#65292;&#25302;&#21160;&#22320;&#22270;&#65292;&#33719;&#21462;&#26631;&#35760;&#30340;&#20301;&#32622;&#22270;&#26631;&#65292;&#21363;&#22320;&#22270;&#20013;&#22830;&#12290;&#30001;&#25991;&#26723;&#21487;&#24471;&#65292;&#22320;&#22270;&#20013;&#22830;&#30340;&#20301;&#32622;&#23601;&#26159;&#35270;&#22270;&#20013;&#22830;&#30340;&#20301;&#32622;&#65292;&#21487;&#20197;&#31616;&#21333;&#33719;&#21462;&#12290;</span><br></pre></td></tr></table></figure></p>
+<p>LatLng mTarget = aMap.getCameraPosition().target;<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mTarget&#20026;&#22320;&#22270;&#20013;&#22830;&#30340;&#32463;&#32428;&#24230;&#12290;&#28982;&#21518;&#25105;&#20204;&#23601;&#21487;&#20197;&#23558;&#22320;&#22270;&#21644;&#22270;&#26631;&#37319;&#29992;Fragment&#24067;&#23616;&#26041;&#24335;&#65292;&#23558;&#22320;&#22270;&#32622;&#20110;&#19979;&#26041;&#65292;&#22270;&#26631;&#32622;&#20110;&#22320;&#22270;&#30340;&#19978;&#26041;&#27491;&#20013;&#22830;&#12290;&#25509;&#19979;&#26469;&#23601;&#26159;&#25302;&#21160;&#22320;&#22270;&#65292;&#33719;&#21462;&#20854;&#27491;&#20013;&#22830;&#30340;&#32463;&#32428;&#24230;&#20102;&#12290;&#25302;&#21160;&#22320;&#22270;&#21487;&#21442;&#32771;&#23454;&#20363;&#20195;&#30721; com.amapv2.apis.basic.EventsActivity.java&#12290;&#10;&#38656;&#35201;&#23454;&#29616;&#25509;&#21475;&#65292;OnCameraChangeListener,&#24182;&#23454;&#29616;&#25509;&#21475;&#20013;&#30340;&#20004;&#20010;&#26041;&#27861;&#65306;</span><br></pre></td></tr></table></figure></p>
+<p>@Override<br>    public void onCameraChange(CameraPosition cameraPosition) {<br>        Log.e(“位置移动”,cameraPosition.toString());<br>    }<br>    @Override<br>    public void onCameraChangeFinish(CameraPosition cameraPosition) {<br>        Log.e(“位置移动结束”,cameraPosition.toString());<br>        //获取拖动后的中央<br>        LatLng mTarget = aMap.getCameraPosition().target;<br>    }<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#27880;&#24847;&#36824;&#38656;&#35201;&#32465;&#23450;&#22320;&#22270;&#25302;&#21160;&#20107;&#20214;&#65306;</span><br></pre></td></tr></table></figure></p>
+<p>aMap.setOnCameraChangeListener(this);// 对amap添加移动地图事件监听器<br>```</p>
+<h2 id="高德地图之POI">高德地图之POI</h2><h2 id="高德地图之云搜索:">高德地图之云搜索:</h2><h2 id="高德地图之移动大头针：">高德地图之移动大头针：</h2><p><a href="http://lbs.amap.com/api/android-sdk/summary/" target="_blank" rel="external">官方文档链接</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://www.daviddone.com/2015/11/19/三方组件之高德地图/" data-id="cih5yj7s9000og8uz0cl73kuf" class="article-share-link">Share</a>
+      
+        <a href="http://www.daviddone.com/2015/11/19/三方组件之高德地图/#disqus_thread" class="article-comment-link">Comments</a>
+	<div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = 'daviddone';
+    
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="android-更新" class="article article-type-android" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2015/11/11/更新/" class="article-date">
@@ -83,7 +148,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2015/11/11/更新/">Android SDK 更新</a>
+      <a class="article-title" href="/2015/11/11/更新/">Android SDK 镜像更新</a>
     </h1>
   
 
@@ -92,13 +157,13 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>当遇到代理不稳定的情况，可以采用国内镜像资源更新Android SDK。不得不说，有时候镜像资源的速度还是非常给力的。这里推荐一下：<a href="http://www.androiddevtools.cn/" target="_blank" rel="external">国内镜像资源</a>。</p>
-<h2 id="Step_1">Step 1</h2><p>打开Android SDK Manager 选择 Tools –&gt; Options,然后在 Proxy Settings的Http Proxy Server和Http Proxy Port分别填上mirrors.neusoft.edu.cn和80，勾选上 [Force https://… sources to be fetched using <a href="http://...]，然后点击Close。" target="_blank" rel="external">http://...]，然后点击Close。</a></p>
+<h2 id="Step_1">Step 1</h2><p>打开Android SDK Manager 选择 Tools –&gt; Options,然后在 Proxy Settings的Http Proxy Server和Http Proxy Port分别填上mirrors.neusoft.edu.cn和80，勾选上 [Force https://… sources to be fetched using http]，然后点击Close。</p>
 <h2 id="Step_2">Step 2</h2><p>然后选择Android SDK Manager下的Packages和Reload，这时候就可以更新了。<br><img src="/images/andrdoid_sdk_upadte.jpg" alt="图片"></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.daviddone.com/2015/11/11/更新/" data-id="ciguk6icc0000q0uzmzqkgooq" class="article-share-link">Share</a>
+      <a data-url="http://www.daviddone.com/2015/11/11/更新/" data-id="cih5yj7qt0000g8uzsapvgx7n" class="article-share-link">Share</a>
       
         <a href="http://www.daviddone.com/2015/11/11/更新/#disqus_thread" class="article-comment-link">Comments</a>
 	<div id="disqus_thread"></div>
@@ -165,7 +230,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.daviddone.com/2015/09/12/屏幕适配/" data-id="ciguk6idf000fq0uzeg8jlpx1" class="article-share-link">Share</a>
+      <a data-url="http://www.daviddone.com/2015/09/12/屏幕适配/" data-id="cih5yj7rq000fg8uz5djgdz88" class="article-share-link">Share</a>
       
         <a href="http://www.daviddone.com/2015/09/12/屏幕适配/#disqus_thread" class="article-comment-link">Comments</a>
 	<div id="disqus_thread"></div>
@@ -201,7 +266,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/English/">English</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/English/Methodology/">Methodology</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/English/Translation/">Translation</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术/">技术</a><span class="category-list-count">5</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/技术/Android/">Android</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术/Hexo/">Hexo</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术/tools/">tools</a><span class="category-list-count">1</span></li></ul></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/English/">English</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/English/Methodology/">Methodology</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/English/Translation/">Translation</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术/">技术</a><span class="category-list-count">6</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/技术/Android/">Android</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术/Hexo/">Hexo</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术/tools/">tools</a><span class="category-list-count">1</span></li></ul></li></ul>
     </div>
   </div>
 
@@ -210,7 +275,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android/">Android</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo教材/">Hexo教材</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Translation/">Translation</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown/">markdown</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tools/">tools</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/标记二/">标记二</a><span class="tag-list-count">1</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android/">Android</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo教材/">Hexo教材</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Translation/">Translation</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown/">markdown</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tools/">tools</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/标记二/">标记二</a><span class="tag-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -228,7 +293,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">十一月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">十月 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">九月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">七月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">六月 2015</a><span class="archive-list-count">2</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">十一月 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">十月 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">九月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">七月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">六月 2015</a><span class="archive-list-count">2</span></li></ul>
     </div>
   </div>
 
@@ -240,7 +305,11 @@
       <ul>
         
           <li>
-            <a href="/2015/11/11/更新/">Android SDK 更新</a>
+            <a href="/2015/11/19/三方组件之高德地图/">三方组件之高德地图</a>
+          </li>
+        
+          <li>
+            <a href="/2015/11/11/更新/">Android SDK 镜像更新</a>
           </li>
         
           <li>
@@ -253,10 +322,6 @@
         
           <li>
             <a href="/2015/09/12/屏幕适配/">Android 屏幕适配</a>
-          </li>
-        
-          <li>
-            <a href="/2015/07/12/node-快捷键/">node++快捷键</a>
           </li>
         
       </ul>
