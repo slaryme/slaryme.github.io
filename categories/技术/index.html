@@ -94,8 +94,8 @@
         <p>高德2D地图实现云搜索（周边地址选择）</p>
 <h2 id="获取SHA1与Package">获取SHA1与Package</h2><p>Windows：依次在 eclipse 中打开 Window -&gt; Preferances -&gt; Android -&gt; Build。<br>然后选择SHA1：18:F2:AA:4B:CD:FC:9D:BC:B8:64:0D:5D:4A:06:CA:E1:B9:EA:A5:A7<br>修改manifest文件：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#60;meta-data&#10;           android:name=&#34;com.amap.api.v2.apikey&#34;&#10;           android:value=&#34;22cf23dc41d089037032898817f4f4f2&#34;/&#62;</span><br></pre></td></tr></table></figure>
-<p><br>        </p>
-<h2 id="高德地图之地位(展示地图)：">高德地图之地位(展示地图)：</h2><h3 id="Step_1，添加布局文件_basicmap_activity-xml中的布局文件；">Step 1，添加布局文件 basicmap_activity.xml中的布局文件；</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#60;com.amap.api.maps2d.MapView&#10;android:id=&#34;@+id/map&#34;&#10;android:layout_width=&#34;fill_parent&#34;&#10;android:layout_height=&#34;fill_parent&#34;&#62;</span><br></pre></td></tr></table></figure>
+<p>fasdasfasf    </p>
+<h2 id="高德地图之地位(展示地图)：">高德地图之地位(展示地图)：</h2><h3 id="Step_1，添加布局文件_basicmap_activity-xml中的布局文件；">Step 1，添加布局文件 basicmap_activity.xml中的布局文件；</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#60;com.amap.api.maps2d.MapView&#10;android:id=&#34;@+id/map&#34;&#10;android:layout_width=&#34;fill_parent&#34;&#10;android:layout_height=&#34;fill_parent&#34;/&#62;</span><br></pre></td></tr></table></figure>
 <p>然后引入com.amapv2.apis.basic. BasicMapActivity.java 中的核心代码。</p>
 <h3 id="Step_2,定位并在地图上显示出自定义的小点（不包含追随功能）：">Step 2,定位并在地图上显示出自定义的小点（不包含追随功能）：</h3><p>引入com.amap.map2d.demo.location.LocationNetworkActivity 中的相关定位代码，定位完毕之后采用Toast提示出来，如能正确定位，将定位得到的结果显示在地图上。这里采用自定义图标代替系统的默认图标。这里重点提一下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">aMapLocManager.requestLocationData(&#10;&#9;&#9;&#9;&#9;LocationProviderProxy.AMapNetwork, 2000, 10, this);</span><br></pre></td></tr></table></figure></p>
 <p>第一个参数是定位provider，第二个参数时间最短是2000毫秒，第三个参数距离间隔单位是米，第四个参数是定位监听者<br>另外注意一个开发文档上没有的细节，设置初始化的缩放比例：<br>aMap.moveCamera(CameraUpdateFactory.zoomTo(12));<br><a href="http://lbs.amap.com/Public/reference/AMap_Android_Api_Doc_V3.0_20150914/" target="_blank" rel="external">开发文档</a><br>参考 com.amapv2.apis.overlay.MarkerActivity.java实例代码可得，<br>[覆盖物——标记小点](htt</p>
@@ -109,7 +109,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.daviddone.com/2015/11/19/三方组件之高德地图/" data-id="cih5yyvq2000or8uzh4kdsw8t" class="article-share-link">Share</a>
+      <a data-url="http://www.daviddone.com/2015/11/19/三方组件之高德地图/" data-id="cih5z1ct3000oeouzeegwyxkz" class="article-share-link">Share</a>
       
         <a href="http://www.daviddone.com/2015/11/19/三方组件之高德地图/#disqus_thread" class="article-comment-link">Comments</a>
 	<div id="disqus_thread"></div>
@@ -169,7 +169,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.daviddone.com/2015/11/11/更新/" data-id="cih5yyvok0000r8uzb3sara5a" class="article-share-link">Share</a>
+      <a data-url="http://www.daviddone.com/2015/11/11/更新/" data-id="cih5z1crm0000eouzl5pl143p" class="article-share-link">Share</a>
       
         <a href="http://www.daviddone.com/2015/11/11/更新/#disqus_thread" class="article-comment-link">Comments</a>
 	<div id="disqus_thread"></div>
@@ -236,7 +236,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.daviddone.com/2015/09/12/屏幕适配/" data-id="cih5yyvpj000fr8uzpeevcrua" class="article-share-link">Share</a>
+      <a data-url="http://www.daviddone.com/2015/09/12/屏幕适配/" data-id="cih5z1cso000feouz4ybrqzo9" class="article-share-link">Share</a>
       
         <a href="http://www.daviddone.com/2015/09/12/屏幕适配/#disqus_thread" class="article-comment-link">Comments</a>
 	<div id="disqus_thread"></div>
@@ -296,7 +296,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.daviddone.com/2015/07/12/node-快捷键/" data-id="cih5yyvqa000sr8uzxlwtb816" class="article-share-link">Share</a>
+      <a data-url="http://www.daviddone.com/2015/07/12/node-快捷键/" data-id="cih5z1ctb000seouzx5ii7kf7" class="article-share-link">Share</a>
       
         <a href="http://www.daviddone.com/2015/07/12/node-快捷键/#disqus_thread" class="article-comment-link">Comments</a>
 	<div id="disqus_thread"></div>
@@ -384,7 +384,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.daviddone.com/2015/06/10/MarkDown简明教材/" data-id="cih5yyvqh000yr8uz87mguvc1" class="article-share-link">Share</a>
+      <a data-url="http://www.daviddone.com/2015/06/10/MarkDown简明教材/" data-id="cih5z1ctq000yeouztvg2olc0" class="article-share-link">Share</a>
       
         <a href="http://www.daviddone.com/2015/06/10/MarkDown简明教材/#disqus_thread" class="article-comment-link">Comments</a>
 	<div id="disqus_thread"></div>
@@ -471,7 +471,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.daviddone.com/2015/06/10/搭建博客/" data-id="cih5yyvpb0007r8uzl3fof1ve" class="article-share-link">Share</a>
+      <a data-url="http://www.daviddone.com/2015/06/10/搭建博客/" data-id="cih5z1csg0007eouzctqtrkqx" class="article-share-link">Share</a>
       
         <a href="http://www.daviddone.com/2015/06/10/搭建博客/#disqus_thread" class="article-comment-link">Comments</a>
 	<div id="disqus_thread"></div>
