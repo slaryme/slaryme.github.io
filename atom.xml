@@ -4,7 +4,7 @@
   <subtitle><![CDATA[If you can't fly then run, if you can't run then walk, if you can't walk then crawl, but whatever you do you have to keep moving forward...]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://www.daviddone.com/"/>
-  <updated>2015-11-19T08:52:10.774Z</updated>
+  <updated>2015-11-11T08:48:46.353Z</updated>
   <id>http://www.daviddone.com/</id>
   
   <author>
@@ -13,25 +13,6 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title><![CDATA[三方组件之高德地图]]></title>
-    <link href="http://www.daviddone.com/2015/11/19/%E4%B8%89%E6%96%B9%E7%BB%84%E4%BB%B6%E4%B9%8B%E9%AB%98%E5%BE%B7%E5%9C%B0%E5%9B%BE/"/>
-    <id>http://www.daviddone.com/2015/11/19/三方组件之高德地图/</id>
-    <published>2015-11-19T08:08:08.000Z</published>
-    <updated>2015-11-19T08:52:10.774Z</updated>
-    <content type="html"></content>
-    <summary type="html">
-    
-    </summary>
-    
-      <category term="Android" scheme="http://www.daviddone.com/tags/Android/"/>
-    
-      <category term="技术" scheme="http://www.daviddone.com/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-      <category term="Android" scheme="http://www.daviddone.com/categories/%E6%8A%80%E6%9C%AF/Android/"/>
-    
-  </entry>
   
   <entry>
     <title><![CDATA[Android SDK 镜像更新]]></title>
