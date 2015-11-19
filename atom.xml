@@ -4,7 +4,7 @@
   <subtitle><![CDATA[If you can't fly then run, if you can't run then walk, if you can't walk then crawl, but whatever you do you have to keep moving forward...]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://www.daviddone.com/"/>
-  <updated>2015-11-19T08:49:34.721Z</updated>
+  <updated>2015-11-19T08:52:10.774Z</updated>
   <id>http://www.daviddone.com/</id>
   
   <author>
@@ -19,23 +19,10 @@
     <link href="http://www.daviddone.com/2015/11/19/%E4%B8%89%E6%96%B9%E7%BB%84%E4%BB%B6%E4%B9%8B%E9%AB%98%E5%BE%B7%E5%9C%B0%E5%9B%BE/"/>
     <id>http://www.daviddone.com/2015/11/19/三方组件之高德地图/</id>
     <published>2015-11-19T08:08:08.000Z</published>
-    <updated>2015-11-19T08:49:34.721Z</updated>
-    <content type="html"><![CDATA[<p>高德2D地图实现云搜索（周边地址选择）</p>
-<h2 id="获取SHA1与Package">获取SHA1与Package</h2><p>Windows：依次在 eclipse 中打开 Window -&gt; Preferances -&gt; Android -&gt; Build。<br>然后选择SHA1：18:F2:AA:4B:CD:FC:9D:BC:B8:64:0D:5D:4A:06:CA:E1:B9:EA:A5:A7<br>修改manifest文件:<br>ceshiss[ohasoid jfsa  fasj fd; ]</p>
-<h2 id="高德地图之地位(展示地图)：">高德地图之地位(展示地图)：</h2><h3 id="Step_1，添加布局文件_basicmap_activity-xml中的布局文件；">Step 1，添加布局文件 basicmap_activity.xml中的布局文件；</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#60;com.amap.api.maps2d.MapView&#10;android:id=&#34;@+id/map&#34;&#10;android:layout_width=&#34;fill_parent&#34;&#10;android:layout_height=&#34;fill_parent&#34;/&#62;</span><br></pre></td></tr></table></figure>
-<p>然后引入com.amapv2.apis.basic. BasicMapActivity.java 中的核心代码。</p>
-<h3 id="Step_2,定位并在地图上显示出自定义的小点（不包含追随功能）：">Step 2,定位并在地图上显示出自定义的小点（不包含追随功能）：</h3><p>引入com.amap.map2d.demo.location.LocationNetworkActivity 中的相关定位代码，定位完毕之后采用Toast提示出来，如能正确定位，将定位得到的结果显示在地图上。这里采用自定义图标代替系统的默认图标。这里重点提一下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">aMapLocManager.requestLocationData(&#10;&#9;&#9;&#9;&#9;LocationProviderProxy.AMapNetwork, 2000, 10, this);</span><br></pre></td></tr></table></figure></p>
-<p>第一个参数是定位provider，第二个参数时间最短是2000毫秒，第三个参数距离间隔单位是米，第四个参数是定位监听者<br>另外注意一个开发文档上没有的细节，设置初始化的缩放比例：<br>aMap.moveCamera(CameraUpdateFactory.zoomTo(12));<br><a href="http://lbs.amap.com/Public/reference/AMap_Android_Api_Doc_V3.0_20150914/" target="_blank" rel="external">开发文档</a><br>参考 com.amapv2.apis.overlay.MarkerActivity.java实例代码可得，<br>[覆盖物——标记小点](htt</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">AMap aMap;&#10;private void addMarkersToMap(LatLng locationLaLng)&#10;&#9;&#123;&#10;&#9;//&#28155;&#21152;&#27599;&#19968;&#24103;&#22270;&#29255;&#12290;&#10;&#9;&#9;markerOption = new MarkerOptions();//&#26681;&#25454;&#32463;&#32428;&#24230;new LatLng(34.341568, 108.940174)&#10;&#9;&#9;markerOption.position(locationLaLng);&#10;&#9;&#9;markerOption.title(&#34;&#35199;&#23433;&#24066;&#34;).snippet(&#34;&#35199;&#23433;&#24066;&#65306;34.341568, 108.940174&#34;);&#10;&#9;&#9;markerOption.draggable(false);// &#22320;&#22270;&#25302;&#25341;&#10;&#9;&#9;markerOption.icon(BitmapDescriptorFactory.fromResource(R.drawable.arrow));&#10;&#9;&#9;aMap.addMarker(markerOption);&#10;&#9;&#125;</span><br></pre></td></tr></table></figure>
-<p>注意每次地点改变之后将会移除Marker，重新标记。可以调用aMap.clear()清除地图。不过，呵呵，我们这里要拖动的地图，可不是Marker标记图标。所以我们要另找方法。</p>
-<h2 id="地图上的标记不动，拖拽地图，位置更改">地图上的标记不动，拖拽地图，位置更改</h2><p>在确定了标记处于地图中央，且无论如何不会改动，拖动地图，获取标记的位置图标，即地图中央。由文档可得，地图中央的位置就是视图中央的位置，可以简单获取。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">LatLng mTarget = aMap.getCameraPosition().target;</span><br></pre></td></tr></table></figure></p>
-<p>mTarget为地图中央的经纬度。然后我们就可以将地图和图标采用Fragment布局方式，将地图置于下方，图标置于地图的上方正中央。接下来就是拖动地图，获取其正中央的经纬度了。拖动地图可参考实例代码 com.amapv2.apis.basic.EventsActivity.java。<br>需要实现接口，OnCameraChangeListener,并实现接口中的两个方法：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@Override&#10;&#9;public void onCameraChange(CameraPosition cameraPosition) &#123;&#10;&#9;&#9;Log.e(&#34;&#20301;&#32622;&#31227;&#21160;&#34;,cameraPosition.toString());&#10;&#9;&#125;&#10;&#9;@Override&#10;&#9;public void onCameraChangeFinish(CameraPosition cameraPosition) &#123;&#10;&#9;&#9;Log.e(&#34;&#20301;&#32622;&#31227;&#21160;&#32467;&#26463;&#34;,cameraPosition.toString());&#10;&#9;&#9;//&#33719;&#21462;&#25302;&#21160;&#21518;&#30340;&#20013;&#22830;&#10;&#9;&#9;LatLng mTarget = aMap.getCameraPosition().target;&#10;&#9;&#125;</span><br></pre></td></tr></table></figure></p>
-<p>注意还需要绑定地图拖动事件：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">aMap.setOnCameraChangeListener(this); &#23545;amap&#28155;&#21152;&#31227;&#21160;&#22320;&#22270;&#20107;&#20214;&#30417;&#21548;&#22120;</span><br></pre></td></tr></table></figure></p>
-<h2 id="高德地图之POI">高德地图之POI</h2><h2 id="高德地图之云搜索:">高德地图之云搜索:</h2><h2 id="高德地图之移动大头针：">高德地图之移动大头针：</h2><p><a href="http://lbs.amap.com/api/android-sdk/summary/" target="_blank" rel="external">官方文档链接</a></p>
-]]></content>
+    <updated>2015-11-19T08:52:10.774Z</updated>
+    <content type="html"></content>
     <summary type="html">
-    <![CDATA[<p>高德2D地图实现云搜索（周边地址选择）</p>
-<h2 id="获取SHA1与Package">获取SHA1与Package</h2><p>Windows：依次在 eclipse 中打开 Window -&gt; Preferances -&gt; Android -&gt]]>
+    
     </summary>
     
       <category term="Android" scheme="http://www.daviddone.com/tags/Android/"/>
