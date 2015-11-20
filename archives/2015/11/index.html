@@ -8,7 +8,7 @@
   <meta name="description" content="daviddone | Android">
 <meta property="og:type" content="website">
 <meta property="og:title" content="David Done 博客">
-<meta property="og:url" content="http://www.daviddone.com/archives/2015/11/index.html">
+<meta property="og:url" content="http://slaryme.github.io/archives/2015/11/index.html">
 <meta property="og:site_name" content="David Done 博客">
 <meta property="og:description" content="daviddone | Android">
 <meta name="twitter:card" content="summary">
@@ -57,7 +57,7 @@
         <a id="nav-search-btn" class="nav-icon" title="Search"></a>
       </nav>
       <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://www.daviddone.com"></form>
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://slaryme.github.io"></form>
       </div>
     </div>
   </div>
@@ -106,16 +106,16 @@
 <p>注意还需要绑定地图拖动事件：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">aMap.setOnCameraChangeListener(this);// &#23545;amap&#28155;&#21152;&#31227;&#21160;&#22320;&#22270;&#20107;&#20214;&#30417;&#21548;&#22120;</span><br></pre></td></tr></table></figure></p>
 <h2 id="高德地图之POI（周边搜索）">高德地图之POI（周边搜索）</h2><p>通过调用高德POI(Point Of interest_兴趣点)，会根据传入关键词，搜索出附近的兴趣点地址列表，如：酒店，餐饮，学校。我们可以参考com.amap.map3d.demo.poisearch.PoiKeywordSearchActivity.java案例，首先需要实现OnPoiSearchListener接口。实现接口中的方法，<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@Override&#10;&#9;public void onPoiItemDetailSearched(PoiItemDetail arg0, int arg1) &#123;&#10;&#9;&#9;// TODO Auto-generated method stub&#10;&#9;&#9;&#10;&#9;&#125;&#10;&#9;public void onPoiSearched(PoiResult result, int rCode) &#123;&#10;&#9;&#9;&#10;&#9;&#125;</span><br></pre></td></tr></table></figure></p>
 <p>我在这里封装了一个方法，每一次需要周边搜索的时候，直接调用即可<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">private PoiSearch.Query query;// Poi&#26597;&#35810;&#26465;&#20214;&#31867;&#10;/**&#10;&#9; * &#24320;&#22987;&#36827;&#34892;poi&#25628;&#32034;&#10;&#9; */&#10;&#9;protected void doSearchQuery() &#123;&#10;&#9;&#9;showProgressDialog();// &#26174;&#31034;&#36827;&#24230;&#26694;&#10;&#9;&#9;currentPage = 0;&#10;&#9;&#9;query = new PoiSearch.Query(keyWord, &#34;&#34;, editCity.getText().toString());// &#31532;&#19968;&#20010;&#21442;&#25968;&#34920;&#31034;&#25628;&#32034;&#23383;&#31526;&#20018;&#65292;&#31532;&#20108;&#20010;&#21442;&#25968;&#34920;&#31034;poi&#25628;&#32034;&#31867;&#22411;&#65292;&#31532;&#19977;&#20010;&#21442;&#25968;&#34920;&#31034;poi&#25628;&#32034;&#21306;&#22495;&#65288;&#31354;&#23383;&#31526;&#20018;&#20195;&#34920;&#20840;&#22269;&#65289;&#10;&#9;&#9;query.setPageSize(10);// &#35774;&#32622;&#27599;&#39029;&#26368;&#22810;&#36820;&#22238;&#22810;&#23569;&#26465;poiitem&#10;&#9;&#9;query.setPageNum(currentPage);// &#35774;&#32622;&#26597;&#31532;&#19968;&#39029;&#10;&#10;&#9;&#9;poiSearch = new PoiSearch(this, query);&#10;&#9;&#9;poiSearch.setOnPoiSearchListener(this);&#10;&#9;&#9;poiSearch.searchPOIAsyn();&#10;&#9;&#125;</span><br></pre></td></tr></table></figure></p>
-<p>调用完毕之后，高德的数据会通过onPoiSearched回调接口返回，通过result.getPois()可以获取到PoiItem列表，POiItem实体类中包含了经纬度，城市，地址等信息。这个时候，我们可以将PoiItem集合获取按照需求做出各种不同的展现，这里将他通过ListView展示出来。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">public void onPoiSearched(PoiResult result, int rCode) &#123;&#10;&#9;ArrayList&#60;PoiItem&#62; lists = result.getPois();&#10;&#9;&#9;PoiItem poiItem = lists.get(0);&#10;&#9;&#9;String Address = poiItem.getProvinceName()+poiItem.getCityName()+poiItem.getDirection()+poiItem.getAdName();&#9;&#10;&#9;&#125;</span><br></pre></td></tr></table></figure></p>
+<p>调用完毕之后，高德的数据会通过onPoiSearched回调接口返回，通过result.getPois()可以获取到PoiItem列表，POiItem实体类中包含了经纬度，城市，地址等信息（建议查看<a href="http://lbs.amap.com/Public/reference/AMap_Android_Api_Doc_V3.0_20150914/" target="_blank" rel="external">参考手册</a>）。这个时候，我们可以将PoiItem集合获取按照需求做出各种不同的展现，这里将他通过ListView展示出来。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">public void onPoiSearched(PoiResult result, int rCode) &#123;&#10;&#9;ArrayList&#60;PoiItem&#62; lists = result.getPois();&#10;&#9;&#9;PoiItem poiItem = lists.get(0);&#10;&#9;&#9;String Address = poiItem.getProvinceName()+poiItem.getCityName()+poiItem.getDirection()+poiItem.getAdName();&#9;&#10;&#9;&#125;</span><br></pre></td></tr></table></figure></p>
 <p>到此周边搜索功能就实现了。接下来实现的是，全国各种大厦，住宅楼的检索功能。</p>
 <h2 id="高德地图之云搜索:">高德地图之云搜索:</h2><h2 id="高德地图之移动大头针：">高德地图之移动大头针：</h2><p><a href="http://lbs.amap.com/api/android-sdk/summary/" target="_blank" rel="external">官方文档链接</a></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.daviddone.com/2015/11/19/三方组件之高德地图/" data-id="cih64at90000ocsuzezk2c5aq" class="article-share-link">Share</a>
+      <a data-url="http://slaryme.github.io/2015/11/19/三方组件之高德地图/" data-id="cih7rovdm000u00uzpg63nb8n" class="article-share-link">Share</a>
       
-        <a href="http://www.daviddone.com/2015/11/19/三方组件之高德地图/#disqus_thread" class="article-comment-link">Comments</a>
+        <a href="http://slaryme.github.io/2015/11/19/三方组件之高德地图/#disqus_thread" class="article-comment-link">Comments</a>
 	<div id="disqus_thread"></div>
 <script type="text/javascript">
     /* * * CONFIGURATION VARIABLES * * */
@@ -173,9 +173,9 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.daviddone.com/2015/11/11/更新/" data-id="cih64at7i0000csuzpklg7vd2" class="article-share-link">Share</a>
+      <a data-url="http://slaryme.github.io/2015/11/11/更新/" data-id="cih7rovcn000700uzqiubw8m8" class="article-share-link">Share</a>
       
-        <a href="http://www.daviddone.com/2015/11/11/更新/#disqus_thread" class="article-comment-link">Comments</a>
+        <a href="http://slaryme.github.io/2015/11/11/更新/#disqus_thread" class="article-comment-link">Comments</a>
 	<div id="disqus_thread"></div>
 <script type="text/javascript">
     /* * * CONFIGURATION VARIABLES * * */

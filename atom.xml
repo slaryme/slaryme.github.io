@@ -3,9 +3,9 @@
   <title><![CDATA[David Done 博客]]></title>
   <subtitle><![CDATA[If you can't fly then run, if you can't run then walk, if you can't walk then crawl, but whatever you do you have to keep moving forward...]]></subtitle>
   <link href="/atom.xml" rel="self"/>
-  <link href="http://www.daviddone.com/"/>
-  <updated>2015-11-19T10:50:56.966Z</updated>
-  <id>http://www.daviddone.com/</id>
+  <link href="http://slaryme.github.io/"/>
+  <updated>2015-11-20T02:54:57.469Z</updated>
+  <id>http://slaryme.github.io/</id>
   
   <author>
     <name><![CDATA[daviddone]]></name>
@@ -16,10 +16,10 @@
   
   <entry>
     <title><![CDATA[三方组件之高德地图]]></title>
-    <link href="http://www.daviddone.com/2015/11/19/%E4%B8%89%E6%96%B9%E7%BB%84%E4%BB%B6%E4%B9%8B%E9%AB%98%E5%BE%B7%E5%9C%B0%E5%9B%BE/"/>
-    <id>http://www.daviddone.com/2015/11/19/三方组件之高德地图/</id>
+    <link href="http://slaryme.github.io/2015/11/19/%E4%B8%89%E6%96%B9%E7%BB%84%E4%BB%B6%E4%B9%8B%E9%AB%98%E5%BE%B7%E5%9C%B0%E5%9B%BE/"/>
+    <id>http://slaryme.github.io/2015/11/19/三方组件之高德地图/</id>
     <published>2015-11-19T09:10:19.000Z</published>
-    <updated>2015-11-19T10:50:56.966Z</updated>
+    <updated>2015-11-20T02:54:57.469Z</updated>
     <content type="html"><![CDATA[<p>高德2D地图实现饿了么订餐地址选择</p>
 <h2 id="获取SHA1与Package">获取SHA1与Package</h2><p>Windows：依次在 eclipse 中打开 Window -&gt; Preferances -&gt; Android -&gt; Build。<br>然后选择SHA1：18:F2:AA:4B:CD:FC:9D:BC:B8:64:0D:5D:4A:06:CA:E1:B9:EA:A5:A7</p>
 <p>修改manifest文件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">android:name=&#34;com.amap.api.v2.apikey&#34;&#10;android:value=&#34;22cf23dc41d089037032898817f4f4f2&#34;</span><br></pre></td></tr></table></figure></p>
@@ -35,7 +35,7 @@
 <p>注意还需要绑定地图拖动事件：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">aMap.setOnCameraChangeListener(this);// &#23545;amap&#28155;&#21152;&#31227;&#21160;&#22320;&#22270;&#20107;&#20214;&#30417;&#21548;&#22120;</span><br></pre></td></tr></table></figure></p>
 <h2 id="高德地图之POI（周边搜索）">高德地图之POI（周边搜索）</h2><p>通过调用高德POI(Point Of interest_兴趣点)，会根据传入关键词，搜索出附近的兴趣点地址列表，如：酒店，餐饮，学校。我们可以参考com.amap.map3d.demo.poisearch.PoiKeywordSearchActivity.java案例，首先需要实现OnPoiSearchListener接口。实现接口中的方法，<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@Override&#10;&#9;public void onPoiItemDetailSearched(PoiItemDetail arg0, int arg1) &#123;&#10;&#9;&#9;// TODO Auto-generated method stub&#10;&#9;&#9;&#10;&#9;&#125;&#10;&#9;public void onPoiSearched(PoiResult result, int rCode) &#123;&#10;&#9;&#9;&#10;&#9;&#125;</span><br></pre></td></tr></table></figure></p>
 <p>我在这里封装了一个方法，每一次需要周边搜索的时候，直接调用即可<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">private PoiSearch.Query query;// Poi&#26597;&#35810;&#26465;&#20214;&#31867;&#10;/**&#10;&#9; * &#24320;&#22987;&#36827;&#34892;poi&#25628;&#32034;&#10;&#9; */&#10;&#9;protected void doSearchQuery() &#123;&#10;&#9;&#9;showProgressDialog();// &#26174;&#31034;&#36827;&#24230;&#26694;&#10;&#9;&#9;currentPage = 0;&#10;&#9;&#9;query = new PoiSearch.Query(keyWord, &#34;&#34;, editCity.getText().toString());// &#31532;&#19968;&#20010;&#21442;&#25968;&#34920;&#31034;&#25628;&#32034;&#23383;&#31526;&#20018;&#65292;&#31532;&#20108;&#20010;&#21442;&#25968;&#34920;&#31034;poi&#25628;&#32034;&#31867;&#22411;&#65292;&#31532;&#19977;&#20010;&#21442;&#25968;&#34920;&#31034;poi&#25628;&#32034;&#21306;&#22495;&#65288;&#31354;&#23383;&#31526;&#20018;&#20195;&#34920;&#20840;&#22269;&#65289;&#10;&#9;&#9;query.setPageSize(10);// &#35774;&#32622;&#27599;&#39029;&#26368;&#22810;&#36820;&#22238;&#22810;&#23569;&#26465;poiitem&#10;&#9;&#9;query.setPageNum(currentPage);// &#35774;&#32622;&#26597;&#31532;&#19968;&#39029;&#10;&#10;&#9;&#9;poiSearch = new PoiSearch(this, query);&#10;&#9;&#9;poiSearch.setOnPoiSearchListener(this);&#10;&#9;&#9;poiSearch.searchPOIAsyn();&#10;&#9;&#125;</span><br></pre></td></tr></table></figure></p>
-<p>调用完毕之后，高德的数据会通过onPoiSearched回调接口返回，通过result.getPois()可以获取到PoiItem列表，POiItem实体类中包含了经纬度，城市，地址等信息。这个时候，我们可以将PoiItem集合获取按照需求做出各种不同的展现，这里将他通过ListView展示出来。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">public void onPoiSearched(PoiResult result, int rCode) &#123;&#10;&#9;ArrayList&#60;PoiItem&#62; lists = result.getPois();&#10;&#9;&#9;PoiItem poiItem = lists.get(0);&#10;&#9;&#9;String Address = poiItem.getProvinceName()+poiItem.getCityName()+poiItem.getDirection()+poiItem.getAdName();&#9;&#10;&#9;&#125;</span><br></pre></td></tr></table></figure></p>
+<p>调用完毕之后，高德的数据会通过onPoiSearched回调接口返回，通过result.getPois()可以获取到PoiItem列表，POiItem实体类中包含了经纬度，城市，地址等信息（建议查看<a href="http://lbs.amap.com/Public/reference/AMap_Android_Api_Doc_V3.0_20150914/" target="_blank" rel="external">参考手册</a>）。这个时候，我们可以将PoiItem集合获取按照需求做出各种不同的展现，这里将他通过ListView展示出来。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">public void onPoiSearched(PoiResult result, int rCode) &#123;&#10;&#9;ArrayList&#60;PoiItem&#62; lists = result.getPois();&#10;&#9;&#9;PoiItem poiItem = lists.get(0);&#10;&#9;&#9;String Address = poiItem.getProvinceName()+poiItem.getCityName()+poiItem.getDirection()+poiItem.getAdName();&#9;&#10;&#9;&#125;</span><br></pre></td></tr></table></figure></p>
 <p>到此周边搜索功能就实现了。接下来实现的是，全国各种大厦，住宅楼的检索功能。</p>
 <h2 id="高德地图之云搜索:">高德地图之云搜索:</h2><h2 id="高德地图之移动大头针：">高德地图之移动大头针：</h2><p><a href="http://lbs.amap.com/api/android-sdk/summary/" target="_blank" rel="external">官方文档链接</a></p>
 ]]></content>
@@ -44,18 +44,18 @@
 <h2 id="获取SHA1与Package">获取SHA1与Package</h2><p>Windows：依次在 eclipse 中打开 Window -&gt; Preferances -&gt; Android -&gt; ]]>
     </summary>
     
-      <category term="Android" scheme="http://www.daviddone.com/tags/Android/"/>
+      <category term="Android" scheme="http://slaryme.github.io/tags/Android/"/>
     
-      <category term="技术" scheme="http://www.daviddone.com/categories/%E6%8A%80%E6%9C%AF/"/>
+      <category term="技术" scheme="http://slaryme.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
     
-      <category term="Android" scheme="http://www.daviddone.com/categories/%E6%8A%80%E6%9C%AF/Android/"/>
+      <category term="Android" scheme="http://slaryme.github.io/categories/%E6%8A%80%E6%9C%AF/Android/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[Android SDK 镜像更新]]></title>
-    <link href="http://www.daviddone.com/2015/11/11/%E6%9B%B4%E6%96%B0/"/>
-    <id>http://www.daviddone.com/2015/11/11/更新/</id>
+    <link href="http://slaryme.github.io/2015/11/11/%E6%9B%B4%E6%96%B0/"/>
+    <id>http://slaryme.github.io/2015/11/11/更新/</id>
     <published>2015-11-11T08:40:22.000Z</published>
     <updated>2015-11-11T08:48:46.353Z</updated>
     <content type="html"><![CDATA[<p>当遇到代理不稳定的情况，可以采用国内镜像资源更新Android SDK。不得不说，有时候镜像资源的速度还是非常给力的。这里推荐一下：<a href="http://www.androiddevtools.cn/" target="_blank" rel="external">国内镜像资源</a>。</p>
@@ -66,18 +66,18 @@
     <![CDATA[<p>当遇到代理不稳定的情况，可以采用国内镜像资源更新Android SDK。不得不说，有时候镜像资源的速度还是非常给力的。这里推荐一下：<a href="http://www.androiddevtools.cn/" target="_blank" rel="external"]]>
     </summary>
     
-      <category term="Android" scheme="http://www.daviddone.com/tags/Android/"/>
+      <category term="Android" scheme="http://slaryme.github.io/tags/Android/"/>
     
-      <category term="技术" scheme="http://www.daviddone.com/categories/%E6%8A%80%E6%9C%AF/"/>
+      <category term="技术" scheme="http://slaryme.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
     
-      <category term="Android" scheme="http://www.daviddone.com/categories/%E6%8A%80%E6%9C%AF/Android/"/>
+      <category term="Android" scheme="http://slaryme.github.io/categories/%E6%8A%80%E6%9C%AF/Android/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[Android API Guides]]></title>
-    <link href="http://www.daviddone.com/2015/10/22/Guides/"/>
-    <id>http://www.daviddone.com/2015/10/22/Guides/</id>
+    <link href="http://slaryme.github.io/2015/10/22/Guides/"/>
+    <id>http://slaryme.github.io/2015/10/22/Guides/</id>
     <published>2015-10-22T07:00:55.000Z</published>
     <updated>2015-11-03T15:16:02.042Z</updated>
     <content type="html"><![CDATA[<h1 id="Android_开发指南">Android 开发指南</h1><h2 id="简介_Introduction_to_Android">简介 <a href="https://developer.android.com/guide/index.html" target="_blank" rel="external">Introduction to Android</a></h2><p>安卓提供了丰富的应用层框架来使得你能够在java开发环境下在移动设备下创建创新型App和游戏。左边导航栏中提供详情，利用Android丰富多样的API的创建App。如果你新入手Android，那么理解关于Android应用层框架的基本概念就显得尤为的重要。</p>
@@ -102,18 +102,18 @@
     <![CDATA[<h1 id="Android_开发指南">Android 开发指南</h1><h2 id="简介_Introduction_to_Android">简介 <a href="https://developer.android.com/guide/index.html" targe]]>
     </summary>
     
-      <category term="Translation" scheme="http://www.daviddone.com/tags/Translation/"/>
+      <category term="Translation" scheme="http://slaryme.github.io/tags/Translation/"/>
     
-      <category term="English" scheme="http://www.daviddone.com/categories/English/"/>
+      <category term="English" scheme="http://slaryme.github.io/categories/English/"/>
     
-      <category term="Translation" scheme="http://www.daviddone.com/categories/English/Translation/"/>
+      <category term="Translation" scheme="http://slaryme.github.io/categories/English/Translation/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[如何掌握英文]]></title>
-    <link href="http://www.daviddone.com/2015/10/13/%E5%A6%82%E4%BD%95%E6%8E%8C%E6%8F%A1%E8%8B%B1%E6%96%87/"/>
-    <id>http://www.daviddone.com/2015/10/13/如何掌握英文/</id>
+    <link href="http://slaryme.github.io/2015/10/13/%E5%A6%82%E4%BD%95%E6%8E%8C%E6%8F%A1%E8%8B%B1%E6%96%87/"/>
+    <id>http://slaryme.github.io/2015/10/13/如何掌握英文/</id>
     <published>2015-10-13T01:54:54.000Z</published>
     <updated>2015-10-15T02:30:32.617Z</updated>
     <content type="html"><![CDATA[<h2 id="目的">目的</h2><p>学习一门外语，不可避及的就是谈一谈，学习这门外语的目的，例如笔者学习英语的主要的目的是，学好英文，能够无障碍看美剧，看英文原著，看英文技术文档，用流利的英文交流，或者用英文来写写文章来陶冶一下情操。正是有了这些目标，我才能够有动力不断学习英文，有意识的运用英文。</p>
@@ -127,16 +127,16 @@
     <![CDATA[<h2 id="目的">目的</h2><p>学习一门外语，不可避及的就是谈一谈，学习这门外语的目的，例如笔者学习英语的主要的目的是，学好英文，能够无障碍看美剧，看英文原著，看英文技术文档，用流利的英文交流，或者用英文来写写文章来陶冶一下情操。正是有了这些目标，我才能够有动力不断学]]>
     </summary>
     
-      <category term="English" scheme="http://www.daviddone.com/categories/English/"/>
+      <category term="English" scheme="http://slaryme.github.io/categories/English/"/>
     
-      <category term="Methodology" scheme="http://www.daviddone.com/categories/English/Methodology/"/>
+      <category term="Methodology" scheme="http://slaryme.github.io/categories/English/Methodology/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[Android 屏幕适配]]></title>
-    <link href="http://www.daviddone.com/2015/09/12/%E5%B1%8F%E5%B9%95%E9%80%82%E9%85%8D/"/>
-    <id>http://www.daviddone.com/2015/09/12/屏幕适配/</id>
+    <link href="http://slaryme.github.io/2015/09/12/%E5%B1%8F%E5%B9%95%E9%80%82%E9%85%8D/"/>
+    <id>http://slaryme.github.io/2015/09/12/屏幕适配/</id>
     <published>2015-09-12T02:17:15.000Z</published>
     <updated>2015-11-09T02:36:01.518Z</updated>
     <content type="html"><![CDATA[<h2 id="何为适配？">何为适配？</h2><p><img src="/images/android_screen/android_devices.jpg" alt=""><br>鉴于Android设备的种类繁多，屏幕大小各异，各种碎片化问题存在，在设计App的时候，需要将适配考虑进去。简单的说，适配就是为了让市面上使用各种屏幕大小，各种机型的用户们都能够正常，且流畅的使用我们的App。如果我们不考虑适配,直接使用UI设计师给出长度为50px方形的logo图形，在Android开发的布局文件中设置控件长宽为50px，那么我们得到的结果是任何设备上显示的控件长度50px，就会出现在低分辨率的手机上logo会失真，高分辨率会缩小。</p>
@@ -154,18 +154,18 @@
     <![CDATA[<h2 id="何为适配？">何为适配？</h2><p><img src="/images/android_screen/android_devices.jpg" alt=""><br>鉴于Android设备的种类繁多，屏幕大小各异，各种碎片化问题存在，在设计App的时候，需要将]]>
     </summary>
     
-      <category term="Android" scheme="http://www.daviddone.com/tags/Android/"/>
+      <category term="Android" scheme="http://slaryme.github.io/tags/Android/"/>
     
-      <category term="技术" scheme="http://www.daviddone.com/categories/%E6%8A%80%E6%9C%AF/"/>
+      <category term="技术" scheme="http://slaryme.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
     
-      <category term="Android" scheme="http://www.daviddone.com/categories/%E6%8A%80%E6%9C%AF/Android/"/>
+      <category term="Android" scheme="http://slaryme.github.io/categories/%E6%8A%80%E6%9C%AF/Android/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[node++快捷键]]></title>
-    <link href="http://www.daviddone.com/2015/07/12/node-%E5%BF%AB%E6%8D%B7%E9%94%AE/"/>
-    <id>http://www.daviddone.com/2015/07/12/node-快捷键/</id>
+    <link href="http://slaryme.github.io/2015/07/12/node-%E5%BF%AB%E6%8D%B7%E9%94%AE/"/>
+    <id>http://slaryme.github.io/2015/07/12/node-快捷键/</id>
     <published>2015-07-12T02:17:15.000Z</published>
     <updated>2015-11-05T03:14:58.726Z</updated>
     <content type="html"><![CDATA[<p><a href="https://notepad-plus-plus.org/" target="_blank" rel="external">nodepad++</a>是我用过最好的文字编辑软件，她不但轻巧优雅，而且功能强大。不过为了更有效率的掌握她，我决定学习一些使用技巧和快捷键。<br><a href="https://notepad-plus-plus.org/" target="_blank" rel="external">参考官网</a><br><!-- http://blog.csdn.net/vindraz/article/details/12579201--></p>
@@ -176,18 +176,18 @@
     <![CDATA[<p><a href="https://notepad-plus-plus.org/" target="_blank" rel="external">nodepad++</a>是我用过最好的文字编辑软件，她不但轻巧优雅，而且功能强大。不过为了更有效率的掌握她，我决定学习一些使用技]]>
     </summary>
     
-      <category term="tools" scheme="http://www.daviddone.com/tags/tools/"/>
+      <category term="tools" scheme="http://slaryme.github.io/tags/tools/"/>
     
-      <category term="技术" scheme="http://www.daviddone.com/categories/%E6%8A%80%E6%9C%AF/"/>
+      <category term="技术" scheme="http://slaryme.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
     
-      <category term="tools" scheme="http://www.daviddone.com/categories/%E6%8A%80%E6%9C%AF/tools/"/>
+      <category term="tools" scheme="http://slaryme.github.io/categories/%E6%8A%80%E6%9C%AF/tools/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[MarkDown简明教材]]></title>
-    <link href="http://www.daviddone.com/2015/06/10/MarkDown%E7%AE%80%E6%98%8E%E6%95%99%E6%9D%90/"/>
-    <id>http://www.daviddone.com/2015/06/10/MarkDown简明教材/</id>
+    <link href="http://slaryme.github.io/2015/06/10/MarkDown%E7%AE%80%E6%98%8E%E6%95%99%E6%9D%90/"/>
+    <id>http://slaryme.github.io/2015/06/10/MarkDown简明教材/</id>
     <published>2015-06-10T03:05:29.000Z</published>
     <updated>2015-11-10T03:57:43.281Z</updated>
     <content type="html"><![CDATA[<h2 id="引用语法">引用语法</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#62; &#24341;&#29992;&#19968;&#10;&#62; &#22810;&#34892;&#24341;&#29992;</span><br></pre></td></tr></table></figure>
@@ -226,18 +226,18 @@
     <![CDATA[<h2 id="引用语法">引用语法</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td clas]]>
     </summary>
     
-      <category term="markdown" scheme="http://www.daviddone.com/tags/markdown/"/>
+      <category term="markdown" scheme="http://slaryme.github.io/tags/markdown/"/>
     
-      <category term="技术" scheme="http://www.daviddone.com/categories/%E6%8A%80%E6%9C%AF/"/>
+      <category term="技术" scheme="http://slaryme.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
     
-      <category term="Hexo" scheme="http://www.daviddone.com/categories/%E6%8A%80%E6%9C%AF/Hexo/"/>
+      <category term="Hexo" scheme="http://slaryme.github.io/categories/%E6%8A%80%E6%9C%AF/Hexo/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[使用Github搭建Hexo博客]]></title>
-    <link href="http://www.daviddone.com/2015/06/10/%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/"/>
-    <id>http://www.daviddone.com/2015/06/10/搭建博客/</id>
+    <link href="http://slaryme.github.io/2015/06/10/%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/"/>
+    <id>http://slaryme.github.io/2015/06/10/搭建博客/</id>
     <published>2015-06-10T02:12:34.000Z</published>
     <updated>2015-11-05T03:14:41.441Z</updated>
     <content type="html"><![CDATA[<h3 id="目录">目录</h3><p></p><p><br>    1：Hexo简介<br>    2：Hexo在本地安装<br>    3：Github分配博客项目空间<br>    4：发布Hexo到Github上<br>    5：绑定个性化域名<br>    6：个性化配置<br>    7：使用MD创建第一篇博客<br>    8：问题与结论<br></p><p></p>
@@ -275,13 +275,13 @@
     <![CDATA[<h3 id="目录">目录</h3><p></p><p><br>    1：Hexo简介<br>    2：Hexo在本地安装<br>    3：Github分配博客项目空间<br>    4：发布Hexo到Github上<br>    5：绑定个性化域名<br>    6：个]]>
     </summary>
     
-      <category term="Hexo教材" scheme="http://www.daviddone.com/tags/Hexo%E6%95%99%E6%9D%90/"/>
+      <category term="Hexo教材" scheme="http://slaryme.github.io/tags/Hexo%E6%95%99%E6%9D%90/"/>
     
-      <category term="标记二" scheme="http://www.daviddone.com/tags/%E6%A0%87%E8%AE%B0%E4%BA%8C/"/>
+      <category term="标记二" scheme="http://slaryme.github.io/tags/%E6%A0%87%E8%AE%B0%E4%BA%8C/"/>
     
-      <category term="技术" scheme="http://www.daviddone.com/categories/%E6%8A%80%E6%9C%AF/"/>
+      <category term="技术" scheme="http://slaryme.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
     
-      <category term="Hexo" scheme="http://www.daviddone.com/categories/%E6%8A%80%E6%9C%AF/Hexo/"/>
+      <category term="Hexo" scheme="http://slaryme.github.io/categories/%E6%8A%80%E6%9C%AF/Hexo/"/>
     
   </entry>
   
