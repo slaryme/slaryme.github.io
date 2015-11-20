@@ -3,19 +3,19 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Archives | David Done 博客</title>
+  <title>Archives | Slary 博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="daviddone | Android">
+  <meta name="description" content="slaryme | UI Designer">
 <meta property="og:type" content="website">
-<meta property="og:title" content="David Done 博客">
+<meta property="og:title" content="Slary 博客">
 <meta property="og:url" content="http://slaryme.github.io/archives/index.html">
-<meta property="og:site_name" content="David Done 博客">
-<meta property="og:description" content="daviddone | Android">
+<meta property="og:site_name" content="Slary 博客">
+<meta property="og:description" content="slaryme | UI Designer">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="David Done 博客">
-<meta name="twitter:description" content="daviddone | Android">
+<meta name="twitter:title" content="Slary 博客">
+<meta name="twitter:description" content="slaryme | UI Designer">
   
-    <link rel="alternative" href="/atom.xml" title="David Done 博客" type="application/atom+xml">
+    <link rel="alternative" href="/atom.xml" title="Slary 博客" type="application/atom+xml">
   
   
     <link rel="icon" href="/favicon.png">
@@ -33,11 +33,11 @@
   <div id="header-outer" class="outer">
     <div id="header-title" class="inner">
       <h1 id="logo-wrap">
-        <a href="/" id="logo">David Done 博客</a>
+        <a href="/" id="logo">Slary 博客</a>
       </h1>
       
         <h2 id="subtitle-wrap">
-          <a href="/" id="subtitle">If you can&#39;t fly then run, if you can&#39;t run then walk, if you can&#39;t walk then crawl, but whatever you do you have to keep moving forward...</a>
+          <a href="/" id="subtitle">当一个优秀的设计师是种什么样的体验？</a>
         </h2>
       
     </div>
@@ -64,403 +64,6 @@
 </header>
       <div class="outer">
         <section id="main">
-  
-    <article id="post-三方组件之高德地图" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2015/11/19/三方组件之高德地图/" class="article-date">
-  <time datetime="2015-11-19T09:10:19.000Z" itemprop="datePublished">2015-11-19</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/技术/">技术</a>►<a class="article-category-link" href="/categories/技术/Android/">Android</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/11/19/三方组件之高德地图/">三方组件之高德地图</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>高德2D地图实现饿了么订餐地址选择</p>
-<h2 id="获取SHA1与Package">获取SHA1与Package</h2><p>Windows：依次在 eclipse 中打开 Window -&gt; Preferances -&gt; Android -&gt; Build。<br>然后选择SHA1：18:F2:AA:4B:CD:FC:9D:BC:B8:64:0D:5D:4A:06:CA:E1:B9:EA:A5:A7</p>
-<p>修改manifest文件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">android:name=&#34;com.amap.api.v2.apikey&#34;&#10;android:value=&#34;22cf23dc41d089037032898817f4f4f2&#34;</span><br></pre></td></tr></table></figure></p>
-<p>即可</p>
-<h2 id="高德地图之地位(展示地图)：">高德地图之地位(展示地图)：</h2><h3 id="Step_1，添加布局文件_basicmap_activity-xml中的布局文件；">Step 1，添加布局文件 basicmap_activity.xml中的布局文件；</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#60;com.amap.api.maps2d.MapView&#10;android:id=&#34;@+id/map&#34;&#10;android:layout_width=&#34;fill_parent&#34;&#10;android:layout_height=&#34;fill_parent&#34; /&#62;</span><br></pre></td></tr></table></figure>
-<p>然后引入com.amapv2.apis.basic. BasicMapActivity.java 中的核心代码。</p>
-<h3 id="Step_2,定位并在地图上显示出自定义的小点（不包含追随功能）：">Step 2,定位并在地图上显示出自定义的小点（不包含追随功能）：</h3><p>引入com.amap.map2d.demo.location.LocationNetworkActivity 中的相关定位代码，定位完毕之后采用Toast提示出来，如能正确定位，将定位得到的结果显示在地图上。这里采用自定义图标代替系统的默认图标。这里重点提一下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">aMapLocManager.requestLocationData(&#10;&#9;&#9;&#9;&#9;LocationProviderProxy.AMapNetwork, 2000, 10, this);</span><br></pre></td></tr></table></figure></p>
-<p>第一个参数是定位provider，第二个参数时间最短是2000毫秒，第三个参数距离间隔单位是米，第四个参数是定位监听者<br>另外注意一个开发文档上没有的细节，设置初始化的缩放比例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">aMap.moveCamera(CameraUpdateFactory.zoomTo(12));</span><br></pre></td></tr></table></figure></p>
-<p><a href="http://lbs.amap.com/Public/reference/AMap_Android_Api_Doc_V3.0_20150914/" target="_blank" rel="external">开发文档</a><br>参考 com.amapv2.apis.overlay.MarkerActivity.java实例代码可得，<br><a href="http://lbs.amap.com/api/android-sdk/guide/overlay/" target="_blank" rel="external">覆盖物——标记小点</a><br>我对其封装了如下代码；<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">AMap aMap;&#10;private void addMarkersToMap(LatLng locationLaLng)&#10;&#9;&#123;&#10;&#9;//&#28155;&#21152;&#27599;&#19968;&#24103;&#22270;&#29255;&#12290;&#10;&#9;&#9;markerOption = new MarkerOptions();//&#26681;&#25454;&#32463;&#32428;&#24230;new LatLng(34.341568, 108.940174)&#10;&#9;&#9;markerOption.position(locationLaLng);&#10;&#9;&#9;markerOption.title(&#34;&#21271;&#20140;&#24066;&#34;).snippet(&#34;&#21271;&#20140;&#24066;&#65306;39.983951, 116.310447&#34;);&#10;&#9;&#9;markerOption.draggable(false);// &#22320;&#22270;&#25302;&#25341;&#10;&#9;&#9;markerOption.icon(BitmapDescriptorFactory.fromResource(R.drawable.arrow));&#10;&#9;&#9;aMap.addMarker(markerOption);&#10;&#9;&#125;</span><br></pre></td></tr></table></figure></p>
-<p>注意每次地点改变之后将会移除Marker，重新标记。可以调用aMap.clear()清除地图。不过，呵呵，我们这里要拖动的地图，可不是Marker标记图标。所以我们要另找方法。</p>
-<h2 id="地图上的标记不动，拖拽地图，位置更改">地图上的标记不动，拖拽地图，位置更改</h2><p>在确定了标记处于地图中央，且无论如何不会改动，拖动地图，获取标记的位置图标，即地图中央。由文档可得，地图中央的位置就是视图中央的位置，可以简单获取。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">LatLng mTarget = aMap.getCameraPosition().target;</span><br></pre></td></tr></table></figure></p>
-<p>mTarget为地图中央的经纬度。然后我们就可以将地图和图标采用Fragment布局方式，将地图置于下方，图标置于地图的上方正中央。接下来就是拖动地图，获取其正中央的经纬度了。拖动地图可参考实例代码 com.amapv2.apis.basic.EventsActivity.java。<br>需要实现接口，OnCameraChangeListener,并实现接口中的两个方法：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@Override&#10;&#9;public void onCameraChange(CameraPosition cameraPosition) &#123;&#10;&#9;&#9;Log.e(&#34;&#20301;&#32622;&#31227;&#21160;&#34;,cameraPosition.toString());&#10;&#9;&#125;&#10;&#9;@Override&#10;&#9;public void onCameraChangeFinish(CameraPosition cameraPosition) &#123;&#10;&#9;&#9;Log.e(&#34;&#20301;&#32622;&#31227;&#21160;&#32467;&#26463;&#34;,cameraPosition.toString());&#10;&#9;&#9;//&#33719;&#21462;&#25302;&#21160;&#21518;&#30340;&#20013;&#22830;&#10;&#9;&#9;LatLng mTarget = aMap.getCameraPosition().target;&#10;&#9;&#125;</span><br></pre></td></tr></table></figure></p>
-<p>注意还需要绑定地图拖动事件：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">aMap.setOnCameraChangeListener(this);// &#23545;amap&#28155;&#21152;&#31227;&#21160;&#22320;&#22270;&#20107;&#20214;&#30417;&#21548;&#22120;</span><br></pre></td></tr></table></figure></p>
-<h2 id="高德地图之POI（周边搜索）">高德地图之POI（周边搜索）</h2><p>通过调用高德POI(Point Of interest_兴趣点)，会根据传入关键词，搜索出附近的兴趣点地址列表，如：酒店，餐饮，学校。我们可以参考com.amap.map3d.demo.poisearch.PoiKeywordSearchActivity.java案例，首先需要实现OnPoiSearchListener接口。实现接口中的方法，<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@Override&#10;&#9;public void onPoiItemDetailSearched(PoiItemDetail arg0, int arg1) &#123;&#10;&#9;&#9;// TODO Auto-generated method stub&#10;&#9;&#9;&#10;&#9;&#125;&#10;&#9;public void onPoiSearched(PoiResult result, int rCode) &#123;&#10;&#9;&#9;&#10;&#9;&#125;</span><br></pre></td></tr></table></figure></p>
-<p>我在这里封装了一个方法，每一次需要周边搜索的时候，直接调用即可<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">private PoiSearch.Query query;// Poi&#26597;&#35810;&#26465;&#20214;&#31867;&#10;/**&#10;&#9; * &#24320;&#22987;&#36827;&#34892;poi&#25628;&#32034;&#10;&#9; */&#10;&#9;protected void doSearchQuery() &#123;&#10;&#9;&#9;showProgressDialog();// &#26174;&#31034;&#36827;&#24230;&#26694;&#10;&#9;&#9;currentPage = 0;&#10;&#9;&#9;query = new PoiSearch.Query(keyWord, &#34;&#34;, editCity.getText().toString());// &#31532;&#19968;&#20010;&#21442;&#25968;&#34920;&#31034;&#25628;&#32034;&#23383;&#31526;&#20018;&#65292;&#31532;&#20108;&#20010;&#21442;&#25968;&#34920;&#31034;poi&#25628;&#32034;&#31867;&#22411;&#65292;&#31532;&#19977;&#20010;&#21442;&#25968;&#34920;&#31034;poi&#25628;&#32034;&#21306;&#22495;&#65288;&#31354;&#23383;&#31526;&#20018;&#20195;&#34920;&#20840;&#22269;&#65289;&#10;&#9;&#9;query.setPageSize(10);// &#35774;&#32622;&#27599;&#39029;&#26368;&#22810;&#36820;&#22238;&#22810;&#23569;&#26465;poiitem&#10;&#9;&#9;query.setPageNum(currentPage);// &#35774;&#32622;&#26597;&#31532;&#19968;&#39029;&#10;&#10;&#9;&#9;poiSearch = new PoiSearch(this, query);&#10;&#9;&#9;poiSearch.setOnPoiSearchListener(this);&#10;&#9;&#9;poiSearch.searchPOIAsyn();&#10;&#9;&#125;</span><br></pre></td></tr></table></figure></p>
-<p>调用完毕之后，高德的数据会通过onPoiSearched回调接口返回，通过result.getPois()可以获取到PoiItem列表，POiItem实体类中包含了经纬度，城市，地址等信息（建议查看<a href="http://lbs.amap.com/Public/reference/AMap_Android_Api_Doc_V3.0_20150914/" target="_blank" rel="external">参考手册</a>）。这个时候，我们可以将PoiItem集合获取按照需求做出各种不同的展现，这里将他通过ListView展示出来。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">public void onPoiSearched(PoiResult result, int rCode) &#123;&#10;&#9;ArrayList&#60;PoiItem&#62; lists = result.getPois();&#10;&#9;&#9;PoiItem poiItem = lists.get(0);&#10;&#9;&#9;String Address = poiItem.getProvinceName()+poiItem.getCityName()+poiItem.getDirection()+poiItem.getAdName();&#9;&#10;&#9;&#125;</span><br></pre></td></tr></table></figure></p>
-<p>到此周边搜索功能就实现了。接下来实现的是，全国各种大厦，住宅楼的检索功能。</p>
-<h2 id="高德地图之云搜索:">高德地图之云搜索:</h2><h2 id="高德地图之移动大头针：">高德地图之移动大头针：</h2><p><a href="http://lbs.amap.com/api/android-sdk/summary/" target="_blank" rel="external">官方文档链接</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://slaryme.github.io/2015/11/19/三方组件之高德地图/" data-id="cih7rovdm000u00uzpg63nb8n" class="article-share-link">Share</a>
-      
-        <a href="http://slaryme.github.io/2015/11/19/三方组件之高德地图/#disqus_thread" class="article-comment-link">Comments</a>
-	<div id="disqus_thread"></div>
-<script type="text/javascript">
-    /* * * CONFIGURATION VARIABLES * * */
-    var disqus_shortname = 'daviddone';
-    
-    /* * * DON'T EDIT BELOW THIS LINE * * */
-    (function() {
-        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="android-更新" class="article article-type-android" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2015/11/11/更新/" class="article-date">
-  <time datetime="2015-11-11T08:40:22.000Z" itemprop="datePublished">2015-11-11</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/技术/">技术</a>►<a class="article-category-link" href="/categories/技术/Android/">Android</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/11/11/更新/">Android SDK 镜像更新</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>当遇到代理不稳定的情况，可以采用国内镜像资源更新Android SDK。不得不说，有时候镜像资源的速度还是非常给力的。这里推荐一下：<a href="http://www.androiddevtools.cn/" target="_blank" rel="external">国内镜像资源</a>。</p>
-<h2 id="Step_1">Step 1</h2><p>打开Android SDK Manager 选择 Tools –&gt; Options,然后在 Proxy Settings的Http Proxy Server和Http Proxy Port分别填上mirrors.neusoft.edu.cn和80，勾选上 [Force https://… sources to be fetched using http]，然后点击Close。</p>
-<h2 id="Step_2">Step 2</h2><p>然后选择Android SDK Manager下的Packages和Reload，这时候就可以更新了。<br><img src="/images/andrdoid_sdk_upadte.jpg" alt="图片"></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://slaryme.github.io/2015/11/11/更新/" data-id="cih7rovcn000700uzqiubw8m8" class="article-share-link">Share</a>
-      
-        <a href="http://slaryme.github.io/2015/11/11/更新/#disqus_thread" class="article-comment-link">Comments</a>
-	<div id="disqus_thread"></div>
-<script type="text/javascript">
-    /* * * CONFIGURATION VARIABLES * * */
-    var disqus_shortname = 'daviddone';
-    
-    /* * * DON'T EDIT BELOW THIS LINE * * */
-    (function() {
-        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="android-Guides" class="article article-type-android" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2015/10/22/Guides/" class="article-date">
-  <time datetime="2015-10-22T07:00:55.000Z" itemprop="datePublished">2015-10-22</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/English/">English</a>►<a class="article-category-link" href="/categories/English/Translation/">Translation</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/10/22/Guides/">Android API Guides</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="Android_开发指南">Android 开发指南</h1><h2 id="简介_Introduction_to_Android">简介 <a href="https://developer.android.com/guide/index.html" target="_blank" rel="external">Introduction to Android</a></h2><p>安卓提供了丰富的应用层框架来使得你能够在java开发环境下在移动设备下创建创新型App和游戏。左边导航栏中提供详情，利用Android丰富多样的API的创建App。如果你新入手Android，那么理解关于Android应用层框架的基本概念就显得尤为的重要。</p>
-<h2 id="应用提供多个入口">应用提供多个入口</h2><p>创建安卓应用由一系列可以独立调用的不同组件组合搞定。例如,一个Activity提供用户界面的的单个屏幕，一个Service独立的在后台运行。你可以采用Intent从一个组件到另外一个组件。甚至可以在不同应用之间调用组件。比如调用地图应用的Activity来显示地址。这种方式为单个应用提供多个入口。使得任何应用能够默认的调用其它的应用。</p>
-<h2 id="App适配不同的设备">App适配不同的设备</h2><p>Android提供可适配化的应用框架，为不同配置参数的设备提供唯一的资源。例如，你可以为不同大小的屏幕创建不同的layout布局文件。系统根据当前屏幕大小选择其中一种进行布局。你可以查询设备在运行时设备的特性是否可用，如果任何应用的特性要求使用指定硬件，比如说camera。若有必要，你可在google play等应用商城上，声明你的应用所需的特性不允许在不支持某种特性的设备上安装该应用。<br>了解更多：<br>          Device Compatibility 设备兼容。<br>          Resources Overview  资源概述。<br>          User Interface Overview 用户界面概述。</p>
-<h2 id="应用的基础知识_Application_Fundamentals">应用的基础知识 <a href="https://developer.android.com/guide/components/fundamentals.html" target="_blank" rel="external">Application Fundamentals</a></h2><p>Android应用有JAVA语言编写，Android SDK工具将会编译所有代码（包括所有数据，资源文件）进入apk(安卓安装包)。apk安装包是一个压缩文件，以.apk后缀结尾。一个apk文件包含所有的Android应用内容，是Android设备用来安装App的文件。一旦安装到设备中，每一个Android应用在自己的安全沙盒中运行。</p>
-<ul>
-<li>Android操作系统是一个多用户的Linux系统。每个App是不同的用户。</li>
-<li>每个进程都有自己的虚拟机（VM），因此，每个App的代码独立运行。</li>
-<li>默认情况下，每个App运行在它自己的Linux进程中，当App的任何组件需要被执行的时候，Android就会开启进程，当进程不在需要或者其它App需要系统恢复内存之时``，Android将会关闭进程。</li>
-</ul>
-<p>通过这样的方式，Android系统实现了最少特权原则。也就是，每一个App在默认情况下，只能访问它本身运行所需的组件``,不再能够访问更多。这就能够确保，App不能访问哪些它没有权限访问的系统的其它部分，从而营造一种安全的环境。<br>然而，任然有一些方法可以让App和其它的App分享数据，让App获取系统的服务：</p>
-<ul>
-<li>两个App同时分享相同的Linux用户Id是可能的，当它们能够互相访问对方的文件。为了节省系统资源，拥有相同用户Id的App能够安排在一个Linux进程中运行,共享同一个虚拟机（应用程序也必须使用相同的证书）。</li>
-<li>一个应用程序可以申请获取设备数据,如用户的联系人，短信，挂载存储设备(SD卡)，摄像头,蓝牙,以及其它更多的设备数据。所有的App权限需要在用户安装是授予。<br>以上包含了Android应用程序在系统中存在的相关基础知识。接下来的文档将会介绍:</li>
-<li>定义你的App的核心框架组件。</li>
-<li>为应用申明组件以及相关设备功能的清单文件（manifest）。</li>
-<li>与App代码分离开来的资源文件夹（Resources），它允许App为一系列的设备配置优化它的行为。<h3 id="应用组件">应用组件</h3>应用程序组件是一个Android应用程序的基本构建模块，每个组件都是系统可以进入App的不同入口，并不是所有的组件都为用户实际的入口，有一写相互依赖，但是每一个都以自己的实体存在着并扮演一个特定角色 。每一个都是帮助定义应用程序的整体行为的独立构建模块。<br>总共有四种不同类型的应用程序组件。每种类型有不同的目的，有着定义组件如何创建和销毁的生命周期。<br>下列是四种应用程序组件:<h4 id="Activities（活动）">Activities（活动）</h4>一个Activity代表拥有单一屏幕的用户界面。例如，一个email应用程序可能拥有一个activity展示新邮件列表，另一个activity用来撰写Email，还有一个用来阅读email。尽管Activities相互协作，构成一个有凝聚力的用户体验，但是每一个都是独立存在。例如，不同的App能够启动这些Activities的任何一个（email应用允许的话）。例如，一个相机应用能够开启每个Email应用中撰写新邮件的Activity，这样来确保用户来分享一张图片。<br>一个activity作为Activity的子类实现，你能在Activities的开发指南中了解更多。<h4 id="Services（服务）">Services（服务）</h4>服务是一个在后台运行的组件,用来进行长时间运行的操作，抑或为远程进程工作。服务不提供用户界面，例如,一个服务可能在后台播放音乐，然后用户使用的是不同的应用程序，或许，它在不需要阻止用户正在进行的一个Activity的交互就能够通过网络获取数据。另一个组件,比如activity，可以通过可以开始服务,让它运行，抑或添加绑定来与之交互。<br>service是作为Service的一个子类实现,你可以在service的官方文档中了解更多。<h4 id="Content_providers（内容提供者）">Content providers（内容提供者）</h4>内容提供者管理一组共享App数据，你可以将数据存储在文件中，sqlite数据库，网络，或App能够访问的任何存储设备。通过内容提供者，其它应用程序可以查询或甚至修改数据（如果内容提供者允许它）。例如,Android系统提供了一个内容提供者来管理用户的联系人信息。因此,任何拥有适当的权限可以查询内容提供商的一部分（(如ContactsContract.Data)）来进行一个特定联系人的读写信息操作。<br>内容提供商也用于读写 那些App私有，不能分享的相关数据。例如,记事本示例应用程序就使用一个内容提供者来保存笔记。<h4 id="Broadcast_receivers（广播接受者）">Broadcast receivers（广播接受者）</h4>广播接收者是一个响应系统级范围的广播通知的组件。很多广播都来源于系统，例如屏幕关闭会发送广播，电池低会发送广播,或者照片被捕获也会发送广播。应用程序也可以启动广播，例如，可以用来——广播告知有些数据被下载到了设备上，通知它们可以被使用了。虽然广播接收器不显示用户界面，但是他们可以创建一个状态栏通知，用来提醒用户广播事件已发生了。更常见的,一个广播接收器是作为其他组件通道，被安排只做很小的工作`。例如，他可能初始化一个Service，Service在此基础上执行更多的操作。<br>广播接受者通过集成BroadcastReceiver实现，每个广播作为一个Intent对象传递。更多相关信息,请参见BroadcastReceiver类。<br>Android系统设计的一个独特之处在于任何应用程序都可以启动另一个应用程序的组件。例如,如果您希望用户通过摄像头获取一张照片。可能其他App有这个功能，你的App就可以使用，而不是，自己开发一个Acitvity来拍照。你不需要合并，甚至连相机应用程序的代码都不需要引用。而是，简单的开启相机应用中的一个Activity来获取一张照片。当完成之后，图片将会返回自己的App这样你就能够使用它了。对用户而言，好像相机功能实际上是本App的一部分一样。<br>当系统启动一个组件，它会开启App的进程（如果它不是正在运行），初始化组件所需要的类。如果你的App启动相机应用的Acitvity来获取照片，在进程中所执行的Activity属于相机应用程序，而不属于你本身的App，这一点不想大多数其他系统上的应用程序。Android应用程序没有单一的入口点(没有Main函数)。<br>因为系统把每个应用程序单独的运行在一个拥有文件权限的独立进程中，严格限制访问其他应用程序,应用程序不能直接激活另一个应用程序的组件。而Android系统是可以在这么做的。因此为了激活另一个应用程序的组件,您必须提供为系统发送一个消息,指定开启特定的组件的intent。然后系统为你激活的组件。<h3 id="激活组件">激活组件</h3>四大组件中的3个，activities, services, and broadcast receivers都是通过叫做Intent的异步消息所激活的。Intent在运行时将各个组件相互绑定（你可以把Intents当作从其他组件请求的动作的使者`），无论是属于自己App的组件还是其他的应用的组件。<br>Intent由一个Intent对象创建，它定义了激活其他指定控件或者一种特定类型的组件——Intent可以分别是显示的，或者是隐式的。</li>
-</ul>
-<h2 id="(持续翻译中)">(持续翻译中)</h2>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://slaryme.github.io/2015/10/22/Guides/" data-id="cih7rovbl000000uz4adws960" class="article-share-link">Share</a>
-      
-        <a href="http://slaryme.github.io/2015/10/22/Guides/#disqus_thread" class="article-comment-link">Comments</a>
-	<div id="disqus_thread"></div>
-<script type="text/javascript">
-    /* * * CONFIGURATION VARIABLES * * */
-    var disqus_shortname = 'daviddone';
-    
-    /* * * DON'T EDIT BELOW THIS LINE * * */
-    (function() {
-        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Translation/">Translation</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-如何掌握英文" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2015/10/13/如何掌握英文/" class="article-date">
-  <time datetime="2015-10-13T01:54:54.000Z" itemprop="datePublished">2015-10-13</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/English/">English</a>►<a class="article-category-link" href="/categories/English/Methodology/">Methodology</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/10/13/如何掌握英文/">如何掌握英文</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="目的">目的</h2><p>学习一门外语，不可避及的就是谈一谈，学习这门外语的目的，例如笔者学习英语的主要的目的是，学好英文，能够无障碍看美剧，看英文原著，看英文技术文档，用流利的英文交流，或者用英文来写写文章来陶冶一下情操。正是有了这些目标，我才能够有动力不断学习英文，有意识的运用英文。</p>
-<h2 id="方法">方法</h2><h3 id="朗读和背诵">朗读和背诵</h3><p>学习任何语言，最基本且有效的方法就是朗读和背诵。最开始的时候，一定要坚持，每天早上1小时，持续一年。背诵不必贪多，一篇一篇的文章背诵即可，对每篇文章的词组，语法都要达到熟练掌握。如此操作，只要能够达到50篇高级文章的熟练掌握，则会发现阅读会有很大的进步。</p>
-<h3 id="反复看和听">反复看和听</h3><!-- http://www.zhihu.com/question/26424821/answer/32770859 --> 
-<p>同种材料反复研看，研听，例如将 老友记 看两遍。充分利用自己的空余时间，把一些Adudio Book或是podcast下载到手机中，在没事干的时候戴上耳机反复听。这里推荐一些材料：《哈利波特》1-7，《乔布斯传》，《人性的弱点》，VOA news等的MP3音频都是不错的材料。</p>
-<h3 id="多用">多用</h3><p>俗话说，孰能生巧，如果学习一门外语，都不运用，怎么能够掌握呢。所以多开口讲英文，浏览英文网站，看英文原著，就会慢慢的扩大自己的词汇量。如果之前的反复阅读的方法算是精读的话，此方法就是略读了，例如笔者经常使用英文浏览技术网站。当遇到不认识的词语词组，采用翻译软件进行一下翻译即可，这里推荐一下国内的有道翻译软件。</p>
-<h3 id="提升中文能力">提升中文能力</h3><p>提升英文阅读的同时，也要注意提升自己的中文水平。语言能够自如的表达，顺畅的翻译是需要两种语言都融汇贯通的。</p>
-<h3 id="(此文持续更新和总结中)">(此文持续更新和总结中)</h3>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://slaryme.github.io/2015/10/13/如何掌握英文/" data-id="cih7rovdg000q00uzn87vfsro" class="article-share-link">Share</a>
-      
-        <a href="http://slaryme.github.io/2015/10/13/如何掌握英文/#disqus_thread" class="article-comment-link">Comments</a>
-	<div id="disqus_thread"></div>
-<script type="text/javascript">
-    /* * * CONFIGURATION VARIABLES * * */
-    var disqus_shortname = 'daviddone';
-    
-    /* * * DON'T EDIT BELOW THIS LINE * * */
-    (function() {
-        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-屏幕适配" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2015/09/12/屏幕适配/" class="article-date">
-  <time datetime="2015-09-12T02:17:15.000Z" itemprop="datePublished">2015-09-12</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/技术/">技术</a>►<a class="article-category-link" href="/categories/技术/Android/">Android</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/09/12/屏幕适配/">Android 屏幕适配</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="何为适配？">何为适配？</h2><p><img src="/images/android_screen/android_devices.jpg" alt=""><br>鉴于Android设备的种类繁多，屏幕大小各异，各种碎片化问题存在，在设计App的时候，需要将适配考虑进去。简单的说，适配就是为了让市面上使用各种屏幕大小，各种机型的用户们都能够正常，且流畅的使用我们的App。如果我们不考虑适配,直接使用UI设计师给出长度为50px方形的logo图形，在Android开发的布局文件中设置控件长宽为50px，那么我们得到的结果是任何设备上显示的控件长度50px，就会出现在低分辨率的手机上logo会失真，高分辨率会缩小。</p>
-<h2 id="基本知识介绍">基本知识介绍</h2><h3 id="px"><a href="https://en.wikipedia.org/wiki/Pixel" target="_blank" rel="external">px</a></h3><p>px是pixel的缩写，即像素，它是数字图像在计算机图形学中基本元素，即屏幕上的最小单位。通常用来指代电子设备的分辨率：<br>如我们所说的分辨率1280 × 720，实际上就是竖屏上面总共的像素点1280,横屏上面像素点为720个。</p>
-<h3 id="inch"><a href="https://en.wikipedia.org/wiki/Inch" target="_blank" rel="external">inch</a></h3><p> inch，英寸，屏幕长度计量单位，一英寸等于2.54厘米。一般常说的5英寸大小的手机是指手机的对角线是5英寸，12.7cm长。</p>
-<h3 id="dpi">dpi</h3><p>dot per inch，每英寸上面的像素点，即Android手机的屏幕密度。对于4.5英寸，1280 × 720分辨率的手机，我们可以通过对角线上的分辨率除以屏幕大小4.5英寸得到dpi。注意：对角线分辨率通过长1280,宽720做勾股定理算出。</p>
-<p><img src="/images/android_screen/android_gongshi.png" alt=""></p>
-<p>算出dpi为326,非常接近320。参考官方的屏幕密度表：</p>
-<p><img src="/images/android_screen/android_screen_size.png" alt=""></p>
-<h3 id="dip">dip</h3><p>dip和dp一样，device independent pixels，即是设备独立像素，是Android设备的特有的屏幕计量单位，按照标准在160dpi的设备下，1px = 1dp。其余情况，需要换算，采用公式计算而得： px = dp × (dpi / 160) (标准情况是160)。这里的dpi/160即是屏幕密度的比例值。如在320的屏幕密度下1px换算成dp为：dp = 1/(320/160) = 0.5。</p>
-<h3 id="sp"><a href="http://stackoverflow.com/questions/2025282/difference-between-px-dp-dip-and-sp-in-android" target="_blank" rel="external">sp</a></h3><p>ScaledPixels，即是放大像素。在Android官方网站上并没有px转换为sp的公式，但是sp的大小和dp相似，所以可以采用px = sp × (dpi/160)，则sp = px/(dpi/160)来做计算。<br><a href="http://developer.android.com/guide/topics/resources/more-resources.html#Dimension" target="_blank" rel="external">官方教材</a></p>
-<h2 id="选择xhdp作为主适配">选择xhdp作为主适配</h2><p>目前市面上的高端机的分辨率范围大多分辨率为1280 × 720，所以优先考虑分辨率为1280 × 720作为主要适配的机型。这时候可以协调公司的UI设计师在分辨率为1280 × 720的画布上作图，此时屏幕密度值为320，则将切好的图标放在xhdpi资源文件夹目录下。同理如果设计稿画布分辨率对应的屏幕密度在240左右，则将图片放在hdpi路径下（具体关系参照上图）。这个时候直接在布局文件中采用wrap_content引用即可，当然你也可以将图片的大小换算成dp值，采用图标px大小除以屏幕密度比例值即为dp值（dp =px/(dpi /160)）。在Android开发中我们采用dp来代替px作为尺寸大小单位，是因为px在任何屏幕上的大小是一致的，而dp则是根据每个手机屏幕密度值变化的，在低屏幕密度值的情况下，控件显示的长度小一些，而高屏幕密度值，控件显示长度则大一些。</p>
-<h2 id="（持续更新中）">（持续更新中）</h2>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://slaryme.github.io/2015/09/12/屏幕适配/" data-id="cih7rovd7000m00uzgfapzfv0" class="article-share-link">Share</a>
-      
-        <a href="http://slaryme.github.io/2015/09/12/屏幕适配/#disqus_thread" class="article-comment-link">Comments</a>
-	<div id="disqus_thread"></div>
-<script type="text/javascript">
-    /* * * CONFIGURATION VARIABLES * * */
-    var disqus_shortname = 'daviddone';
-    
-    /* * * DON'T EDIT BELOW THIS LINE * * */
-    (function() {
-        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-node-快捷键" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2015/07/12/node-快捷键/" class="article-date">
-  <time datetime="2015-07-12T02:17:15.000Z" itemprop="datePublished">2015-07-12</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/技术/">技术</a>►<a class="article-category-link" href="/categories/技术/tools/">tools</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/07/12/node-快捷键/">node++快捷键</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><a href="https://notepad-plus-plus.org/" target="_blank" rel="external">nodepad++</a>是我用过最好的文字编辑软件，她不但轻巧优雅，而且功能强大。不过为了更有效率的掌握她，我决定学习一些使用技巧和快捷键。<br><a href="https://notepad-plus-plus.org/" target="_blank" rel="external">参考官网</a><br><!-- http://blog.csdn.net/vindraz/article/details/12579201--></p>
-<h2 id="nodeplus_设置背景颜色<!-http://blog-csdn-net/fly542/article/details/7101118_->">nodeplus 设置背景颜色<!--http://blog.csdn.net/fly542/article/details/7101118 --></h2><p>设置选项-&gt;语言格式设置-&gt;语言 Global Styles -&gt; Global Override<br>按照如下操作：<br><img src="/images/tools/tools_nodepad.png" alt=""><br>点击背景色框，即可修改想要的背景色。如笔者使用的颜色：R，G，B分别为202,234,206。</p>
-<h4 id="同理设置行颜色">同理设置行颜色</h4><p>选中–&gt;Current line background<br>修改背景色，变为自己想要的颜色，如笔者使用的颜色：R，G，B分别为43,213,157。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://slaryme.github.io/2015/07/12/node-快捷键/" data-id="cih7rovdu000y00uzl12rdi2u" class="article-share-link">Share</a>
-      
-        <a href="http://slaryme.github.io/2015/07/12/node-快捷键/#disqus_thread" class="article-comment-link">Comments</a>
-	<div id="disqus_thread"></div>
-<script type="text/javascript">
-    /* * * CONFIGURATION VARIABLES * * */
-    var disqus_shortname = 'daviddone';
-    
-    /* * * DON'T EDIT BELOW THIS LINE * * */
-    (function() {
-        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/tools/">tools</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
   
     <article id="post-MarkDown简明教材" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
@@ -523,7 +126,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://slaryme.github.io/2015/06/10/MarkDown简明教材/" data-id="cih7rove3001400uzjwl4diil" class="article-share-link">Share</a>
+      <a data-url="http://slaryme.github.io/2015/06/10/MarkDown简明教材/" data-id="cih7rx7ym0000rwuzme7jzv5b" class="article-share-link">Share</a>
       
         <a href="http://slaryme.github.io/2015/06/10/MarkDown简明教材/#disqus_thread" class="article-comment-link">Comments</a>
 	<div id="disqus_thread"></div>
@@ -610,7 +213,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://slaryme.github.io/2015/06/10/搭建博客/" data-id="cih7rovcv000e00uzi1t6awbf" class="article-share-link">Share</a>
+      <a data-url="http://slaryme.github.io/2015/06/10/搭建博客/" data-id="cih7rx7zq0007rwuzhwpyc1h1" class="article-share-link">Share</a>
       
         <a href="http://slaryme.github.io/2015/06/10/搭建博客/#disqus_thread" class="article-comment-link">Comments</a>
 	<div id="disqus_thread"></div>
@@ -646,7 +249,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/English/">English</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/English/Methodology/">Methodology</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/English/Translation/">Translation</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术/">技术</a><span class="category-list-count">6</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/技术/Android/">Android</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术/Hexo/">Hexo</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术/tools/">tools</a><span class="category-list-count">1</span></li></ul></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/技术/">技术</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/技术/Hexo/">Hexo</a><span class="category-list-count">2</span></li></ul></li></ul>
     </div>
   </div>
 
@@ -655,7 +258,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android/">Android</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo教材/">Hexo教材</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Translation/">Translation</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown/">markdown</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tools/">tools</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/标记二/">标记二</a><span class="tag-list-count">1</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo教材/">Hexo教材</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown/">markdown</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/标记二/">标记二</a><span class="tag-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -664,7 +267,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Android/" style="font-size: 20px;">Android</a> <a href="/tags/Hexo教材/" style="font-size: 10px;">Hexo教材</a> <a href="/tags/Translation/" style="font-size: 10px;">Translation</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/tools/" style="font-size: 10px;">tools</a> <a href="/tags/标记二/" style="font-size: 10px;">标记二</a>
+      <a href="/tags/Hexo教材/" style="font-size: 10px;">Hexo教材</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/标记二/" style="font-size: 10px;">标记二</a>
     </div>
   </div>
 
@@ -673,7 +276,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">十一月 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">十月 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">九月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">七月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">六月 2015</a><span class="archive-list-count">2</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">六月 2015</a><span class="archive-list-count">2</span></li></ul>
     </div>
   </div>
 
@@ -685,23 +288,11 @@
       <ul>
         
           <li>
-            <a href="/2015/11/19/三方组件之高德地图/">三方组件之高德地图</a>
+            <a href="/2015/06/10/MarkDown简明教材/">MarkDown简明教材</a>
           </li>
         
           <li>
-            <a href="/2015/11/11/更新/">Android SDK 镜像更新</a>
-          </li>
-        
-          <li>
-            <a href="/2015/10/22/Guides/">Android API Guides</a>
-          </li>
-        
-          <li>
-            <a href="/2015/10/13/如何掌握英文/">如何掌握英文</a>
-          </li>
-        
-          <li>
-            <a href="/2015/09/12/屏幕适配/">Android 屏幕适配</a>
+            <a href="/2015/06/10/搭建博客/">使用Github搭建Hexo博客</a>
           </li>
         
       </ul>
@@ -716,7 +307,7 @@
   
   <div class="outer">
     <div id="footer-info" class="inner">
-      &copy; 2015 daviddone<br>
+      &copy; 2015 slaryme<br>
       Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
