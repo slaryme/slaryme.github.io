@@ -4,7 +4,7 @@
   <subtitle><![CDATA[当一个优秀的设计师是种什么样的体验？]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://slaryme.github.io/"/>
-  <updated>2015-12-02T02:43:42.276Z</updated>
+  <updated>2015-12-02T03:40:23.421Z</updated>
   <id>http://slaryme.github.io/</id>
   
   <author>
@@ -19,14 +19,14 @@
     <link href="http://slaryme.github.io/2015/05/02/Android%E5%92%8CIOS%E7%9A%84%E8%AE%BE%E8%AE%A1%E7%A8%BF%E5%B0%BA%E5%AF%B8%E8%AF%A6%E8%A7%A3/"/>
     <id>http://slaryme.github.io/2015/05/02/Android和IOS的设计稿尺寸详解/</id>
     <published>2015-05-02T01:36:31.000Z</published>
-    <updated>2015-12-02T02:43:42.276Z</updated>
+    <updated>2015-12-02T03:40:23.421Z</updated>
     <content type="html"><![CDATA[<p>作为一个UI设计师，在做移动应用之初会遇到这样的问题：我们的App产品会用在几类移动终端？每种终端系统设计规范是否有较大区别？对每类终端画布尺寸设计多大，图标和字体大小如何确定，以及切图切几套等等的问题。这里我将分享以Android和IOS为主的App应用设计知识，毕竟目前Windows Phone的市场还太小。<br><img src="/images/android_screen/android_devices.jpg" alt=""></p>
 <h2 id="Android篇">Android篇</h2><p>Android设备的种类繁多，屏幕大小各异，借用我司程序员的术语：碎片化超级严重。在设计App的时候，需要将适配考虑进去，这里介绍一下Android常规的屏幕分辨率和对应的参数，ldpi(低分辨率),mdpi(标准分辨率),hdpi(高分辨率),xhdpi(超高分辨率)。<br><img src="/images/android_screen/android_screen_size.png" alt=""><br>这里先科普一些基础知识：</p>
 <h4 id="px">px</h4><p>px是pixel的缩写，即像素，它是数字图像在计算机图形学中基本元素，即屏幕上的最小单位。通常用来指代电子设备的分辨率：<br>如我们所说的分辨率1280 × 720，实际上就是竖屏上面总共的像素点1280,横屏上面像素点为720个。</p>
 <h4 id="inch">inch</h4><p>inch，英寸，屏幕长度计量单位，一英寸等于2.54厘米。一般常说的5英寸大小的手机是指手机的对角线是5英寸，12.7cm长。</p>
 <h4 id="ppi(IOS)">ppi(IOS)</h4><p>pixel per inch，每英寸上面的像素点。</p>
 <h4 id="dpi">dpi</h4><p>dot per inch，每英寸上面的点，打印分辨率 （每英寸所能打印的点数，即打印精度，Android采用打印分辨率），即Android手机的屏幕密度，这里dpi=ppi。对于4.5英寸，1280 × 720分辨率的手机，我们可以通过对角线上的分辨率除以屏幕大小4.5英寸得到dpi。注意：对角线分辨率通过长1280,宽720做勾股定理算出。<br><img src="/images/android_screen/android_gongshi.png" alt=""><br>算出dpi为326,非常接近320。<br>科普环节到此结束，对于多分辨率的Android而言，在为一个图标定义长宽的时候，使用的是dip的单位（如50dip），这时候图标会根据手机的屏幕密度，自动调整换算成px，这里会用到公式： px = dp × (dpi / 160) (标准情况是160)。如在1280×720的手机上，50dp的图形就是px = 50 × (dpi / 160)=50 × (320 / 160)=100px。那知道这个对我们设计师有什么影响呢？那就是我们在设计的时候要找一个标准基础，比如目前主流的手机是1280×720,或是1334×750,这两种屏幕密度都差不多为320，查看上图屏幕尺寸表，对应xhdpi。这个时候，新建一个画布1334×750,然后再画布上设计视觉稿，打上各种标注之后给Android开发小组，这个时候，他们就可以根据标注图上的PX,采用公司  dp = px /(dpi / 160)，换算成dp。这样就可以。而我们设计师所做的就是找到一个主流的手机分辨率作为基础标准，然后设计即可，主流手机的分辨率，友盟有统计，<a href="http://umindex.com/#android_resolution" target="_blank" rel="external">点击产看</a>。对于字体Android使用的是sp，计算方式和dp相同，sp = px/(dpi / 160)。主流的是12sp，14sp，16sp，18sp，不过自己可以随便定义，根据视觉稿的大小调整就可以了。</p>
-<h2 id="IOS篇">IOS篇</h2><h4 id="ppi">ppi</h4><p>pixel per inch，每英寸上面的像素点。iPhone手机的屏幕密度。<br>IOS不想Android无数种分辨率，这里列出ihone手机系统版本和相关参数<br><img src="/images/ios_screen.png" alt=""><br>目前IOS适配以上手机就可以了，根据手机分辨率做出3套图形即可。</p>
+<h2 id="IOS篇">IOS篇</h2><h4 id="ppi">ppi</h4><p>pixel per inch，每英寸上面的像素点。iPhone手机的屏幕密度。<br>IOS不像Android无数种分辨率，这里列出ihone手机系统版本和相关参数<br><img src="/images/ios_screen.png" alt=""><br>目前IOS适配以上手机就可以了，根据手机分辨率做出3套图形即可。</p>
 ]]></content>
     <summary type="html">
     <![CDATA[<p>作为一个UI设计师，在做移动应用之初会遇到这样的问题：我们的App产品会用在几类移动终端？每种终端系统设计规范是否有较大区别？对每类终端画布尺寸设计多大，图标和字体大小如何确定，以及切图切几套等等的问题。这里我将分享以Android和IOS为主的App应用设计知识，毕竟目前]]>
